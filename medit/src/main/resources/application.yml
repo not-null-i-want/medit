@@ -1,0 +1,13 @@
+server:
+  port: 8098
+  servlet:
+    context-path: /medit
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  config:
+    use-legacy-processing: true # 레거시 구동방식 유지
+      
