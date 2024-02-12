@@ -1,5 +1,5 @@
 server:
-  port: 8098
+  port: 8080
   servlet:
     context-path: /medit
     
@@ -8,6 +8,28 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+      
   config:
     use-legacy-processing: true # 레거시 구동방식 유지
-      
+    
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@project-db-cgi.smhrd.com:1524:xe
+    username: medit
+    password: medit01
+    
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    show-sql: true
+    database: oracle
+    database-platform: org.hibernate.dialect.OracleDialect
+    
+  devtools:
+    livereload:
+      enabled: true # 파일을 수정하고 저장되는 순간에 서버 재실행
+  
