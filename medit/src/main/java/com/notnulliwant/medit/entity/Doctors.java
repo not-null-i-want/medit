@@ -31,6 +31,9 @@ public class Doctors {
 	@OneToMany(mappedBy = "doctorId")
 	private List<Patients> patient;
 	
+	@OneToMany(mappedBy = "doctorId")
+	private List<Diagnosis> diagnosis;
+	
 	public String toString() {
 		return "Doctors";
 	}
