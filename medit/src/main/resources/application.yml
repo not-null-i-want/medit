@@ -43,7 +43,7 @@ spring:
 cloud:
   aws:
     s3:
-      bucket: medit-static-files.bucket
+      bucket: medit-static-files
     region:
       static: ap-northeast-2
       auto: false

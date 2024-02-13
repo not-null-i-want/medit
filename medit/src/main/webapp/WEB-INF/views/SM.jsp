@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="fileUpload" method="post">
+	<form action="fileUpload" method="post" enctype="multipart/form-data">
 		<input type="file" name="file">
 		<input type="submit" value="전송"> 
 	</form>
