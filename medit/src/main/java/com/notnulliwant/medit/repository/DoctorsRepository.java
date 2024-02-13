@@ -7,5 +7,6 @@ import com.notnulliwant.medit.entity.Doctors;
 
 @Repository
 public interface DoctorsRepository extends JpaRepository<Doctors, String> {
-
+   
+   public Doctors findByDoctorIdAndDoctorPw(String doctorId, String doctorPw);
 }
