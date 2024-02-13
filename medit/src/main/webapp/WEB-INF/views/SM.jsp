@@ -8,5 +8,10 @@
 </head>
 <body>
 
+	<form action="fileUpload" method="post">
+		<input type="file" name="file">
+		<input type="submit" value="전송"> 
+	</form>
+
 </body>
 </html>
