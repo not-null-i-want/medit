@@ -7,5 +7,9 @@ import com.notnulliwant.medit.entity.Patients;
 
 @Repository
 public interface PatientsRepository extends JpaRepository<Patients, Integer> {
-
+	
+	
+	
+	
+	
 }
