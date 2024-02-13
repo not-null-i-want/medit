@@ -55,4 +55,7 @@ public class Patients {
 	@Column(name = "REGISTERED_AT")
 	private Date registeredAt;
 	
+	public String toString() {
+		return "Patients";
+	}
 }

@@ -34,6 +34,12 @@ public class Doctors {
 	@OneToMany(mappedBy = "doctorId")
 	private List<Diagnosis> diagnosis;
 	
+	@OneToMany(mappedBy = "doctorId")
+	private List<Chatroom_Members> chatroom_members;
+	
+	@OneToMany(mappedBy = "doctorId")
+	private List<Chattings> chattings;
+	
 	public String toString() {
 		return "Doctors";
 	}

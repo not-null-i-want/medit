@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.notnulliwant.medit.entity.Diagnosis;
-import com.notnulliwant.medit.entity.Patients;
-import com.notnulliwant.medit.repository.DiagnosisRepository;
+import com.notnulliwant.medit.entity.Chatroom_Members;
+import com.notnulliwant.medit.entity.Chattings;
+import com.notnulliwant.medit.repository.ChattingsRepository;
 
 @Controller
 public class TestController {
 
 	@Autowired
-	private DiagnosisRepository repo;
+	private ChattingsRepository repo;
 	
 	@RequestMapping("/test")
 	public String test() {
 		
-		List<Diagnosis> diagnosis = repo.findAll();
+		List<Chattings> test = repo.findAll();
 		
-		for(Diagnosis n : diagnosis) {
+		for(Chattings n : test) {
 			System.out.println(n);
 		}
 		
