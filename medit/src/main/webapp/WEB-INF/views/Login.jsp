@@ -14,11 +14,11 @@
 	    <form class="login" method="post" action="login">
 	        <img src="assets/imgs/medit.png" id="logo">
 	        <div class="vector">
-	            <input type="text" placeholder="Enter ID" class="bounceAnim" name="doctorId" required>
+	            <input type="text" placeholder="Enter ID" name="doctorId" required id ="test">
 	            <img src="assets/imgs/login_id.png" id="people">
 	        </div>
 	        <div class="vector">
-	            <input type="password" placeholder="Enter Password" class="bounceAnim" name="doctorPw" required>
+	            <input type="password" placeholder="Enter Password" name="doctorPw" required>
 	            <img src="assets/imgs/login_pw.png" id="key">
 	        </div>
 	        <input type="submit" value="Login">
