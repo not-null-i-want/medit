@@ -9,52 +9,50 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "PATIENTS")
-@SequenceGenerator(
-	    name="patient_seq", 
-	    sequenceName="PATIENT_SEQ",
-	    initialValue=1,
-	    allocationSize = 1
-	    )
+@Table(name = "PATIENTS") // 테이블 지정
+@SequenceGenerator(name = "patients_seq", sequenceName = "PATIENTS_SEQ", initialValue = 1, allocationSize = 1)
+@DynamicInsert
 public class Patients {
 
 	@Id
 	@Column(name = "PTNT_ID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "patient_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "patients_seq") // 자동으로 값생성
 	private Integer ptntId;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "doctorId")
 	private Doctors doctorId;
-	
+
 	@Column(name = "PTNT_NAME")
 	private String ptntName;
-	
+
 	@Column(name = "PTNT_GENDER")
 	private Character ptntGender;
-	
+
 	@Column(name = "PTNT_BIRTHDATE")
 	private String ptntBirthdate;
-	
+
 	@Column(name = "PTNT_ADDR")
-	private String ptntAddr;
+	private String ptntAddr; // 주소 1
 	
 	@Column(name = "PTNT_PHONE")
 	private String ptntPhone;
-	
+
 	@Column(name = "PTNT_TYPE")
 	private Character ptntType;
-	
-	@Column(name = "REGISTERED_AT")
-	private Date registeredAt;
-	
+
 	public String toString() {
 		return "Patients";
 	}
