@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.notnulliwant.medit.entity.Patients;
 import com.notnulliwant.medit.repository.DoctorsRepository;
@@ -13,27 +15,29 @@ import com.notnulliwant.medit.repository.PatientsRepository;
 
 @Controller
 public class JH_Controller {
-	
-	@Autowired
-	private PatientsRepository repo;
-	private DoctorsRepository doctorsrepo;
-	
-	@RequestMapping("/JH")
-	public String JH( Model model ) {
-		
-		List<Patients> list = repo.findAll();
-		
-		for(Patients n : list) {
-			System.out.println(n.getDoctorId().getDoctorName());
-		}
-		
-		model.addAttribute("patiensList", list);
-		
-		
-		
-		return "JH";
-	}
-	
-	
-	
+   
+   @Autowired
+   private PatientsRepository repo;
+   private DoctorsRepository doctorsrepo;
+   
+   @RequestMapping("/JH")
+    public String showPatientList(Model model) {
+        List<Patients> patientsList = repo.findAll();
+        
+        model.addAttribute("patientsList", patientsList);
+        
+        return "JH";
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("keyword") String keyword, Model model) {
+       
+        List<Patients> patientsList = repo.findByPtntNameContaining(keyword);
+        
+        model.addAttribute("patientsList", patientsList);
+        
+        return "JH"; 
+    }
+
+   
 }
