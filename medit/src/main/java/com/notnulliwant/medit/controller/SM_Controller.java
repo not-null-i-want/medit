@@ -15,7 +15,6 @@ public class SM_Controller {
 	public String fileUpload() {
 		return "SM";
 	}
-	
-	
+
 	
 }

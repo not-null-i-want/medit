@@ -40,7 +40,6 @@ public class AwsS3FileController {
         	String extension = fileName.substring(index + 1);	
         }
         
-        
         // 영상번호 			: seq
         // 진단번호 			: FK
         // 영상이미지명 		: fileName
@@ -50,7 +49,7 @@ public class AwsS3FileController {
         // 영상 촬영일시 		: 클라이언트 입력
         // 업로드 일시 			: 즉시
         // 영상 원본 유무 		: 일단 0
-        
+
         
         // amazonS3.getUrl(bucket, fileName).toString();
         System.out.println(amazonS3.getUrl(bucket, fileName).toString());
