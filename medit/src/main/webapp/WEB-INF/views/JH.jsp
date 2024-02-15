@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>환자 목록</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -30,10 +31,10 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="patient" items="${patientsList}">
-                    <tr>
-                        <td>${patient.ptntId}</td>
-                        <td>${patient.ptntName}</td>
+                <c:forEach var="patient" items="${patientsList}" varStatus="loop">
+                    <tr class="test">
+                        <td class="jsId">${patient.ptntId}</td>
+                        <td>${patient.ptntName}</td>	
                         <td>${patient.getDoctorId().getDoctorName()}</td>
                     </tr>
                 </c:forEach>
@@ -41,7 +42,7 @@
         </table>
     </c:if>
 </div>
-
+<script src="assets/js/test.js"></script>
 
 </body>
 </html>
