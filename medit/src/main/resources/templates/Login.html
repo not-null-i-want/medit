@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>로그인</title>
@@ -11,7 +9,7 @@
 	<video autoplay loop muted>
 		<source src="assets/videos/loginbackground.mp4">
 	</video>
-	    <form class="login" method="post" action="login">
+	    <form id="submit" class="login" th:action="@{/login}" method="post">
 	        <img src="assets/imgs/medit.png" id="logo">
 	        <div class="vector">
 	            <input type="text" placeholder="Enter ID" name="doctorId" required id ="test">

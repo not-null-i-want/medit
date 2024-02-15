@@ -19,6 +19,12 @@
 	</properties>
 	<dependencies>
 	
+		<!-- Thymeleaf -->
+		<dependency>
+	    	<groupId>org.springframework.boot</groupId>
+	    	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+	
 		<!-- S3 -->
 		<dependency>
     		<groupId>org.springframework.cloud</groupId>
