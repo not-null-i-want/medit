@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>환자 목록</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script defer src="assets/js/test.js"></script>
 </head>
 <body>
 
@@ -42,7 +43,6 @@
         </table>
     </c:if>
 </div>
-<script src="assets/js/test.js"></script>
 
 </body>
 </html>
