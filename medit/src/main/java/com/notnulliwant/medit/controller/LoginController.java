@@ -28,7 +28,7 @@ public class LoginController {
 	    System.out.println(result);
 	    if(result != null) {
 	    	session.setAttribute("user", result);
-	        return "Test";
+	        return "Main";
 	    } else {
 	        return "Login"; // 로그인 실패 시 다시 로그인 페이지로 이동
 	    }       

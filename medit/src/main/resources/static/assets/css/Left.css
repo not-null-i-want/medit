@@ -1,0 +1,118 @@
+#left {
+	width: 500px;
+	height: 100%;
+}
+
+#logo {
+	width: 80%;
+	margin: 20px auto;
+	display: block;
+}
+
+/* 검색창 */
+.search {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-family: "SUITE-Regular";
+	font-size: 18px;
+}
+
+#searchText {
+	display: inline-block;
+	width: 250px;
+	height: 40px;
+	box-sizing: border-box;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	padding: 10px 10px 10px 130px;
+	transition: all 0.1s ease-out;
+	font-family: "SUITE-Regular";
+	font-size: 16px;
+}
+
+#searchText+label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	border-radius: 3px 0 0 3px;
+	padding: 0 20px;
+	background: #39568d;
+	transform: translateZ(0) translateX(0);
+	transition: all 0.3s ease-in;
+	transition-delay: 0.2s;
+	display: flex;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px
+		16px rgba(0, 0, 0, 0.12);
+}
+
+#searchText:focus+label {
+	transform: translateY(-120%) translateX(0%);
+	border-radius: 3px;
+	transition: all 0.2s ease-out;
+}
+
+#searchText:focus {
+	padding: 10px;
+	transition: all 0.3s ease-out;
+	transition-delay: 0.2s;
+}
+
+#search_icon {
+	position: absolute;
+	width: 18px;
+	left: 220px;
+	top: 10px;
+	filter: invert(16%) sepia(0%) saturate(3184%) hue-rotate(200deg)
+		brightness(124%) contrast(54%);
+}
+
+/* 환자 목록 */
+#ptntList {
+	border: 1px solid white;
+	margin: 20px auto 40px;
+	width: 90%;
+	height: 250px;
+	/* 아래 5개는 나중에 지우기*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: white;
+}
+
+/* 환자 클릭시 디테일 */
+#ptntDetail {
+	border: 1px solid white;
+	margin: 20px auto 10px;
+	width: 90%;
+	height: 250px;
+	/* 아래 5개는 나중에 지우기*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: white;
+}
+
+/* 진단 날짜 */
+#diagnosisDate {
+	border: 1px solid white;
+	margin: 5px auto;
+	width: 90%;
+	height: 250px;
+	/* 아래 5개는 나중에 지우기*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: white;
+}

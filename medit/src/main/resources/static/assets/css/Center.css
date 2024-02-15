@@ -1,0 +1,27 @@
+#center {
+	width: 100%;
+	height: 100%;
+}
+
+/* 상단 빈 공간 */
+#empty {
+	border: 1px solid white;
+	box-sizing: border-box;
+	background-color: #636363;
+	width: 100%;
+	height: 50px;
+	/* 아래 5개는 나중에 지우기*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: white;
+}
+
+/* 메인 */
+section {
+	border: 1px solid white;
+	width: 99%;
+	height: 970px;
+	margin: 5px auto;
+}
