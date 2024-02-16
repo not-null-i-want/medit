@@ -31,12 +31,16 @@
             </thead>
             <tbody>
                 <tr th:each="patient, loop : ${patientsList}" class="test">
-                    <td th:text="${patient.ptntId}" class="jsId"></td>
+                    <td th:text="${patient.ptntId}" class="ptntId"></td>
                     <td th:text="${patient.ptntName}"></td>
                     <td th:text="${patient.doctorId.doctorName}"></td>
                 </tr>
             </tbody>
         </table>
+        
+        <div id="test">
+        
+        </div>
     </div>
 </div>
 
