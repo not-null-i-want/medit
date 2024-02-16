@@ -48,8 +48,6 @@ public class Diagnosis {
 	@OneToMany(mappedBy = "diagSeq")
 	private List<Cxrs> cxrs;
 	
-	
-	
 	public String toString() {
 		return "Diagnosis";
 	}
