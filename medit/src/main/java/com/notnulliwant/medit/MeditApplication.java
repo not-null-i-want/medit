@@ -15,7 +15,5 @@ public class MeditApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MeditApplication.class, args);
 	}
-	
-	
 
 }

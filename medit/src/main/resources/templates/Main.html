@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>MEDIT</title>
-
-<link rel="stylesheet" href="assets/css/Born.css">
-<link rel="stylesheet" href="assets/css/Left.css">
-<link rel="stylesheet" href="assets/css/Center.css">
-<link rel="stylesheet" href="assets/css/Right.css">
-
+	<meta charset="UTF-8">
+	<title>MEDIT</title>
+	
+	<link rel="stylesheet" th:href="@{assets/css/Born.css}">
+	<link rel="stylesheet" th:href="@{assets/css/Left.css}">
+	<link rel="stylesheet" th:href="@{assets/css/Center.css}">
+	<link rel="stylesheet" th:href="@{assets/css/Right.css}">
+    <script th:src="@{assets/js/test2.js}" type="text/javascript" defer></script>
+    <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -24,7 +26,30 @@
             </div>
             <!-- 환자 목록 -->
             <div id="ptntList">
-                환자 목록
+            	<table>
+            		<tr th:each="item:${ptntList}">
+            			<td th:text="${item.ptntId}">
+            			</td>
+            			<td th:text="${item.ptntName}">
+            			</td>
+            			<td th:text="${item.doctorId.doctorName}">
+            			</td>
+            		</tr>
+            	</table>
+            	<!-- /paging?page=1 타임리프 문법 -->
+            	<a th:href="@{/paging(page=1)}">First</a>
+            	<a th:href="${ptntList.first} ? '#' : @{/paging(page=${ptntList.number-1})}">prev</a>
+            	<!-- for(page = startPage, i <= endPage, page++) -->
+				<span th:each="page: ${#numbers.sequence(startPage, endPage)}">
+					<!-- 현재 페이지는 링크 미존재 -->
+					<span th:if="${page == ptntList.number}" th:text="${page}"></span>
+					<!-- 나머지는 링크 존재 -->
+					<span th:unless="${page == ptntList.number}">
+					    <a th:href="@{paging(page=${page})}" th:text="${page}"></a>
+					</span>
+				</span>
+    			<a th:href="${ptntList.last} ? '#' : @{/paging(page=${ptntList.number + 1})}">next</a>
+    			<a th:href="@{/paging(page=${ptntList.totalPages - 1})}">Last</a>
             </div>
             <!-- 환자 디테일-->
             <div id="ptntDetail">

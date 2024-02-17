@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>로그인</title>
-	<link rel="stylesheet" href="assets/css/Login.css">
+	<link rel="stylesheet" th:href="@{assets/css/Login.css}">
 </head>
 <body>
 	<video autoplay loop muted>
@@ -38,6 +38,6 @@
 			</div>
 	    </form>
 	    
-	<script src="assets/js/Login.js"></script>
+	<script th:src="@{assets/js/login.js}" type="text/javascript"></script>
 </body>
 </html>

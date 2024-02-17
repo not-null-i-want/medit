@@ -1,14 +1,22 @@
 package com.notnulliwant.medit.controller;
 
+import java.awt.print.Pageable;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.notnulliwant.medit.entity.Doctors;
+import com.notnulliwant.medit.entity.Patients;
 import com.notnulliwant.medit.repository.DoctorsRepository;
+import com.notnulliwant.medit.repository.PatientsRepository;
 
 @Controller
 public class LoginController {
@@ -16,22 +24,29 @@ public class LoginController {
 	@Autowired
 	private DoctorsRepository repo;
 	
-	@RequestMapping("/loginPage")
-	public String loginPage() {
-		return "Login";
-	}
+	@Autowired
+	private PatientsRepository ptntRepo;
 	   
-	@RequestMapping("/login")
+	@PostMapping("/login")
 	public String login(Doctors doctor, HttpSession session, Model model) {
 	      
 		Doctors result = repo.findByDoctorIdAndDoctorPw(doctor.getDoctorId(), doctor.getDoctorPw());
-	    System.out.println(result);
+		
+		List<Patients> ptntList = ptntRepo.findAll();
+		
 	    if(result != null) {
+	    	model.addAttribute("ptntList", ptntList);
 	    	session.setAttribute("user", result);
-	        return "Main";
+	        return "redirect:paging";
 	    } else {
-	        return "Login"; // 로그인 실패 시 다시 로그인 페이지로 이동
+	        return "Login";
 	    }       
 	}
+	
+	@GetMapping("/")
+	public String start() {
+		return "Login";
+	}
+	
 	
 }

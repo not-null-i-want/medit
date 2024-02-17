@@ -18,12 +18,14 @@ import org.hibernate.annotations.DynamicInsert;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "PATIENTS") // 테이블 지정
 @SequenceGenerator(name = "patients_seq", sequenceName = "PATIENTS_SEQ", initialValue = 1, allocationSize = 1)
 @DynamicInsert
+@NoArgsConstructor
 public class Patients {
 
 	@Id
@@ -56,4 +58,20 @@ public class Patients {
 	public String toString() {
 		return "Patients";
 	}
+
+	// 환자 목록 페이징에 사용할 생성자
+	public Patients(Integer ptntId, Doctors doctorId, String ptntName, Character ptntGender, String ptntBirthdate,
+			String ptntAddr, String ptntPhone) {
+		this.ptntId = ptntId;
+		this.doctorId = doctorId;
+		this.ptntName = ptntName;
+		this.ptntGender = ptntGender;
+		this.ptntBirthdate = ptntBirthdate;
+		this.ptntAddr = ptntAddr;
+		this.ptntPhone = ptntPhone;
+	}
+	
+	
+
+	
 }

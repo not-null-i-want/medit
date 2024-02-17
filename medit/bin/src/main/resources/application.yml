@@ -1,13 +1,15 @@
 server:
-  port: 8080
+  port: 8089
   servlet:
     context-path: /medit
     
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+      
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    check-template-location: true
+    mode: HTML5
       
   config:
     use-legacy-processing: true # 레거시 구동방식 유지
@@ -32,4 +34,25 @@ spring:
   devtools:
     livereload:
       enabled: true # 파일을 수정하고 저장되는 순간에 서버 재실행
-  
+
+
+################# S3 설정 ####################   
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB # 업로드
+
+cloud:
+  aws:
+    s3:
+      bucket: medit-static-files
+      bucket-cxrs: medit-static-files/cxrs
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
+    credentials:
+      access-key: AKIA5GP7S5DFKJJHEPAF
+      secret-key: 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
+###############################################
