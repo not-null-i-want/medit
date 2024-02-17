@@ -1,48 +1,125 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>환자 목록</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script defer th:src="@{/assets/js/test.js}"></script>
+<meta charset="UTF-8">
+<title>환자 목록</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script defer th:src="@{/assets/js/test_bh.js}"></script>
+<script defer th:src="@{/assets/js/test.js}"></script>
+<style>
+table {
+	border-collapse: collapse;
+	width: 25%;
+	margin-top: 20px;
+}
+
+table, th, td {
+	border: 1px solid #000;
+}
+
+.diagnosis-box {
+	margin-top: 20px;
+}
+
+.diagnosis-box table {
+	border: none; 
+	width: 25%;
+}
+</style>
 </head>
 <body>
 
-<!-- Thymeleaf 페이지 -->
-<div>
-    <h1>환자 목록</h1>
+	<!-- Thymeleaf 페이지 -->
+	<div>
+		<h1>환자 목록</h1>
 
-    <!-- 환자 검색 폼 -->
-    <form id="search" th:action="@{/search}" method="get">
-        <label for="searchName">환자명 검색: </label>
-        <input type="text" id="searchName" name="keyword">
-        <button type="submit">검색</button>
-    </form>
+		<!-- 환자 검색 폼 -->
+		<form id="search" th:action="@{/search}" method="get">
+			<label for="searchName">환자명 검색: </label> <input type="text"
+				id="searchName" name="keyword">
+			<button type="submit">검색</button>
+		</form>
 
-    <!-- 검색 결과 표시 -->
-    <div th:if="${#lists.size(patientsList) > 0}">
-        <table>
-            <thead>
-                <tr>
-                    <td>No.</td>
-                    <td>환자명</td>
-                    <td>담당의사</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="patient, loop : ${patientsList}" class="test">
-                    <td th:text="${patient.ptntId}" class="ptntId"></td>
-                    <td th:text="${patient.ptntName}"></td>
-                    <td th:text="${patient.doctorId.doctorName}"></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div id="test">
-        
-        </div>
-    </div>
-</div>
+		<!-- 검색 결과 표시 -->
+		<div th:if="${#lists.size(patientsList) > 0}">
+			<table>
+				<thead>
+					<tr>
+						<td>No.</td>
+						<td>환자명</td>
+						<td>담당의사</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="patient, loop : ${patientsList}" class="test">
+						<td th:text="${patient.ptntId}" class="ptntId"></td>
+						<td th:text="${patient.ptntName}"></td>
+						<td th:text="${patient.doctorId.doctorName}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br> 
+
+			<h1>환자 상세정보</h1>
+			<table>
+				<tr>
+					<td>담당의사</td>
+					<td id="output-doctorName"></td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td id="output-ptntAddr"></td>
+				</tr>
+				<tr>
+					<td>생년월일</td>
+					<td id="output-ptntBirthdate"></td>
+				</tr>
+				<tr>
+					<td>성별</td>
+					<td id="output-ptntGender"></td>
+				</tr>
+				<tr>
+					<td>환자 ID</td>
+					<td id="output-ptntId"></td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td id="output-ptntName"></td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td id="output-ptntPhone"></td>
+				</tr>
+				<tr>
+					<td>환자 유형</td>
+					<td id="output-ptntType"></td>
+				</tr>
+			</table>
+
+			
+			<div class="diagnosis-box">
+				<h2>진단 날짜</h2>
+				<table>
+					<tr>
+						<td id="">Date 1</td>
+					</tr>
+					<tr>
+						<td>Date 2</td>
+					</tr>
+					<tr>
+						<td>Date 3</td>
+					</tr>
+					<tr>
+						<td>Date 4</td>
+					</tr>
+					<tr>
+						<td>Date 5</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

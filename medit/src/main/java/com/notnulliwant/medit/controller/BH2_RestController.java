@@ -18,49 +18,31 @@ import com.notnulliwant.medit.repository.PatientsRepository;
 
 import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 
-@Controller
+@RestController
 public class BH2_RestController {
-
+	
 	@Autowired
-	   private PatientsRepository repo;
-	   //private DoctorsRepository doctorsrepo;
-	   
-	   @RequestMapping("/BH2")
-	    public String showPatientList(Model model) {
-	        List<Patients> patientsList = repo.findAll();
-	        
-	        model.addAttribute("patientsList", patientsList);
-	        
-	        return "BH2";
-	    }
-
-	    @GetMapping("/search1")
-	    public String search(@RequestParam("keyword") String keyword, Model model) {
-	       
-	        List<Patients> patientsList = repo.findByPtntNameContaining(keyword);
-	        
-	        model.addAttribute("patientsList", patientsList);
-	        
-	        return "BH2"; 
-	    }
+	private PatientsRepository repo;
 	
-	
-	  @RequestMapping("/saveOpinion")
-	  public String opinion( Diagnosis DOCTOR_OPINION) {
-	  
-	  System.out.println("test test"); 
-//	  String doctor_opinion= DOCTOR_OPINION;
-	  
-	  System.out.println(DOCTOR_OPINION.getDoctorOpinion());
-	  
-//	  DOCTOR_OPINION.setDoctorOpinion(doctor_opinion); 
-	  
-//	  repo.save(DOCTOR_OPINION);
-	  
-	  return "BH2"; }
-	
-	
-	
-	
+	@PostMapping("/DrDiagnosis") // 맵핑 이름겹치면안됨
+	public PatientsDTO Detail(Integer PTNT_ID, Model model) {
+		
+		Patients ptnt = repo.findById(PTNT_ID).get();
+		
+		PatientsDTO result = new PatientsDTO();
+		
+		result.setDoctorName(ptnt.getDoctorId().getDoctorName());
+		result.setPtntAddr(ptnt.getPtntAddr());
+		result.setPtntBirthdate(ptnt.getPtntBirthdate());
+		result.setPtntGender(ptnt.getPtntGender());
+		result.setPtntId(ptnt.getPtntId());
+		result.setPtntName(ptnt.getPtntName());
+		result.setPtntPhone(ptnt.getPtntPhone());
+		result.setPtntType(ptnt.getPtntType());
+		// 새로운 DTO를 만들어서 거기에 다시 담아서 리턴해줌
+		//   ==> 위에 있는 ptnt를 리턴으로 ajax쪽으로 넘겨주면 DoctorId를 Integer가 아니라 Doctor 객체로 인지함(Doctor.java)
+		
+		return result;
+	}
 	
 }
