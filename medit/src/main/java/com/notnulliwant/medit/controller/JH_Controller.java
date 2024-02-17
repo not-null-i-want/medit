@@ -18,7 +18,7 @@ public class JH_Controller {
    
    @Autowired
    private PatientsRepository repo;
-   //private DoctorsRepository doctorsrepo;
+  
    
    @RequestMapping("/JH")
     public String showPatientList(Model model) {
