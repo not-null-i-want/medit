@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>환자 목록</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer th:src="@{/assets/js/test.js}"></script>
+</head>
+<body>
+
+<!-- Thymeleaf 페이지 -->
+<div>
+    <h1>환자 목록</h1>
+
+    <!-- 환자 검색 폼 -->
+    <form id="search" th:action="@{/search}" method="get">
+        <label for="searchName">환자명 검색: </label>
+        <input type="text" id="searchName" name="keyword">
+        <button type="submit">검색</button>
+    </form>
+
+    <!-- 검색 결과 표시 -->
+    <div th:if="${#lists.size(patientsList) > 0}">
+        <table>
+            <thead>
+                <tr>
+                    <td>No.</td>
+                    <td>환자명</td>
+                    <td>담당의사</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="patient, loop : ${patientsList}" class="test">
+                    <td th:text="${patient.ptntId}" class="ptntId"></td>
+                    <td th:text="${patient.ptntName}"></td>
+                    <td th:text="${patient.doctorId.doctorName}"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div id="test">
+        
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

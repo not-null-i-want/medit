@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.notnulliwant.medit.entity.Patients;
 import com.notnulliwant.medit.entity.Chattings;
+import com.notnulliwant.medit.entity.Diagnosis;
 import com.notnulliwant.medit.repository.ChattingsRepository;
 import com.notnulliwant.medit.repository.PatientsRepository;
+
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 
 @Controller
 public class BH_Controller {
@@ -25,11 +28,12 @@ public class BH_Controller {
 	}
 	
 	@RequestMapping("/savePatient")
-	public String join( Patients patients, String addr1, String addr2, String addr3 ) {
+	public String join( Patients patients, String addr1, String addr2, String addr3, Diagnosis DOCTOR_OPINION) {
 		
-		System.out.println("test test");
 		String ptnt_addr= addr1+" "+addr2+" 우편번호("+addr3+")";
 		patients.setPtntAddr(ptnt_addr);
+		System.out.println("test"); // 테스트용
+		System.out.println(patients.getDoctorId()); // 테스트용
 		repo.save(patients);
 		
 		return "BH";

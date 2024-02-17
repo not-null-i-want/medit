@@ -58,7 +58,7 @@ public class Patients {
 	public String toString() {
 		return "Patients";
 	}
-
+	
 	// 환자 목록 페이징에 사용할 생성자
 	public Patients(Integer ptntId, Doctors doctorId, String ptntName, Character ptntGender, String ptntBirthdate,
 			String ptntAddr, String ptntPhone) {
