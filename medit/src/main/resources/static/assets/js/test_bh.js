@@ -1,4 +1,4 @@
-$(".test").on("click", selectPtnt);
+/*$(".test5").on("click", selectPtnt);
 
 function selectPtnt() {
     let ptnt_id = $(this).find(".ptntId").html();	
@@ -8,7 +8,7 @@ function selectPtnt() {
 		url: "DrDiagnosis",
 		type: "post",
 		data : ({
-			"PTNT_ID" : ptnt_id
+			"PTNT_ID" : ptnt_id  // 여기 PTNT_ID가 BH2_RestController.java로 보내주는거임, DrDiagnosis
 		}),
 		success : function(res){
 			$('#output-doctorName').text(res.doctorName);
@@ -19,6 +19,7 @@ function selectPtnt() {
 			$('#output-ptntName').text(res.ptntName);
 			$('#output-ptntPhone').text(res.ptntPhone);
 			$('#output-ptntType').text(res.ptntType);
+			$('#output-diagAt').text(res.diagAt);
 			
 			console.log(res)
 		},
@@ -28,4 +29,6 @@ function selectPtnt() {
 		
 	})
 }
+*/
+
 

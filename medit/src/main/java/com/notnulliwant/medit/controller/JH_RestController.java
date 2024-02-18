@@ -14,46 +14,33 @@ import com.notnulliwant.medit.repository.PatientsRepository;
 
 @RestController
 public class JH_RestController {
-
+	
 	@Autowired
 	private PatientsRepository repo;
-
+	
 	@PostMapping("/PtntDetail")
 	public PatientsDTO Detail(Integer PTNT_ID, Model model) {
-
+		
 		System.out.println(PTNT_ID);
-
+		
 		Patients ptnt = repo.findById(PTNT_ID).get();
-
+		
 		PatientsDTO result = new PatientsDTO();
-
+		
+		
+		
 		result.setDoctorName(ptnt.getDoctorId().getDoctorName());
 		result.setPtntAddr(ptnt.getPtntAddr());
 		result.setPtntBirthdate(ptnt.getPtntBirthdate());
 		result.setPtntGender(ptnt.getPtntGender());
-
-		// 성별을 "남" 또는 "여"로 변환하는 코드
-		if (ptnt.getPtntGender().equals('0')) {
-			result.setPtntGender('남');
-		} else if (ptnt.getPtntGender().equals('1')) {
-			result.setPtntGender('여');
-		}
 		result.setPtntId(ptnt.getPtntId());
 		result.setPtntName(ptnt.getPtntName());
 		result.setPtntPhone(ptnt.getPtntPhone());
-
-		// 타입을 "admission 입원" 또는 "discharged 내원"로 변환하는 코드
-		if (ptnt.getPtntType().equals('0')) {
-			result.setPtntType('A'); 
-		} else if (ptnt.getPtntType().equals('1')) {
-			result.setPtntType('D'); 
-		}
-
+		result.setPtntType(ptnt.getPtntType());
 		// 새로운 DTO를 만들어서 거기에 다시 담아서 리턴해줌
-		// ==> 위에 있는 ptnt를 리턴으로 ajax쪽으로 넘겨주면 DoctorId를 Integer가 아니라 Doctor 객체로
-		// 인지함(Doctor.java)
-
+		//   ==> 위에 있는 ptnt를 리턴으로 ajax쪽으로 넘겨주면 DoctorId를 Integer가 아니라 Doctor 객체로 인지함(Doctor.java)
+		
 		return result;
 	}
-
+	
 }

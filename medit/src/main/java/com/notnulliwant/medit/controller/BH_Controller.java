@@ -27,6 +27,12 @@ public class BH_Controller {
 		return "BH";
 	}
 	
+	@RequestMapping("/BH2")
+	public String BH2() {
+		
+		return "BH2";
+	}
+	
 	@RequestMapping("/savePatient")
 	public String join( Patients patients, String addr1, String addr2, String addr3, Diagnosis DOCTOR_OPINION) {
 		
