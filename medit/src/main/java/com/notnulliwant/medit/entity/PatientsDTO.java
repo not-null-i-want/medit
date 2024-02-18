@@ -9,6 +9,8 @@ public class PatientsDTO {
 
 	private String doctorId;
 
+	private String doctorName;
+	
 	private String ptntName;
 
 	private Character ptntGender;

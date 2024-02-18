@@ -1,18 +1,26 @@
-function loadPatientInfo(patientNumber) {
+$(".diagnosis").on("click", selectPtnt);
+
+function selectPtnt() {
+    let ptnt_id = $(this).find(".ptntId").html();	
+
     $.ajax({
-        type: "GET",
-        url: "http://localhost:8089/medit/getDiagnosisByPtntId",
-        data: { ptntId: patientNumber },
-        success: function (response) {
-            document.getElementById("content").value = response.doctorOpinion;
-        },
-        error: function (error) {
-            console.error("데이터 가져오기 오류:", error);
-        }
-    });
+		
+		url: "DoctorOpinions",
+		type: "post",
+		data : ({
+			"PTNT_ID" : ptnt_id
+		}),
+		success : function(res){
+			console.log(res);
+		},
+		error : function(){
+			alert("testdiagnosis");
+		}
+		
+	});
 }
 
-function openEditForm() {
+/*function openEditForm() {
     var currentContent = document.getElementById("content").value;
     document.getElementById("editContent").value = currentContent;
     document.querySelector(".edit-form").style.display = "block";
@@ -29,4 +37,4 @@ function submitDiagnosis() {
     var patientNumber = 1; // 예시로 고정된 환자 번호
     // AJAX를 사용하여 서버에 소견서 등록 요청
     // ...
-}
+}*/
