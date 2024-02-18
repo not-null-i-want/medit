@@ -26,30 +26,20 @@
             </div>
             <!-- 환자 목록 -->
             <div id="ptntList">
-            	<table>
-            		<tr th:each="item:${ptntList}">
-            			<td th:text="${item.ptntId}">
-            			</td>
-            			<td th:text="${item.ptntName}">
-            			</td>
-            			<td th:text="${item.doctorId.doctorName}">
-            			</td>
-            		</tr>
-            	</table>
             	<!-- /paging?page=1 타임리프 문법 -->
-            	<a th:href="@{/paging(page=1)}">First</a>
-            	<a th:href="${ptntList.first} ? '#' : @{/paging(page=${ptntList.number-1})}">prev</a>
-            	<!-- for(page = startPage, i <= endPage, page++) -->
-				<span th:each="page: ${#numbers.sequence(startPage, endPage)}">
-					<!-- 현재 페이지는 링크 미존재 -->
-					<span th:if="${page == ptntList.number}" th:text="${page}"></span>
-					<!-- 나머지는 링크 존재 -->
-					<span th:unless="${page == ptntList.number}">
-					    <a th:href="@{paging(page=${page})}" th:text="${page}"></a>
-					</span>
-				</span>
-    			<a th:href="${ptntList.last} ? '#' : @{/paging(page=${ptntList.number + 1})}">next</a>
-    			<a th:href="@{/paging(page=${ptntList.totalPages - 1})}">Last</a>
+            	<!-- <a th:href="@{/paging(page=1)}">First</a> -->
+            	<table id="ptntTable">
+            		
+            	</table>
+            	<div>
+	            	<span id="first"> 처음 </span>
+	            	<span id="pre"> 이전 </span>
+	            	<div id="pageNumber">
+	            		
+	            	</div>
+	            	<span id="next"> 다음 </span>
+	            	<span id="last"> 끝 </span>
+            	</div>
             </div>
             <!-- 환자 디테일-->
             <div id="ptntDetail">

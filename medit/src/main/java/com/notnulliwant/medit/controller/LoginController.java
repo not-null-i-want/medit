@@ -37,7 +37,7 @@ public class LoginController {
 	    if(result != null) {
 	    	model.addAttribute("ptntList", ptntList);
 	    	session.setAttribute("user", result);
-	        return "redirect:paging";
+	        return "Main";
 	    } else {
 	        return "Login";
 	    }       
