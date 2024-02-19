@@ -1,6 +1,6 @@
 package com.notnulliwant.medit.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
 
@@ -44,8 +46,9 @@ public class Chattings {
 	@Column(name = "EMOTICON")
 	private String emoticon;
 	
-	@Column(name = "CHATTED_AT")
-	private Date chattedAt;
+	@CreationTimestamp
+	@Column(name = "CHATTED_AT", updatable = false)
+	private LocalDateTime chattedAt;
 	
 	public String toString() {
 		return "Chattings";

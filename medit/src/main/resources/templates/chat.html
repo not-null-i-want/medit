@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>WebSocket Chat</title>
+</head>
+<body>
+	<p th:text="${session.user.doctorId}" id="chatter"></p>
+	<div th:each="item:${dlist}">
+		<p>
+			<a th:href="@{/doctor/{id}(id=${item.doctorId})}"
+				th:text="${item.doctorName}"></a>
+		</p>
+	</div>
+	<!-- <div id="chatBox"></div>
+	<input id="messageInput" type="text">
+	<button id="sendButton">Send</button>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="assets/js/chat.js"></script> -->
+</body>
+</html>

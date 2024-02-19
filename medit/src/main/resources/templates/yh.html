@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#chatBox {
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;
+	overflow: auto;
+}
+
+#messageInput {
+	width: 400px;
+}
+
+.message.my {
+	text-align: right;
+	background-color: #b2d8b2;
+}
+
+.message {
+	text-align: left;
+	background-color: #d8d8d8;
+}
+
+.chatBox {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+	<p th:text="${session.user.doctorId}" id="chatter"></p>
+	<p th:text="${roomseq}" id="roomseq"></p>
+	
+	<div id="chatBox"></div>
+	<input id="messageInput" type="text">
+	<button id="sendButton">Send</button>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/assets/js/chat.js"></script>
+
+</body>
+</html>
