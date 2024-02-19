@@ -20,8 +20,21 @@
 
 /* 메인 */
 section {
-	border: 1px solid white;
+	border: 1px solid  rgb(255, 255, 255, 0.1);
+	border-radius: 10px;
 	width: 99%;
 	height: 970px;
 	margin: 5px auto;
+	overflow: hidden;
+	position: relative;
+}
+
+video{
+    opacity: 30%;
+    width: auto;
+    height: auto;
+    max-width: 150%;
+    max-height: 100%;
+    position: relative;
+    right: 120px;
 }
