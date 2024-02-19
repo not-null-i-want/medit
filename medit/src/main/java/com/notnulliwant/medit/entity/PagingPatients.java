@@ -12,5 +12,7 @@ public class PagingPatients {
 	private Integer number;
 	private Boolean last;
 	private Integer totalPage;
+	private Integer startPage;
+	private Integer endPage;
 	
 }

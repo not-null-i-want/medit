@@ -31,11 +31,17 @@ public class PatientsController {
         
         PagingPatients pagingpatients = new PagingPatients();
         
+        int blockLimit = 5; // 페이지 개수 조정
+        int startPage = (((int) Math.ceil(((double) pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1;
+        int endPage = Math.min((startPage + blockLimit - 1), ptntList.getTotalPages());
+        
         pagingpatients.setPatients(ptnts);
         pagingpatients.setFirst(ptntList.isFirst());
         pagingpatients.setLast(ptntList.isLast());
         pagingpatients.setNumber(ptntList.getNumber());
         pagingpatients.setTotalPage(ptntList.getTotalPages());
+        pagingpatients.setStartPage(startPage);
+        pagingpatients.setEndPage(endPage);
         
 		return pagingpatients;
 	}
