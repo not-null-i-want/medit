@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.notnulliwant.serializer.DoctorSerializer;
+import com.notnulliwant.medit.serializer.DoctorSerializer;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

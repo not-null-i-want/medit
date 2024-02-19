@@ -42,7 +42,4 @@ public class SM_Controller {
         return ptntList;
 	}*/
 	
-
-	
-	
 }

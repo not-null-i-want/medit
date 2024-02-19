@@ -15,7 +15,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.notnulliwant.serializer.DoctorSerializer;
+import com.notnulliwant.medit.serializer.DoctorSerializer;
 
 import lombok.Data;
 

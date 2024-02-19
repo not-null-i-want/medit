@@ -46,7 +46,7 @@ $(document).ready(function() {
 			patients.forEach(function(ptnt){
 				
 				table.append(`
-					<tr class="test">
+					<tr class="selectPtnt">
                         <td>${ptnt.ptntId}</td>
                         <td>${ptnt.ptntName}</td>
                         <td>${ptnt.doctorId.doctorName}</td>
@@ -106,7 +106,7 @@ let next = () => {
 			patients.forEach(function(ptnt){
 				
 				table.append(`
-					<tr>
+					<tr class="selectPtnt">
                         <td>${ptnt.ptntId}</td>
                         <td>${ptnt.ptntName}</td>
                         <td>${ptnt.doctorId.doctorName}</td>
@@ -167,7 +167,7 @@ let pre = () => {
 			patients.forEach(function(ptnt){
 					
 				table.append(`
-					<tr>
+					<tr class="selectPtnt">
 	                	<td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
@@ -230,7 +230,7 @@ let first = () => {
 			patients.forEach(function(ptnt){
 					
 				table.append(`
-					<tr>
+					<tr class="selectPtnt">
 	                    <td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
@@ -293,7 +293,7 @@ let last = () => {
 			patients.forEach(function(ptnt){
 					
 				table.append(`
-					<tr>
+					<tr class="selectPtnt">
 	                    <td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
@@ -361,7 +361,7 @@ $(document).on('click', '.pageNumber', function() {
 				patients.forEach(function(ptnt){
 						
 					table.append(`
-						<tr>
+						<tr class="selectPtnt">
 		                    <td>${ptnt.ptntId}</td>
 		                    <td>${ptnt.ptntName}</td>
 		                    <td>${ptnt.doctorId.doctorName}</td>

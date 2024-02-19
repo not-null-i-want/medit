@@ -1,29 +1,33 @@
 package com.notnulliwant.medit.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.notnulliwant.medit.entity.PagingPatients;
 import com.notnulliwant.medit.entity.Patients;
+import com.notnulliwant.medit.repository.PatientsRepository;
 import com.notnulliwant.medit.service.PatientsService;
 
-@Controller
-public class PatientsController {
+@RestController
+public class RestPatientsController {
 
 	@Autowired
 	private PatientsService patientsService;
 	
+	@Autowired
+	private PatientsRepository patientsRepo;
+	
 	// 환자 목록 페이징 //
 	@GetMapping("/paging")
-	@ResponseBody
 	public PagingPatients paging(@PageableDefault(page = 1) Pageable pageable, Model mdl) {
 		Page<Patients> ptntList = patientsService.paging(pageable);
 
@@ -45,5 +49,17 @@ public class PatientsController {
         
 		return pagingpatients;
 	}
+	
+	// 환자 상세정보 출력  //
+	@RequestMapping("/ShowPatientDetail")
+	public Patients patientDetail(Integer ptntId) {
+
+		Optional<Patients> result = patientsRepo.findById(ptntId);
+		
+		Patients resultPtnt = result.get();
+		
+		return resultPtnt;
+	}
+	
 	
 }

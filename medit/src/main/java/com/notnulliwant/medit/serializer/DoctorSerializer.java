@@ -1,4 +1,4 @@
-package com.notnulliwant.serializer;
+package com.notnulliwant.medit.serializer;
 
 import java.io.IOException;
 
