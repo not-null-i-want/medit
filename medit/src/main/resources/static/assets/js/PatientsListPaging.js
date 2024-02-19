@@ -33,6 +33,14 @@ $(document).ready(function() {
 			
 			let patients = res.patients;
 			
+			table.innerHTML += `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+			`;
+			
 			patients.forEach(function(ptnt){
 				
 				table.innerHTML += `
@@ -41,7 +49,7 @@ $(document).ready(function() {
                         <td>${ptnt.ptntName}</td>
                         <td>${ptnt.doctorId.doctorName}</td>
                     </tr>
-				`;
+				`;	
 			});
 			
 				for(let i = startPage; i <= endPage; i++){
@@ -83,8 +91,15 @@ let next = () => {
 		
 			let patients = res.patients;
 			
-			table.innerHTML = "";
 			pageNumberSpace.innerHTML = "";
+			
+			table.innerHTML = `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+			`;
 			
 			patients.forEach(function(ptnt){
 				
@@ -137,8 +152,15 @@ let pre = () => {
 		
 			let patients = res.patients;
 			
-			table.innerHTML = "";
 			pageNumberSpace.innerHTML = "";
+			
+			table.innerHTML = `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+			`;
 			
 			patients.forEach(function(ptnt){
 					
@@ -193,8 +215,15 @@ let first = () => {
 		
 			let patients = res.patients;
 			
-			table.innerHTML = "";
 			pageNumberSpace.innerHTML = "";
+			
+			table.innerHTML = `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+			`;
 				
 			patients.forEach(function(ptnt){
 					
@@ -249,8 +278,15 @@ let last = () => {
 		
 			let patients = res.patients;
 			
-			table.innerHTML = "";
 			pageNumberSpace.innerHTML = "";
+			
+			table.innerHTML = `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+			`;
 				
 			patients.forEach(function(ptnt){
 					
@@ -310,8 +346,15 @@ $(document).on('click', '.pageNumber', function() {
 			
 				let patients = res.patients;
 				
-				table.innerHTML = "";
 				pageNumberSpace.innerHTML = "";
+				
+				table.innerHTML = `
+				<tr>
+					<td>No.</td>
+					<td>환자명</td>
+					<td>담당의</td>
+				</tr>
+				`;
 					
 				patients.forEach(function(ptnt){
 						

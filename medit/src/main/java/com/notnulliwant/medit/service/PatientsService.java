@@ -25,7 +25,7 @@ public class PatientsService {
 	public Page<Patients> paging(Pageable pageable) {
 
 		int page = pageable.getPageNumber() - 1;
-		int pageLimit = 6; // 한 번에 출력되는 페이지 수
+		int pageLimit = 5; // 한 번에 출력되는 페이지 수
 	
 		Pageable pageRequest = PageRequest.of(page, pageLimit, Sort.by("ptntId").descending());
 

@@ -9,7 +9,7 @@
 	display: block;
 }
 
-/* 검색창 */
+/****** 검색창 ******/
 .search {
 	position: relative;
 	margin: 0 auto;
@@ -75,17 +75,89 @@
 		brightness(124%) contrast(54%);
 }
 
-/* 환자 목록 */
+/****** 환자 목록 ******/
 #ptntList {
-	border: 1px solid white;
 	margin: 20px auto 40px;
 	width: 90%;
 	height: 250px;
-	
-	color: white;
+	border: 1px solid rgb(255, 255, 255, 0.3);
+	border-radius: 5px;
 }
 
-/* 환자 클릭시 디테일 */
+#ptntTable {
+	margin: auto;
+	min-width: 309px;
+	max-width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+}
+
+#ptntTable tr:first-child {
+	border-top: none;
+	background: #525252;
+	color: #fff;
+	height: 20px;
+	border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+}
+
+#ptntTable tr {
+	color: white;
+	background-color: #363636;
+}
+
+#ptntTable tr:nth-child(odd):not(:first-child) {
+	background-color: #3d3d3d;
+}
+
+#ptntTable td {
+	display: block;
+}
+
+#ptntTable td:before {
+	content: attr(data-th) ": ";
+	font-weight: bold;
+	width: 120px;
+	display: inline-block;
+	color: #000;
+}
+
+#ptntTable td {
+	text-align: center;
+}
+
+#ptntTable tr {
+	border-color: #ffffff;
+}
+
+@media screen and (max-width: 601px) {
+	#ptntTable tr:nth-child(2) {
+		border-top: none;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	#ptntTable tr:hover:not(:first-child) {
+		background-color: #335675;
+	}
+	#ptntTable td:before {
+		display: none;
+	}
+	#ptntTable td {
+		display: table-cell;
+		padding: .25em .5em;
+	}
+	#ptntTable td:first-child {
+		padding-left: 0;
+	}
+	#ptntTable td:last-child {
+		padding-right: 0;
+	}
+	#ptntTable td {
+		padding: 7px !important;
+	}
+}
+
+/****** 환자 클릭시 디테일 ******/
 #ptntDetail {
 	border: 1px solid white;
 	margin: 20px auto 10px;
@@ -113,7 +185,6 @@
 	color: white;
 }
 
-
-table, tr, td{
+table, tr, td {
 	border: 1px solid white;
 }
