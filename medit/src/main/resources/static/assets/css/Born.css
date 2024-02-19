@@ -13,6 +13,7 @@ html, body{
 	background-color: #353535;
 	overflow-x: hidden; 
 	overflow-y: auto;
+	font-family: 'SUITE-Regular';
 }
 .container{
 	display: flex;

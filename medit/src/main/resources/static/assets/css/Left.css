@@ -86,10 +86,11 @@
 
 #ptntTable {
 	margin: auto;
-	min-width: 309px;
+	min-width: 308px;
 	max-width: 100%;
 	border-collapse: collapse;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 #ptntTable tr:first-child {
@@ -103,6 +104,8 @@
 #ptntTable tr {
 	color: white;
 	background-color: #363636;
+	border-color: #ffffff;
+	border: none;
 }
 
 #ptntTable tr:nth-child(odd):not(:first-child) {
@@ -111,6 +114,7 @@
 
 #ptntTable td {
 	display: block;
+	border: none;
 }
 
 #ptntTable td:before {
@@ -125,10 +129,6 @@
 	text-align: center;
 }
 
-#ptntTable tr {
-	border-color: #ffffff;
-}
-
 @media screen and (max-width: 601px) {
 	#ptntTable tr:nth-child(2) {
 		border-top: none;
@@ -137,7 +137,7 @@
 
 @media screen and (min-width: 600px) {
 	#ptntTable tr:hover:not(:first-child) {
-		background-color: #335675;
+		background-color: #39568d;
 	}
 	#ptntTable td:before {
 		display: none;
@@ -155,6 +155,47 @@
 	#ptntTable td {
 		padding: 7px !important;
 	}
+}
+
+#pageNumberSpace {
+	display: flex;
+	width: 100%;
+	height: 45px;
+}
+
+.ptntListMoveBtn {
+	width: 25px;
+	margin: 3px;
+	filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(36deg)
+		brightness(117%) contrast(112%);
+}
+
+#ptntListLeftSpace {
+	display: inline-block;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+#PtntListRightSpace {
+	display: inline;
+	margin-left: 9px;
+	margin-top: 3px;
+}
+
+#pageNumber {
+	display: inline-block;
+	font-size: 18px;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+.num {
+	margin-left: 3px;
+	margin-right: 3px;
+	color: white;
 }
 
 /****** 환자 클릭시 디테일 ******/
