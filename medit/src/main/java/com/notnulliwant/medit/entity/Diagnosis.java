@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.notnulliwant.serializer.DoctorSerializer;
+
 import lombok.Data;
 
 @Entity
@@ -36,6 +39,7 @@ public class Diagnosis {
 	private Integer ptntId;
 	
 	@ManyToOne
+	@JsonSerialize(using = DoctorSerializer.class)
 	@JoinColumn(name = "doctorId")
 	private Doctors doctorId;
 	
