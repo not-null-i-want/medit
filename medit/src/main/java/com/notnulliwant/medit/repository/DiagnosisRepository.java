@@ -10,6 +10,7 @@ import com.notnulliwant.medit.entity.Diagnosis;
 @Repository
 public interface DiagnosisRepository extends JpaRepository<Diagnosis, Integer> {
 	
-	List<Diagnosis> findByPtntId(Integer ptntId); // BH , 환자 번호가져올거임
+	public List<Diagnosis> findByPtntId(Integer ptntId); // BH , 환자 번호가져올거임
+	
 	
 }

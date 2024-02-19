@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.notnulliwant.medit.entity.Doctors;
 
-public class DoctorSerializer extends JsonSerializer<Doctors>{
+public class DoctorSerializer extends JsonSerializer<Doctors>{	
 	
 	@Override
 	public void serialize(Doctors doctor, JsonGenerator jsonGenerator, SerializerProvider serializers) throws IOException {
