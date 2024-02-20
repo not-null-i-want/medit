@@ -20,16 +20,16 @@ import com.notnulliwant.medit.service.PatientsService;
 @RestController
 public class RestPatientsController {
 
-	@Autowired
-	private PatientsService patientsService;
-	
-	@Autowired
-	private PatientsRepository patientsRepo;
-	
-	// 환자 목록 페이징 //
-	@GetMapping("/paging")
-	public PagingPatients paging(@PageableDefault(page = 1) Pageable pageable, Model mdl) {
-		Page<Patients> ptntList = patientsService.paging(pageable);
+   @Autowired
+   private PatientsService patientsService;
+   
+   @Autowired
+   private PatientsRepository patientsRepo;
+   
+   // 환자 목록 페이징 //
+   @GetMapping("/paging")
+   public PagingPatients paging(@PageableDefault(page = 1) Pageable pageable, Model mdl) {
+      Page<Patients> ptntList = patientsService.paging(pageable);
 
         List<Patients> ptnts = ptntList.getContent();
         
@@ -47,12 +47,12 @@ public class RestPatientsController {
         pagingpatients.setStartPage(startPage);
         pagingpatients.setEndPage(endPage);
         
-		return pagingpatients;
-	}
-	
-	// 환자 상세정보 출력  //
-	@RequestMapping("/ShowPatientDetail")
-	public Patients patientDetail(Integer ptntId) {
+      return pagingpatients;
+   }
+   
+   // 환자 상세정보 출력  //
+   @RequestMapping("/ShowPatientDetail")
+   public Patients patientDetail(Integer ptntId) {
 
 		Optional<Patients> result = patientsRepo.findById(ptntId);
 		
@@ -88,3 +88,4 @@ public class RestPatientsController {
 	
 	
 }
+

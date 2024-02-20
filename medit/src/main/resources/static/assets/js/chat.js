@@ -33,29 +33,28 @@ function onMessage(data) {
 
 function msgSend() {
 	chat.chatting = msg.val();
-	
+
 	websocket.send(JSON.stringify(chat));
-	
+
 	msg.val('');
-	
-	addChat(chat);
+
 }
 
-function addChat(json){
-	
-	let check = json.doctorId == chat.doctorId;
-	
+function addChat(json) {
+
+	let check = json.doctorId.doctorId == chat.doctorId;
+
 	let msgDiv = `
-	<div class="chatBox ${check ? 'broadcater':''}">
+	<div class="chatBox ${check ? 'broadcater' : ''}">
 		<div>
 			<div class="chatUser">${json.doctorId} : </div>
 			<div class="message ${check ? 'my' : ''}">${json.chatting}</div>
 		</div>
 	</div>
 	`;
-	
+
 	chatDiv.append(msgDiv);
-	
+
 	chatDiv.scrollTop(chatDiv[0].scrollHeight);
-	
+
 }

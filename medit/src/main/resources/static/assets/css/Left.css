@@ -1,296 +1,296 @@
 #left {
-	width: 500px;
-	height: 100%;
+   width: 500px;
+   height: 100%;
 }
 
 #logo {
-	width: 80%;
-	margin: 20px auto;
-	display: block;
+   width: 80%;
+   margin: 20px auto;
+   display: block;
 }
 
 /****** 검색창 ******/
 .search {
-	position: relative;
-	margin: 0 auto;
-	width: 100%;
-	margin-left: 50px;
-	margin-top: 50px;
-	font-family: "SUITE-Regular";
-	font-size: 18px;
+   position: relative;
+   margin: 0 auto;
+   width: 100%;
+   margin-left: 50px;
+   margin-top: 50px;
+   font-family: "SUITE-Regular";
+   font-size: 18px;
 }
 
 #searchText {
-	display: inline-block;
-	width: 250px;
-	height: 40px;
-	box-sizing: border-box;
-	outline: none;
-	border: 1px solid lightgray;
-	border-radius: 3px;
-	padding: 10px 10px 10px 130px;
-	transition: all 0.1s ease-out;
-	font-family: "SUITE-Regular";
-	font-size: 16px;
+   display: inline-block;
+   width: 250px;
+   height: 40px;
+   box-sizing: border-box;
+   outline: none;
+   border: 1px solid lightgray;
+   border-radius: 3px;
+   padding: 10px 10px 10px 130px;
+   transition: all 0.1s ease-out;
+   font-family: "SUITE-Regular";
+   font-size: 16px;
 }
 
 #searchText+label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	height: 40px;
-	line-height: 40px;
-	color: white;
-	border-radius: 3px 0 0 3px;
-	padding: 0 20px;
-	background: #39568d;
-	transform: translateZ(0) translateX(0);
-	transition: all 0.3s ease-in;
-	transition-delay: 0.2s;
-	display: flex;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-		0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px
-		16px rgba(0, 0, 0, 0.12);
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   height: 40px;
+   line-height: 40px;
+   color: white;
+   border-radius: 3px 0 0 3px;
+   padding: 0 20px;
+   background: #39568d;
+   transform: translateZ(0) translateX(0);
+   transition: all 0.3s ease-in;
+   transition-delay: 0.2s;
+   display: flex;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+      0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px
+      16px rgba(0, 0, 0, 0.12);
 }
 
 #searchText:focus+label {
-	transform: translateY(-120%) translateX(0%);
-	border-radius: 3px;
-	transition: all 0.2s ease-out;
+   transform: translateY(-120%) translateX(0%);
+   border-radius: 3px;
+   transition: all 0.2s ease-out;
 }
 
 #searchText:focus {
-	padding: 10px;
-	transition: all 0.3s ease-out;
-	transition-delay: 0.2s;
+   padding: 10px;
+   transition: all 0.3s ease-out;
+   transition-delay: 0.2s;
 }
 
 #search_icon {
-	position: absolute;
-	width: 18px;
-	left: 220px;
-	top: 10px;
-	filter: invert(16%) sepia(0%) saturate(3184%) hue-rotate(200deg)
-		brightness(124%) contrast(54%);
+   position: absolute;
+   width: 18px;
+   left: 220px;
+   top: 10px;
+   filter: invert(16%) sepia(0%) saturate(3184%) hue-rotate(200deg)
+      brightness(124%) contrast(54%);
 }
 
 /****** 환자 목록 ******/
 #ptntList {
-	margin: 20px auto 20px;
-	width: 90%;
-	height: 250px;
-	border: 1px solid rgb(255, 255, 255, 0.3);
-	border-radius: 5px;
+   margin: 20px auto 20px;
+   width: 90%;
+   height: 250px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-radius: 5px;
 }
 
 #ptntTable {
-	margin: auto;
-	min-width: 308px;
-	max-width: 100%;
-	border-collapse: collapse;
-	overflow: hidden;
-	border-radius: 5px;
+   margin: auto;
+   min-width: 308px;
+   max-width: 100%;
+   border-collapse: collapse;
+   overflow: hidden;
+   border-radius: 5px;
 }
 
 #ptntTable tr:first-child {
-	border-top: none;
-	background: #525252;
-	color: #fff;
-	height: 20px;
-	border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+   border-top: none;
+   background: #525252;
+   color: #fff;
+   height: 20px;
+   border-bottom: 1px solid rgb(255, 255, 255, 0.3);
 }
 
 #ptntTable tr {
-	color: white;
-	background-color: #363636;
-	border-color: #ffffff;
-	border: none;
+   color: white;
+   background-color: #363636;
+   border-color: #ffffff;
+   border: none;
 }
 
 #ptntTable tr:nth-child(odd):not(:first-child) {
-	background-color: #3d3d3d;
+   background-color: #3d3d3d;
 }
 
 #ptntTable td {
-	display: block;
-	border: none;
+   display: block;
+   border: none;
 }
 
 #ptntTable td:before {
-	content: attr(data-th) ": ";
-	font-weight: bold;
-	width: 120px;
-	display: inline-block;
-	color: #000;
+   content: attr(data-th) ": ";
+   font-weight: bold;
+   width: 120px;
+   display: inline-block;
+   color: #000;
 }
 
 #ptntTable td {
-	text-align: center;
+   text-align: center;
 }
 
 @media screen and (max-width: 601px) {
-	#ptntTable tr:nth-child(2) {
-		border-top: none;
-	}
+   #ptntTable tr:nth-child(2) {
+      border-top: none;
+   }
 }
 
 @media screen and (min-width: 600px) {
-	#ptntTable tr:hover:not(:first-child) {
-		background-color: #39568d;
-	}
-	#ptntTable td:before {
-		display: none;
-	}
-	#ptntTable td {
-		display: table-cell;
-		padding: .25em .5em;
-	}
-	#ptntTable td:first-child {
-		padding-left: 0;
-	}
-	#ptntTable td:last-child {
-		padding-right: 0;
-	}
-	#ptntTable td {
-		padding: 7px !important;
-	}
+   #ptntTable tr:hover:not(:first-child) {
+      background-color: #39568d;
+   }
+   #ptntTable td:before {
+      display: none;
+   }
+   #ptntTable td {
+      display: table-cell;
+      padding: .25em .5em;
+   }
+   #ptntTable td:first-child {
+      padding-left: 0;
+   }
+   #ptntTable td:last-child {
+      padding-right: 0;
+   }
+   #ptntTable td {
+      padding: 7px !important;
+   }
 }
 
 #pageNumberSpace {
-	display: flex;
-	width: 100%;
-	height: 45px;
-	border-top: 1px solid rgb(255, 255, 255, 0.3);
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: 4px;
+   display: flex;
+   width: 100%;
+   height: 45px;
+   border-top: 1px solid rgb(255, 255, 255, 0.3);
+   border-bottom-left-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
 
 .ptntListMoveBtn {
-	width: 25px;
-	margin: 3px;
-	filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(36deg)
-		brightness(117%) contrast(112%);
+   width: 25px;
+   margin: 3px;
+   filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(36deg)
+      brightness(117%) contrast(112%);
 }
 
 #ptntListLeftSpace {
-	display: inline-block;
-	margin-left: 30px;
-	margin-top: 5px;
+   display: inline-block;
+   margin-left: 30px;
+   margin-top: 5px;
 }
 
 #PtntListRightSpace {
-	display: inline;
-	margin-left: 9px;
-	margin-top: 3px;
+   display: inline;
+   margin-left: 9px;
+   margin-top: 3px;
 }
 
 #pageNumber {
-	display: inline-block;
-	font-size: 18px;
-	text-align: center;
-	width: 100px;
-	height: 30px;
-	margin-top: 8px;
-	margin-left: 8px;
+   display: inline-block;
+   font-size: 18px;
+   text-align: center;
+   width: 100px;
+   height: 30px;
+   margin-top: 8px;
+   margin-left: 8px;
 }
 
 .num {
-	margin-left: 3px;
-	margin-right: 3px;
-	color: white;
+   margin-left: 3px;
+   margin-right: 3px;
+   color: white;
 }
 
 /****** 환자 클릭시 디테일 ******/
 .selectPtntActive {
-	background-color: #39568d !important;
+   background-color: #39568d !important;
 }
 
 #ptntDetail {
-	margin: 0px auto 10px;
-	width: 90%;
-	height: 346px;
-	font-size: 15px;
-	border: 1px solid rgb(255, 255, 255, 0.3);
-	border-radius: 5px;
+   margin: 0px auto 10px;
+   width: 90%;
+   height: 346px;
+   font-size: 15px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-radius: 5px;
 }
 
 .detailTable {
-	font-size: 16px;
-	color: #fff;
-	border-collapse: collapse;
-	border: 1px solid rgb(255, 255, 255, 0.3);
-	border-style: hidden;
-	table-layout: fixed;
+   font-size: 16px;
+   color: #fff;
+   border-collapse: collapse;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-style: hidden;
+   table-layout: fixed;
 }
 
 .detailTable td {
-	padding: 0 10px;
-	border: 1px solid rgb(255, 255, 255, 0.3);
+   padding: 0 10px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
 }
 
 .detailTable td:nth-child(1) {
-	width: 90px;
-	height: 40px;
-	padding-left: 20px;
-	border: 1px solid rgb(255, 255, 255, 0.3);
+   width: 90px;
+   height: 40px;
+   padding-left: 20px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
 }
 .detailTable td:nth-child(2) {
-	width: 160px;
-	word-break:break-all;
+   width: 160px;
+   word-break:break-all;
 }
 
 .detailTable tr:nth-child(even) td:nth-child(1) {
-	background-color: #525252;
+   background-color: #525252;
 }
 
 .detailTable tr:nth-child(odd) td:nth-child(1) {
-	background-color: #3d3d3d;
+   background-color: #3d3d3d;
 }
 
 .detailTable tr:nth-child(even) td:nth-child(2) {
-	background-color: #525252;
+   background-color: #525252;
 }
 
 .detailTable tr:nth-child(odd) td:nth-child(2) {
-	background-color: #3d3d3d;
+   background-color: #3d3d3d;
 }
 
 .detailTable td:nth-child(2) {
-	padding-right: 20px;
+   padding-right: 20px;
 }
 
 .detailTable tr:nth-child(5) td {
-	height: 100px;
+   height: 100px;
 }
 .detailTable tr:nth-child(1) td:nth-child(1){
-	border-radius: 5px;
+   border-radius: 5px;
 }
 .detailTable tr:nth-child(1) td:nth-child(2){
-	border-radius: 5px;
+   border-radius: 5px;
 }
 .detailTable tr:nth-child(7) td:nth-child(1){
-	border-bottom-left-radius: 5px;
+   border-bottom-left-radius: 5px;
 }
 .detailTable tr:nth-child(7) td:nth-child(2){
-	border-bottom-right-radius: 5px;
+   border-bottom-right-radius: 5px;
 }
 
 
 /* 진단 날짜 */
 #diagnosisDate {
-	border: 1px solid white;
-	margin: 5px auto;
-	width: 90%;
-	height: 250px;
-	/* 아래 5개는 나중에 지우기*/
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 30px;
-	color: white;
+   border: 1px solid white;
+   margin: 5px auto;
+   width: 90%;
+   height: 250px;
+   /* 아래 5개는 나중에 지우기*/
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 30px;
+   color: white;
 }
 
 table, tr, td {
-	border: 1px solid white;
+   border: 1px solid white;
 }
