@@ -61,5 +61,30 @@ public class RestPatientsController {
 		return resultPtnt;
 	}
 	
+	// 환자 검색 후 페이징 //
+	@RequestMapping("/searchPaging")
+    public PagingPatients search(@PageableDefault(page = 1) Pageable pageable, String ptntName) {
+       
+		Page<Patients> ptntList = patientsService.searchPaging(pageable, ptntName);
+		
+		List<Patients> ptnts = ptntList.getContent();
+		
+		PagingPatients pagingpatients = new PagingPatients();
+        
+        int blockLimit = 5;
+        int startPage = (((int) Math.ceil(((double) pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1;
+        int endPage = Math.min((startPage + blockLimit - 1), ptntList.getTotalPages());
+        
+        pagingpatients.setPatients(ptnts);
+        pagingpatients.setFirst(ptntList.isFirst());
+        pagingpatients.setLast(ptntList.isLast());
+        pagingpatients.setNumber(ptntList.getNumber());
+        pagingpatients.setTotalPage(ptntList.getTotalPages());
+        pagingpatients.setStartPage(startPage);
+        pagingpatients.setEndPage(endPage);
+        	
+        return pagingpatients;
+    }
+	
 	
 }
