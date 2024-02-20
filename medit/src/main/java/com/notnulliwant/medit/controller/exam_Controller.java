@@ -24,18 +24,18 @@ public class exam_Controller {
 //   @Autowired
 //   private PatientsRepository repo;
 
-	@Autowired
-	private DiagnosisRepository Diagrepo;
+   @Autowired
+   private DiagnosisRepository Diagrepo;
 
-	@ResponseBody
-	@RequestMapping("/ShowPatientAt") // 진달 날짜 띄워주는 컨트롤러임 // 트러블슈팅, postmapping으로해놔서 오류가 405오류가 뜨던걸 requestmapping으로
-										// 바꿔주니 해결됨!
-	public List<Diagnosis> PtntDetail2(Integer ptntId) {
+   @ResponseBody
+   @RequestMapping("/ShowPatientAt") // 진달 날짜 띄워주는 컨트롤러임 // 트러블슈팅, postmapping으로해놔서 오류가 405오류가 뜨던걸 requestmapping으로
+                              // 바꿔주니 해결됨!
+   public List<Diagnosis> PtntDetail2(Integer ptntId) {
 
-		List<Diagnosis> diag = Diagrepo.findAllByPtntId(ptntId);
-		
-		return diag;
-	}
+      List<Diagnosis> diag = Diagrepo.findAllByPtntId(ptntId);
+      
+      return diag;
+   }
 
 //   @RequestMapping("/exam")
 //    public String showPatientList(Model model) {
@@ -59,34 +59,34 @@ public class exam_Controller {
 
 //    @ResponseBody
 //    @RequestMapping("/PtntDetail1")
-//	public Patients PtntDetail1(Integer PTNT_ID, Model model) {
-//		
-//		System.out.println(PTNT_ID);
-//		
-//		Patients ptnt = repo.findById(PTNT_ID).get();
-//		
-//		return ptnt;
-//	}
+//   public Patients PtntDetail1(Integer PTNT_ID, Model model) {
+//      
+//      System.out.println(PTNT_ID);
+//      
+//      Patients ptnt = repo.findById(PTNT_ID).get();
+//      
+//      return ptnt;
+//   }
 
 //    @ResponseBody
 //    @PostMapping("/PtntDetail3")
-//	public List<Diagnosis> PtntDetail3(Integer PTNT_ID) {
-//		
-//		System.out.println(PTNT_ID);
-//		System.out.println("33");
-//		List<Diagnosis> diagList = repo1.findByPtntId(PTNT_ID);
-//		
-////		System.out.println(diag.get(0).getDiagAt()+"tt");
-//		
-//		
-////		for (Diagnosis diagnosis : diagList) {
-////	        diagAt = diagnosis.getDiagAt();
-////	        // diagAt 값을 이용한 원하는 작업 수행
-////	        System.out.println(diagAt);
-////	    }
-//		
-//		return diagList;
-//	}
+//   public List<Diagnosis> PtntDetail3(Integer PTNT_ID) {
+//      
+//      System.out.println(PTNT_ID);
+//      System.out.println("33");
+//      List<Diagnosis> diagList = repo1.findByPtntId(PTNT_ID);
+//      
+////      System.out.println(diag.get(0).getDiagAt()+"tt");
+//      
+//      
+////      for (Diagnosis diagnosis : diagList) {
+////           diagAt = diagnosis.getDiagAt();
+////           // diagAt 값을 이용한 원하는 작업 수행
+////           System.out.println(diagAt);
+////       }
+//      
+//      return diagList;
+//   }
 
 //    @ResponseBody
 //    @PostMapping("/saveOpinion")

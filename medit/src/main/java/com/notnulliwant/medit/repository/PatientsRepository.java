@@ -11,7 +11,7 @@ import com.notnulliwant.medit.entity.Patients;
 
 @Repository
 public interface PatientsRepository extends JpaRepository<Patients, Integer> {
-	
-	public List<Patients> findByPtntNameContaining(String keyword);
-	
+   
+   public List<Patients> findByPtntNameContaining(String keyword);
+   
 }
