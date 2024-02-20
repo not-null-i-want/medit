@@ -1,8 +1,12 @@
 let ptntDetail = $("#ptntDetail");
 
+let selectedPtntId_addDiagnosis; // AddDiagnosis.js에서 쓸 변수
+let selectedPtntId_doctorId; // 상동
+
 $(document).on('click', '.selectPtnt', function() {
    
-   let seletedPtntId = $(this)[0].cells[0].innerText;
+    let seletedPtntId = $(this)[0].cells[0].innerText;
+	selectedPtntId_addDiagnosis = $(this)[0].cells[0].innerText;
 	
 	// 요소 선택시 해당 요소에 클래스 추가, 다른 형제 요소들 클래스 삭제 == 배경색 변경
 	$(this).addClass("selectPtntActive");
@@ -20,6 +24,7 @@ $(document).on('click', '.selectPtnt', function() {
          let ptntGender = res.ptntGender;
          let ptntBirthdate = res.ptntBirthdate;
          let ptntAddr = res.ptntAddr;
+		 selectedPtntId_doctorId = res.doctorId.doctorId;
          
          ptntDetail.html(`
             <table class="detailTable">
