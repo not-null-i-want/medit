@@ -4,6 +4,10 @@ $(document).on('click', '.selectPtnt', function() {
 	
 	let seletedPtntId = $(this)[0].cells[0].innerText;
 	
+	// 요소 선택시 해당 요소에 클래스 추가, 다른 형제 요소들 클래스 삭제 == 배경색 변경
+	$(this).addClass("selectPtntActive");
+	$(this).siblings().removeClass("selectPtntActive");
+	
 	$.ajax({
 		url : "ShowPatientDetail",
 		data : {"ptntId" : seletedPtntId},

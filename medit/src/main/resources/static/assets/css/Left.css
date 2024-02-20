@@ -208,6 +208,9 @@
 	width: 90%;
 	height: 250px;
 }
+.selectPtntActive{
+    background-color: #39568d !important;
+}
 
 /* 진단 날짜 */
 #diagnosisDate {
