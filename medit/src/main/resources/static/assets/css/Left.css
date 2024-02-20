@@ -209,14 +209,14 @@
 #ptntDetail {
    margin: 0px auto 10px;
    width: 90%;
-   height: 346px;
+   height: 286px;
    font-size: 15px;
    border: 1px solid rgb(255, 255, 255, 0.3);
    border-radius: 5px;
 }
 
 .detailTable {
-   font-size: 16px;
+   font-size: 15px;
    color: #fff;
    border-collapse: collapse;
    border: 1px solid rgb(255, 255, 255, 0.3);
@@ -231,7 +231,7 @@
 
 .detailTable td:nth-child(1) {
    width: 90px;
-   height: 40px;
+   height: 30px;
    padding-left: 20px;
    border: 1px solid rgb(255, 255, 255, 0.3);
 }

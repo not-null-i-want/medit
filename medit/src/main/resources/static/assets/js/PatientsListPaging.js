@@ -273,7 +273,7 @@ let last = () => {
          
          isFirst = res.first;
          isLast = res.last;
-         pageNumber = endPage-1;
+         pageNumber = totalPage-1;
          
          startPage = res.startPage;
          endPage = res.endPage;
