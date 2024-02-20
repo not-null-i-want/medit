@@ -3,6 +3,11 @@ let diagDetail = $("#diagnosisDate");
 $(document).on('click', '.selectPtnt', function() {
 
 	let seletedPtntId = $(this)[0].cells[0].innerText;
+	
+	
+	$(this).addClass("PtntDiagAt");
+	$(this).siblings().removeClass("PtntDiagAt");
+	
 	$.ajax({
 		url: "ShowPatientAt",
 		data: { "ptntId": seletedPtntId },
@@ -23,18 +28,20 @@ $(document).on('click', '.selectPtnt', function() {
 			}
 
 			// 테이블 생성
-			let tableHtml = '<table>';
+			let tableHtml = '<table class="diagAtTable">';
 
 			for (let i = 0; i < res.length; i++) {
 				tableHtml += `
-                    <tr>
-                        <td>${Arr_ptntAt[i]}</td>
-                    </tr>`;
+					<tr>
+						<td>${Arr_ptntAt[i]}</td>
+					</tr>`;
 			}
 
 			tableHtml += '</table>';
 
 			diagDetail.html(tableHtml).trigger("create");
+
+
 		}
 	});
 });

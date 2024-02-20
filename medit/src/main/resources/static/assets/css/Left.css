@@ -277,19 +277,40 @@
 }
 
 
+.PtntDiagAt {
+   background-color: #39568d !important;
+}
+
 /* 진단 날짜 */
 #diagnosisDate {
    border: 1px solid white;
    margin: 5px auto;
    width: 90%;
    height: 250px;
-   /* 아래 5개는 나중에 지우기*/
+  /*  아래 5개는 나중에 지우기
    display: flex;
    align-items: center;
    justify-content: center;
    font-size: 30px;
-   color: white;
+   color: white;  */
+  
 }
+
+ .diagAtTable {
+   font-size: 16px;
+   color: #fff;
+   border-collapse: collapse;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-style: hidden;
+   table-layout: fixed;
+}
+
+.diagAtTable td {
+   padding: 0 10px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+} 
+
+
 
 table, tr, td {
    border: 1px solid white;
