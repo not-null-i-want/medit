@@ -22,7 +22,7 @@ $(document).on('click', '.selectPtnt', function() {
 			let ptntAddr = res.ptntAddr;
 			
 			ptntDetail.html(`
-				<table>
+				<table class="detailTable">
                 	<tr>
                 		<td>환자 번호</td>
 						<td>${ptntId}</td>
