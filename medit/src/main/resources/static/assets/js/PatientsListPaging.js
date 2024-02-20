@@ -5,14 +5,12 @@ let totalPage;
 let startPage;
 let endPage;
 
-// let table = document.getElementById("ptntTable");
-let table = $("#ptntTable");
-let pageNumberSpace = $("#pageNumber");
-
+let table = document.getElementById("ptntTable");
 let nextBtn = document.getElementById("next");
 let preBtn = document.getElementById("pre");
 let firtsBtn = document.getElementById("first");
 let lastBtn = document.getElementById("last");
+let pageNumberSpace = document.getElementById("pageNumber");
 
 //////////////////// 첫 진입시 페이지 로딩 ///////////////
 $(document).ready(function() {
@@ -35,34 +33,34 @@ $(document).ready(function() {
 			
 			let patients = res.patients;
 			
-			table.append(`
+			table.innerHTML += `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-			`).trigger("create");
+			`;
 			
 			patients.forEach(function(ptnt){
 				
-				table.append(`
-					<tr class="selectPtnt">
+				table.innerHTML += `
+					<tr class="test">
                         <td>${ptnt.ptntId}</td>
                         <td>${ptnt.ptntName}</td>
                         <td>${ptnt.doctorId.doctorName}</td>
                     </tr>
-				`).trigger("create");
+				`;	
 			});
 			
 				for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span>${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="pageNumber num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span class="pageNumber">${i}</span>
+						`
 					}
 				}
 		},
@@ -93,36 +91,36 @@ let next = () => {
 		
 			let patients = res.patients;
 			
-			pageNumberSpace.html("").trigger("create");
+			pageNumberSpace.innerHTML = "";
 			
-			table.html(`
+			table.innerHTML = `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-			`).trigger("create");
+			`;
 			
 			patients.forEach(function(ptnt){
 				
-				table.append(`
-					<tr class="selectPtnt">
+				table.innerHTML += `
+					<tr>
                         <td>${ptnt.ptntId}</td>
                         <td>${ptnt.ptntName}</td>
                         <td>${ptnt.doctorId.doctorName}</td>
                     </tr>
-				`).trigger("create");
+				`;
 			});
 			
 			for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span>${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span>${i}</span>
+						`
 					}
 			}
 			
@@ -154,36 +152,36 @@ let pre = () => {
 		
 			let patients = res.patients;
 			
-			pageNumberSpace.html("").trigger("create");
+			pageNumberSpace.innerHTML = "";
 			
-			table.html(`
+			table.innerHTML = `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-			`).trigger("create");
+			`;
 			
 			patients.forEach(function(ptnt){
 					
-				table.append(`
-					<tr class="selectPtnt">
+				table.innerHTML += `
+					<tr>
 	                	<td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
 	                </tr>
-					`).trigger("create");
+					`;
 			});	
 			
 			for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span>${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="pageNumber num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span class="pageNumber">${i}</span>
+						`
 					}
 			}
 			
@@ -217,36 +215,36 @@ let first = () => {
 		
 			let patients = res.patients;
 			
-			pageNumberSpace.html("").trigger("create");
+			pageNumberSpace.innerHTML = "";
 			
-			table.html(`
+			table.innerHTML = `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-			`).trigger("create");
+			`;
 				
 			patients.forEach(function(ptnt){
 					
-				table.append(`
-					<tr class="selectPtnt">
+				table.innerHTML += `
+					<tr>
 	                    <td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
 	                </tr>
-				`).trigger("create");
+				`;
 			});
 			
 			for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span>${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="pageNumber num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span class="pageNumber">${i}</span>
+						`
 					}
 			}
 			
@@ -273,43 +271,43 @@ let last = () => {
 			
 			isFirst = res.first;
 			isLast = res.last;
-			pageNumber = endPage-1;
+			pageNumber = endPage;
 			
 			startPage = res.startPage;
 			endPage = res.endPage;
 		
 			let patients = res.patients;
 			
-			pageNumberSpace.html("").trigger("create");
+			pageNumberSpace.innerHTML = "";
 			
-			table.html(`
+			table.innerHTML = `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-			`).trigger("create");
+			`;
 				
 			patients.forEach(function(ptnt){
 					
-				table.append(`
-					<tr class="selectPtnt">
+				table.innerHTML += `
+					<tr>
 	                    <td>${ptnt.ptntId}</td>
 	                    <td>${ptnt.ptntName}</td>
 	                    <td>${ptnt.doctorId.doctorName}</td>
 	                </tr>
-				`).trigger("create");
+				`;
 			});	
 			
 			for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span>${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="pageNumber num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span class="pageNumber">${i}</span>
+						`
 					}
 			}
 				
@@ -348,36 +346,36 @@ $(document).on('click', '.pageNumber', function() {
 			
 				let patients = res.patients;
 				
-				pageNumberSpace.html("").trigger("create");
+				pageNumberSpace.innerHTML = "";
 				
-				table.html(`
+				table.innerHTML = `
 				<tr>
 					<td>No.</td>
 					<td>환자명</td>
 					<td>담당의</td>
 				</tr>
-				`).trigger("create");
+				`;
 					
 				patients.forEach(function(ptnt){
 						
-					table.append(`
-						<tr class="selectPtnt">
+					table.innerHTML += `
+						<tr>
 		                    <td>${ptnt.ptntId}</td>
 		                    <td>${ptnt.ptntName}</td>
 		                    <td>${ptnt.doctorId.doctorName}</td>
 		                </tr>
-					`).trigger("create");
+					`;
 				});	
 				
 				for(let i = startPage; i <= endPage; i++){
 					if(i == pageNumber + 1){
-						pageNumberSpace.append(`
-							<b><span class="num">${i}</span></b>
-						`).trigger("create");
+						pageNumberSpace.innerHTML += `
+							<b><span >${i}</span></b>
+						`
 					} else {
-					pageNumberSpace.append(`
-						<span class="pageNumber num">${i}</span>
-						`).trigger("create");
+					pageNumberSpace.innerHTML += `
+						<span class="pageNumber">${i}</span>
+						`
 					}
 				}
 					
