@@ -1,32 +1,41 @@
-/*$(".test5").on("click", selectPtnt);
+let diagAt = $("#diagnosisDate");
 
-function selectPtnt() {
-    let ptnt_id = $(this).find(".ptntId").html();	
+$(document).on('click', '.selectPtnt', function() {
 
+	let seletedPtntId = $(this)[0].cells[0].innerText;
 	$.ajax({
-		
-		url: "DrDiagnosis",
-		type: "post",
-		data : ({
-			"PTNT_ID" : ptnt_id  // 여기 PTNT_ID가 BH2_RestController.java로 보내주는거임, DrDiagnosis
-		}),
-		success : function(res){
-			$('#output-doctorName').text(res.doctorName);
-			$('#output-ptntAddr').text(res.ptntAddr);
-			$('#output-ptntBirthdate').text(res.ptntBirthdate);
-			$('#output-ptntGender').text(res.ptntGender);
-			$('#output-ptntId').text(res.ptntId);
-			$('#output-ptntName').text(res.ptntName);
-			$('#output-ptntPhone').text(res.ptntPhone);
-			$('#output-ptntType').text(res.ptntType);
-			$('#output-diagAt').text(res.diagAt);
-			
-			console.log(res)
-		},
-		error : function(){
-			alert("test");
+		url: "ShowPatientAt",
+		data: { "ptntId": seletedPtntId },
+		success: function(res) {
+
+			let Arr_ptntAt = []; // 
+
+			for (let i = 0; i < res.length; i++) {
+
+				let originalDate = res[i].diagAt
+				let formattedDate = originalDate.substring(0, 16).replace('T', ' ');
+				formattedDate = formattedDate.replace(/:/, '시 ') + '분';
+				Arr_ptntAt.push(formattedDate);
+
+			}
+
+			// 테이블 생성
+			/*let tableHtml = '<table>';*/
+
+			/*for (let i = 0; i < res.length; i++) {*/
+				diagAt.html( `
+				for (let i = 0; i < res.length; i++) {
+					<table>
+	                    <tr>
+	                        <td>${Arr_ptntAt[i]}</td>
+	                    </tr> 
+					</table>}
+					`).trigger("create");
+			/*}*/
+
+		/*	tableHtml += '</table>';*/
+
+			diagDetail.html(tableHtml).trigger("create");
 		}
-		
-	})
-}
-*/
+	});
+});
