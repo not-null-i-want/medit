@@ -19,8 +19,8 @@ $(document).on('click', '.selectPtnt', function() {
 				// 날짜 포맷 변경
 				/*let originalDate = new Date(res[i].diagAt);
 				let formattedDate = `${originalDate.getFullYear()}-${(originalDate.getMonth() + 1).toString().padStart(2, '0')}-${originalDate.getDate().toString().padStart(2, '0')} ${originalDate.getHours().toString().padStart(2, '0')}:${originalDate.getMinutes().toString().padStart(2, '0')}`;
-*/
-
+				*/
+				
 				let originalDate = res[i].diagAt
 				let formattedDate = originalDate.substring(0, 16).replace('T', ' ');
 				formattedDate = formattedDate.replace(/:/, '시 ') + '분';

@@ -283,6 +283,15 @@
 
 /* 진단 날짜 */
 #diagnosisDate {
+	
+	margin: 0px auto 10px;
+   width: 90%;
+   height: 346px;
+   font-size: 15px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-radius: 5px;
+	
+	
    border: 1px solid white;
    margin: 5px auto;
    width: 90%;
