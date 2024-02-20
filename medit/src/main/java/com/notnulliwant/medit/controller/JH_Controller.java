@@ -29,14 +29,4 @@ public class JH_Controller {
         return "JH";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam("keyword") String keyword, Model model) {
-       
-        List<Patients> patientsList = repo.findByPtntNameContaining(keyword);
-        
-        model.addAttribute("patientsList", patientsList);
-        
-        return "JH"; 
-    }
-
 }

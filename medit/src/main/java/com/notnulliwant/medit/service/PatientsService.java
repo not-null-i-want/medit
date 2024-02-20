@@ -38,5 +38,22 @@ public class PatientsService {
 		return ptntList;
 	}
 	
+	// 환자 검색 목록 페이징 //
+	public Page<Patients> searchPaging(Pageable pageable, String ptntName) {
+
+		int page = pageable.getPageNumber() - 1;
+		int pageLimit = 5; // 한 번에 출력되는 페이지 수
+	
+		Pageable pageRequest = PageRequest.of(page, pageLimit, Sort.by("ptntId").descending());
+
+		Page<Patients> ptntEntities = ptntRepo.findByPtntNameContaining(pageRequest, ptntName);
+
+		Page<Patients> ptntList = ptntEntities.map(patient -> new Patients(patient.getPtntId(), patient.getDoctorId(),
+				patient.getPtntName(), patient.getPtntGender(), patient.getPtntBirthdate(), patient.getPtntAddr(),
+				patient.getPtntPhone()));
+
+		return ptntList;
+	}
+	
 	
 }
