@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -28,15 +30,19 @@ public class Doctors {
 	@Column(name = "DOCTOR_PHONE")
 	private String doctorPhone;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Patients> patient;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Diagnosis> diagnosis;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Chatroom_Members> chatroom_members;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Chattings> chattings;
 	

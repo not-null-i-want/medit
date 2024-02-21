@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -33,7 +32,7 @@ public class Chatroom_Members {
 	@JoinColumn(name = "doctorId")
 	private Doctors doctorId;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "roomSeq")
 	private Chatrooms roomSeq;
 	

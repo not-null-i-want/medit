@@ -1,3 +1,65 @@
+// 채팅 리스트 불러오기
+let dlist = $("#modalContent");
+
+$("#modalOpenButton").on("click", function() {
+
+	$.ajax({
+		url: "/dlist",
+		contentType: "application/json;charset=UTF-8",
+		dataType: "json",
+		success: function(res) {
+			console.log(res);
+
+			dlist.empty();
+
+			res.forEach(function(d) {
+				var link = "/doctor/" + d.doctorId;
+
+				dlist.append(`
+				<table id="dlist">		
+                	<tr>
+                    	<td>
+                    	<a class="detail-link" href="${link}">
+                        	${d.doctorName}
+                    	</a>
+                    	</td>
+                	</tr>
+				</table>
+            `).trigger("create");
+			})
+
+			$('.detail-link').on('click', function(event) {
+				event.preventDefault();  // 페이지 전환을 막습니다.
+
+				var url = $(this).attr('href');  // 링크의 href 속성을 가져옵니다.
+
+				$.ajax({
+					url: url,
+					success: function(data) {
+						// 새로운 데이터를 받아서 모달 창의 내용을 업데이트합니다.
+						console.log(data);
+						dlist.empty();
+						dlist.append(data);
+					},
+					error: function() {
+						console.log('error');
+					}
+				});
+			});
+
+
+		},
+		error: function() {
+			console.log("error")
+		}
+	})
+
+})
+
+
+
+
+// 채팅 관련
 let chat = {
 	"roomSeq": $('#roomseq').html(),
 	"doctorId": $('#chatter').html(),

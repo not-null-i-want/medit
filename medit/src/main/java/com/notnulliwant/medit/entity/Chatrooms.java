@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -37,8 +36,8 @@ public class Chatrooms {
 	
 	private Character roomStatus;
 	
-	@OneToOne(mappedBy = "roomSeq")
-	private Chatroom_Members chatroom_members;
+	@OneToMany(mappedBy = "roomSeq")
+	private List<Chatroom_Members> chatroom_members;
 	
 	@OneToMany(mappedBy = "roomSeq")
 	private List<Chattings> chattings;
