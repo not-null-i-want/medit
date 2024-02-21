@@ -13,6 +13,7 @@
     <script th:src="@{assets/js/AtPatient.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/SearchPatientsPaging.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/AddDiagnosis.js}" type="text/javascript" defer></script>
+    <script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
     <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
     
 </head>
@@ -76,8 +77,15 @@
         <div id="right">
             <!-- 우측 상단 버튼 모음-->
             <div id="btns">
+				<img src="assets/imgs/messanger.png" id="modalOpenButton"></img>
 
-            </div>
+				<div id="modalContainer" class="hidden">
+					<div id="modalContent">
+						
+						<button id="modalCloseButton">닫기</button>
+					</div>
+				</div>
+			</div>
             <!-- 진단 결과 -->
             <div id="diagnosisResult">
                 진단 결과
