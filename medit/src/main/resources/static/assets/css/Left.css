@@ -175,24 +175,26 @@
 
 #ptntListLeftSpace {
    display: inline-block;
-   margin-left: 30px;
+   margin-left: 10px;
    margin-top: 5px;
+   width: 80px;
 }
 
 #PtntListRightSpace {
    display: inline;
-   margin-left: 9px;
-   margin-top: 3px;
+   margin-left: 5px;
+   margin-top: 5px;
+   width: 80px;
 }
 
 #pageNumber {
    display: inline-block;
    font-size: 16px;
    text-align: center;
-   width: 100px;
+   width: 150px;
    height: 30px;
-   margin-top: 8px;
-   margin-left: 8px;
+   margin-top: 9px;
+   margin-right: 3px;
 }
 
 .num {
