@@ -1,6 +1,7 @@
 #right {
 	width: 380px;
 	height: 100%;
+	margin-right: 18px;
 }
 /* 우측 상단 버튼모음 */
 #btns {
