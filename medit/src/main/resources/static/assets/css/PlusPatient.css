@@ -1,0 +1,76 @@
+/****** 환자등록창 *******/
+#inputDiv_Title {
+	text-align: center;
+	width: 200px;
+	height: 40px;
+	border: 1px solid rgb(255, 255, 255, 0.3);
+	border-radius: 20px;
+	color:white;
+	margin-top: 100px;
+	margin-left: 100px;
+	align-items: center;
+	justify-content: center;
+	line-height: 40px;
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+}
+
+
+#inputDiv_Input{
+	margin-left: 100px; 
+	border: 1px solid rgb(255, 255, 255, 0.3);
+	border-radius: 10px;
+	margin-bottom: 400px; 
+	width: 70%;
+	height: 800px;
+	background: #525252;
+	color:white;
+	border-top-left-radius : 0px;
+}
+#form_Input{
+	margin-top:80px;
+	margin-left:200px; 
+	height: 960px;
+}
+input {
+  width: 350px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 10px;
+  padding-left: 20px;
+  background-color: rgb(233, 233, 233);
+}
+input#sample4_postcode{
+  width: 150px;
+  font-size: 15px;
+}
+input.searchAddr{
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    border-radius: 10px; 
+    padding:4px;
+    width: 200px;
+    height: 40px;
+  }
+input#ptntGender{
+  width: 30px;
+  height: 20px;
+}  
+
+input#inputBtn{
+	background-color:#0a0a23;
+	margin-left:80px;
+	width: 80px;
+	height: 40px;
+	color: white;
+	line-height: 20px;
+}
+input#outBtn{
+	background-color:#0a0a23;
+	width: 80px;
+	height: 40px;
+	color: white;
+	line-height: 20px;
+}
