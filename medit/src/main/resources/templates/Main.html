@@ -8,12 +8,15 @@
    <link rel="stylesheet" th:href="@{assets/css/Left.css}">
    <link rel="stylesheet" th:href="@{assets/css/Center.css}">
    <link rel="stylesheet" th:href="@{assets/css/Right.css}">
+     <link rel="stylesheet" th:href="@{assets/css/PlusPatient.css}">
     <script th:src="@{assets/js/PatientsListPaging.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/SelectPatient.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/AtPatient.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/SearchPatientsPaging.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/AddDiagnosis.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
+     <script th:src="@{assets/js/PlusPatient.js}" type="text/javascript" defer></script>
+       <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
     
 </head>
@@ -67,8 +70,9 @@
             </div>
             <!-- 가운데 메인 -->
             <section id="main-section">
-            
-            
+             <div id="inputPtnt">
+         
+          	 </div>
             <video autoplay loop muted>
                <source src="assets/videos/main.mp4">
             </video>
@@ -77,6 +81,7 @@
         <div id="right">
             <!-- 우측 상단 버튼 모음-->
             <div id="btns">
+            <button id="plusBtn">환자 추가</button>
 				<img src="assets/imgs/messanger.png" id="modalOpenButton"></img>
 
 				<div id="modalContainer" class="hidden">
