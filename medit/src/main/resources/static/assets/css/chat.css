@@ -1,0 +1,32 @@
+/* 채팅창 관련 */
+
+#chatBox {
+	width: 500px;
+	height: 500px;
+	border: 1px solid black;
+	overflow: auto;
+}
+
+#messageInput {
+	width: 400px;
+}
+
+.message.my {
+	text-align: right;
+	background-color: #b2d8b2;
+}
+
+.message {
+	text-align: left;
+	background-color: #d8d8d8;
+}
+
+.chatBox {
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#modalCloseButton{
+	display:none;
+}

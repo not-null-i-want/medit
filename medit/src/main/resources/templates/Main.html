@@ -9,7 +9,7 @@
    <link rel="stylesheet" th:href="@{assets/css/Center.css}">
    <link rel="stylesheet" th:href="@{assets/css/Right.css}">
    <link rel="stylesheet" th:href="@{assets/css/Diagnose.css}">
-   
+   <link rel="stylesheet" th:href="@{assets/css/chat.css}">
     <script th:src="@{assets/js/PatientsListPaging.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/SelectPatient.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/AtPatient.js}" type="text/javascript" defer></script>
@@ -83,12 +83,13 @@
             <!-- 우측 상단 버튼 모음-->
             <div id="btns">
             <button id="plusBtn">환자 추가</button>
+				
+				<button th:text="${session.user.doctorId}" id="modalCloseButton">닫기</button>
 				<img src="assets/imgs/messanger.png" id="modalOpenButton"></img>
 
 				<div id="modalContainer" class="hidden">
 					<div id="modalContent">
 						
-						<button id="modalCloseButton">닫기</button>
 					</div>
 				</div>
 			</div>

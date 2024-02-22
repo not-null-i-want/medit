@@ -2,6 +2,7 @@ package com.notnulliwant.medit.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.notnulliwant.medit.serializer.ChatroomSerializer;
+import com.notnulliwant.medit.serializer.DoctorSerializer;
 
 import lombok.Data;
 
@@ -33,10 +39,12 @@ public class Chattings {
 	private Integer chatSeq;
 	
 	@ManyToOne
+	@JsonSerialize(using = ChatroomSerializer.class)
 	@JoinColumn(name = "roomSeq")
 	private Chatrooms roomSeq;
 	
 	@ManyToOne
+	@JsonSerialize(using = DoctorSerializer.class)
 	@JoinColumn(name = "doctorId")
 	private Doctors doctorId;
 	
