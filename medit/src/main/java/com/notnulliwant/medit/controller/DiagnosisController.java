@@ -1,7 +1,6 @@
 package com.notnulliwant.medit.controller;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,7 @@ public class DiagnosisController {
 	public String diagnose(MultipartFile file, Diagnosis diagnosis) throws IOException {
 		
 		
-		Diagnosis diag = diagRepo.save(diagnosis);
+		Diagnosis diag = diagRepo.save(diagnosis); // DB 진단 추가
 		
 		Integer diagSeq = diag.getDiagSeq(); // 진단번호
 		
@@ -52,6 +51,7 @@ public class DiagnosisController {
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(file.getInputStream().available());
         //amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
+        
         String fileRealName = amazonS3.getUrl(bucket, fileName).toString(); // S3 주소 + 파일 이름
         
         // 확장자 추출
@@ -61,7 +61,7 @@ public class DiagnosisController {
         	extension = fileName.substring(index + 1);
         }
         
-       /* Cxrs cxrs = new Cxrs();
+        Cxrs cxrs = new Cxrs();
         Diagnosis tempDiagnosis = new Diagnosis();
         tempDiagnosis.setDiagSeq(diagSeq);
         
@@ -70,20 +70,10 @@ public class DiagnosisController {
         cxrs.setCxrRealname(fileRealName);
         cxrs.setCxrSize(file.getSize());
         cxrs.setCxrExt(extension);
-        cxrs.setCxrOriginal((char) 0); */
+        cxrs.setCxrOriginal('0');
         
+        cxrsRepo.save(cxrs); // DB CXR 추가
         
-        // 영상번호 			: seq
-        // 진단번호 			: diagSeq
-        // 영상이미지명 		: fileName
-        // 영상 실제 이미지명 	: amazonS3.getUrl(bucket, fileName).toString()
-        // 영상 사이즈 			: file.getSize()
-        // 영상 사이즈 확장자	: extension
-        // 영상 촬영일시 		: 즉시
-        // 업로드 일시 			: 즉시
-        // 영상 원본 유무 		: 일단 0
-        
-        System.out.println(amazonS3.getUrl(bucket, fileName).toString());
         return "SM";
 	}
 	

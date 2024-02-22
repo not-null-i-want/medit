@@ -38,7 +38,7 @@ const loadWriteDiag = () => {
 					<input type="text" value="${selectedDoctorName_addDiagnosis}" class="fixedTextBox" id="doctorName-diag" disabled>
 				</div>
 				<div>
-					<input type="file" name="file">
+					<input type="file" name="file" required>
 					<input type="hidden" value="${selectedPtntId_addDiagnosis}" name="ptntId">
 					<input type="hidden" value="${selectedDoctorId_addDiagnosis}" name="doctorId"> 
 				</div>
