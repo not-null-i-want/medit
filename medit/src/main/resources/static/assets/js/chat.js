@@ -65,7 +65,8 @@ $("#modalOpenButton").on("click", function() {
 
 						data.forEach(function(c) {
 
-							let check = c.doctorId.doctorName == $('.detail-link').innerHTML;
+							let check = c.doctorId.doctorId == $('#modalCloseButton').text();
+							
 
 							let msgDiv = `
 						<div class="chatBox ${check ? 'broadcater' : ''}">
