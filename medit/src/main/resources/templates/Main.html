@@ -1,105 +1,100 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-   <meta charset="UTF-8">
-   <title>MEDIT</title>
-   
-   <link rel="stylesheet" th:href="@{assets/css/Born.css}">
-   <link rel="stylesheet" th:href="@{assets/css/Left.css}">
-   <link rel="stylesheet" th:href="@{assets/css/Center.css}">
-   <link rel="stylesheet" th:href="@{assets/css/Right.css}">
-     <link rel="stylesheet" th:href="@{assets/css/PlusPatient.css}">
-    <script th:src="@{assets/js/PatientsListPaging.js}" type="text/javascript" defer></script>
-    <script th:src="@{assets/js/SelectPatient.js}" type="text/javascript" defer></script>
-    <script th:src="@{assets/js/AtPatient.js}" type="text/javascript" defer></script>
-    <script th:src="@{assets/js/SearchPatientsPaging.js}" type="text/javascript" defer></script>
-    <script th:src="@{assets/js/AddDiagnosis.js}" type="text/javascript" defer></script>
-    <script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
-     <script th:src="@{assets/js/PlusPatient.js}" type="text/javascript" defer></script>
-       <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
-    
+<meta charset="UTF-8">
+<title>MEDIT</title>
+
+<link rel="stylesheet" th:href="@{assets/css/Born.css}">
+<link rel="stylesheet" th:href="@{assets/css/Left.css}">
+<link rel="stylesheet" th:href="@{assets/css/Center.css}">
+<link rel="stylesheet" th:href="@{assets/css/Right.css}">
+<link rel="stylesheet" th:href="@{assets/css/PlusPatient.css}">
+<script th:src="@{assets/js/PatientsListPaging.js}"
+	type="text/javascript" defer></script>
+<script th:src="@{assets/js/SelectPatient.js}" type="text/javascript"
+	defer></script>
+<script th:src="@{assets/js/AtPatient.js}" type="text/javascript" defer></script>
+<script th:src="@{assets/js/SearchPatientsPaging.js}"
+	type="text/javascript" defer></script>
+<script th:src="@{assets/js/AddDiagnosis.js}" type="text/javascript"
+	defer></script>
+<script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
+<script th:src="@{assets/js/PlusPatient.js}" type="text/javascript"
+	defer></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
+
 </head>
 <body>
-    <div class="container">
-        <nav id="left">
-            <!-- 로고 -->
-            <img src="assets/imgs/medit2.png" id="logo">
-            <!-- 검색창 -->
-            <div class="search">
-                <input type="text" id="searchText" placeholder="환자명 입력">
-                <label for="searchText">환자검색</label>
-                <!-- 검색 버튼-->
-                <img src="assets/imgs/search_icon.png" id="search_icon">
-            </div>
-            <!-- 환자 목록 -->
-            <div id="ptntList">
-               <!-- /paging?page=1 타임리프 문법 -->
-               <!-- <a th:href="@{/paging(page=1)}">First</a> -->
-               <table id="ptntTable">
-                  
-               </table>
-               <div id="pageNumberSpace">
-                    <div id="ptntListLeftSpace">
-                        <img src="assets/imgs/firstBtn.svg" id="first" class="ptntListMoveBtn"></img>
-                      <img src="assets/imgs/preBtn.svg" id="pre" class="ptntListMoveBtn"></img>
-                    </div>
-                  <div id="pageNumber">
-                        
-                  </div>
-                    <div id="PtntListRightSpace">
-                      <img src="assets/imgs/nextBtn.svg" id="next" class="ptntListMoveBtn"></img>
-                      <img src="assets/imgs/lastBtn.svg" id="last" class="ptntListMoveBtn"></img>
-                    </div>
-                </div>
-            </div>
-            <!-- 환자 디테일-->
-            <div id="ptntDetail">
-               
-            </div>
-            <!-- 진단 날짜 -->
-            <div id="diagnosisDate">
-                진단 날짜
-            </div>
-        </nav>
-        <div id="center">
-            <!-- 상단의 빈 공간-->
-            <div id="empty">
-                빈 공간
-                <button id="testBtn">테스트</button>
-            </div>
-            <!-- 가운데 메인 -->
-            <section id="main-section">
-             <div id="inputPtnt">
-         
-          	 </div>
-            <video autoplay loop muted>
-               <source src="assets/videos/main.mp4">
-            </video>
-            </section>
-        </div>
-        <div id="right">
-            <!-- 우측 상단 버튼 모음-->
-            <div id="btns">
-            <button id="plusBtn">환자 추가</button>
+	<div class="container">
+		<nav id="left">
+			<!-- 로고 -->
+			<img src="assets/imgs/medit2.png" id="logo">
+			<!-- 검색창 -->
+			<div class="search">
+				<input type="text" id="searchText" placeholder="환자명 입력"> <label
+					for="searchText">환자검색</label>
+				<!-- 검색 버튼-->
+				<img src="assets/imgs/search_icon.png" id="search_icon">
+			</div>
+			<!-- 환자 목록 -->
+			<div id="ptntList">
+				<!-- /paging?page=1 타임리프 문법 -->
+				<!-- <a th:href="@{/paging(page=1)}">First</a> -->
+				<table id="ptntTable">
+
+				</table>
+				<div id="pageNumberSpace">
+					<div id="ptntListLeftSpace">
+						<img src="assets/imgs/firstBtn.svg" id="first"
+							class="ptntListMoveBtn"></img> <img src="assets/imgs/preBtn.svg"
+							id="pre" class="ptntListMoveBtn"></img>
+					</div>
+					<div id="pageNumber"></div>
+					<div id="PtntListRightSpace">
+						<img src="assets/imgs/nextBtn.svg" id="next"
+							class="ptntListMoveBtn"></img> <img src="assets/imgs/lastBtn.svg"
+							id="last" class="ptntListMoveBtn"></img>
+					</div>
+				</div>
+			</div>
+			<!-- 환자 디테일-->
+			<div id="ptntDetail"></div>
+			<!-- 진단 날짜 -->
+			<div id="diagnosisDate">진단 날짜</div>
+		</nav>
+		<div id="center">
+			<!-- 상단의 빈 공간-->
+			<div id="empty">
+				빈 공간
+				<button id="testBtn">테스트</button>
+			</div>
+			<!-- 가운데 메인 -->
+			<section id="main-section">
+				<div id="inputPtnt"></div>
+				<video autoplay loop muted>
+					<source src="assets/videos/main.mp4">
+				</video>
+			</section>
+		</div>
+		<div id="right">
+			<!-- 우측 상단 버튼 모음-->
+			<div id="btns">
+				<button id="plusBtn">환자 추가</button>
 				<img src="assets/imgs/messanger.png" id="modalOpenButton"></img>
 
 				<div id="modalContainer" class="hidden">
 					<div id="modalContent">
-						
+
 						<button id="modalCloseButton">닫기</button>
 					</div>
 				</div>
 			</div>
-            <!-- 진단 결과 -->
-            <div id="diagnosisResult">
-                진단 결과
-            </div>
-            <!-- 소견 -->
-            <div id="opinion">
-                소견 작성 부분
-            </div>
-        </div>
-    </div>
+			<!-- 진단 결과 -->
+			<div id="diagnosisResult">진단 결과</div>
+			<!-- 소견 -->
+			<div id="opinion">소견 작성 부분</div>
+		</div>
+	</div>
 </body>
 </html>
