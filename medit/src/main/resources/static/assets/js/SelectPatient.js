@@ -1,7 +1,9 @@
 let ptntDetail = $("#ptntDetail");
 
 let selectedPtntId_addDiagnosis; // AddDiagnosis.js에서 쓸 변수
-let selectedPtntId_doctorId; // 상동
+let selectedDoctorId_addDiagnosis; // 상동
+let selectedPtntName_addDiagnosis;
+let selectedDoctorName_addDiagnosis;
 
 $(document).on('click', '.selectPtnt', function() {
    
@@ -24,7 +26,9 @@ $(document).on('click', '.selectPtnt', function() {
          let ptntGender = res.ptntGender;
          let ptntBirthdate = res.ptntBirthdate;
          let ptntAddr = res.ptntAddr;
-		 selectedPtntId_doctorId = res.doctorId.doctorId;
+		 selectedDoctorId_addDiagnosis = res.doctorId.doctorId;
+		 selectedPtntName_addDiagnosis = res.ptntName;
+		 selectedDoctorName_addDiagnosis = res.doctorId.doctorName;
          
          ptntDetail.html(`
             <table class="detailTable">

@@ -322,10 +322,10 @@ let last = () => {
 lastBtn.addEventListener("click", last);
 ///////////////////////////////////////////////////////////
 
-$(document).on('click', '.test', function() {
-    let ptntId = $(this).find('td:eq(0)').text(); // tr의 첫 td에 접근
-    console.log(ptntId);
-});
+// $(document).on('click', '.test', function() {
+//     let ptntId = $(this).find('td:eq(0)').text(); // tr의 첫 td에 접근
+//     console.log(ptntId);
+// });
 ///////////////////////////////////////////////////////////
 
 //////////////////// 클릭 페이지 로딩 /////////////////////
