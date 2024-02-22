@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.notnulliwant.medit.serializer.DoctorSerializer;
 
@@ -44,6 +46,7 @@ public class Diagnosis {
    private Doctors doctorId;
    
    @Column(name = "DIAG_AT")
+   @CreationTimestamp
    private Date diagAt;
    
    @Column(name = "DOCTOR_OPINION")

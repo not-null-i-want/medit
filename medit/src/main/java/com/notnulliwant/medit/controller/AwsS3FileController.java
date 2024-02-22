@@ -32,7 +32,7 @@ public class AwsS3FileController {
         String fileName = UUID.randomUUID() + file.getOriginalFilename(); // UUID + 업로드 파일 이름
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(file.getInputStream().available());
-        amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
+        // amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
         
         // 확장자 추출
         int index = fileName.lastIndexOf(".");

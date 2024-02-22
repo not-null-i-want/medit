@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.Data;
 
 @Entity
@@ -43,14 +45,16 @@ public class Cxrs {
 	private String cxrRealname;
 	
 	@Column(name = "CXR_SIZE")
-	private Integer cxrSize;
+	private Long cxrSize;
 	
 	@Column(name = "CXR_EXT")
 	private String cxrExt;
 	
+	@CreationTimestamp
 	@Column(name = "CREATED_AT")
 	private Date createdAt;
 	
+	@CreationTimestamp
 	@Column(name = "UPLOADED_AT")
 	private Date uploadedAt;
 	
