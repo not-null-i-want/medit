@@ -23,7 +23,7 @@ public class AwsS3FileController {
 
     private final AmazonS3 amazonS3;
 
-    @Value("${cloud.aws.s3.bucket-cxrs}")
+    @Value("${cloud.aws.s3.bucket}")
     private String bucket;
 
     @PostMapping("/fileUpload")

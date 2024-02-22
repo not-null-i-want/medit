@@ -7,7 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.services.s3.AmazonS3;
@@ -36,7 +40,7 @@ public class DiagnosisController {
 	@Autowired
 	private DeepsRepository deepsRepo;
 	
-    @Value("${cloud.aws.s3.bucket-cxrs}")
+    @Value("${cloud.aws.s3.bucket}")
     private String bucket;
 	
 	@RequestMapping("/diagnose")
@@ -50,7 +54,7 @@ public class DiagnosisController {
 		String fileName = UUID.randomUUID() + file.getOriginalFilename(); // UUID + 업로드 파일 이름
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(file.getInputStream().available());
-        //amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
+        // 	amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
         
         String fileRealName = amazonS3.getUrl(bucket, fileName).toString(); // S3 주소 + 파일 이름
         
