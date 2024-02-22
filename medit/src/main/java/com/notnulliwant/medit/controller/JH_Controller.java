@@ -28,5 +28,28 @@ public class JH_Controller {
         
         return "JH";
     }
-
+   @GetMapping("/Main")
+   public String main() {
+		return "Main";
+   }
+   
+   
+   @RequestMapping("/savePatients")
+	public String join( Patients patients, String addr1, String addr2, String addr3) {
+		
+		String ptnt_addr= addr1+" "+addr2+" 우편번호("+addr3+")";
+		
+		Patients patients2 = new Patients();
+		patients2.setPtntName(patients.getPtntName());
+		patients2.setPtntGender(patients.getPtntGender());
+		patients2.setPtntBirthdate(patients.getPtntBirthdate());
+		patients2.setPtntPhone(patients.getPtntPhone());
+		patients2.setDoctorId(patients.getDoctorId());
+		patients2.setPtntAddr(ptnt_addr);
+		
+		repo.save(patients2);
+		
+		return "redirect:Main";
+	}
+   
 }
