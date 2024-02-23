@@ -19,6 +19,8 @@
     <script th:src="@{assets/js/AddDiagnosis.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/PlusPatient.js}" type="text/javascript" defer></script>
+    <script th:src="@{assets/js/Diagnosis123.js}" type="text/javascript" defer></script>
+    <script th:src="@{assets/js/DiagnosisAtPaging.js}" type="text/javascript" defer></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
     
@@ -62,8 +64,22 @@
             </div>
             <!-- 진단 날짜 -->
             <div id="diagnosisDate">
-                진단 날짜
+           
             </div>
+              <div id="pageNumberSpace">
+                    <div id="ptntListLeftSpace">
+                       <img src="assets/imgs/firstBtn.svg" id="first" class="ptntListMoveBtn"></img>
+                      <img src="assets/imgs/preBtn.svg" id="pre" class="ptntListMoveBtn"></img>
+                    </div>
+                  <div id="pageNumber">
+                        
+                  </div>
+                    <div id="PtntListRightSpace">
+                      <img src="assets/imgs/nextBtn.svg" id="next" class="ptntListMoveBtn"></img>
+                      <img src="assets/imgs/lastBtn.svg" id="last" class="ptntListMoveBtn"></img>
+                    </div>
+                </div>
+                
         </nav>
         <div id="center">
             <!-- 상단의 빈 공간-->
@@ -101,7 +117,6 @@
             </div>
             <!-- 소견 -->
             <div id="opinion">
-                소견 작성 부분
             </div>
         </div>
     </div>
