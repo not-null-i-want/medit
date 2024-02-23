@@ -36,7 +36,6 @@ public class exam_Controller {
       return diag;
    }
 
-
 //   @RequestMapping("/exam")
 //    public String showPatientList(Model model) {
 //        List<Patients> patientsList = repo.findAll();
