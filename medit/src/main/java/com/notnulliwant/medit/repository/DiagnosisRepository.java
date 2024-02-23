@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.notnulliwant.medit.entity.Diagnosis;
+import com.notnulliwant.medit.entity.Doctors;
 
 @Repository
 public interface DiagnosisRepository extends JpaRepository<Diagnosis, Integer> {
@@ -22,10 +23,9 @@ public interface DiagnosisRepository extends JpaRepository<Diagnosis, Integer> {
    
    
 	/* void updateDoctorOpinionByDiagSeq(Integer diagSeq, String doctorOpinion); */
-  @Transactional
-  @Modifying
-  @Query("UPDATE Diagnosis d SET d.doctorOpinion = :doctorOpinion WHERE d.diagSeq = :diagSeq")
-  void updateDoctorOpinionByDiagSeq(@Param("diagSeq") Integer diagSeq, @Param("doctorOpinion") String doctorOpinion);
-  
-  
+   @Transactional
+   @Modifying
+   @Query("UPDATE Diagnosis d SET d.doctorOpinion = :doctorOpinion WHERE d.diagSeq = :diagSeq")
+   void updateDoctorOpinionByDiagSeq(@Param("diagSeq") Integer diagSeq, @Param("doctorOpinion") String doctorOpinion);
+   
 }
