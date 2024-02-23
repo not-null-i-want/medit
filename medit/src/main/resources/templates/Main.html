@@ -99,17 +99,17 @@
         <div id="right">
             <!-- 우측 상단 버튼 모음-->
             <div id="btns">
-            <button id="plusBtn">환자 추가</button>
-            
-            <button th:text="${session.user.doctorId}" id="modalCloseButton">닫기</button>
-            <img src="assets/imgs/messanger.png" id="modalOpenButton"></img>
+				<button id="plusBtn">환자 추가</button>
 
-            <div id="modalContainer" class="hidden">
-               <div id="modalContent">
-                  
-               </div>
-            </div>
-         </div>
+				<button th:text="${session.user.doctorId}" id="modalCloseButton"></button>
+				
+				<img src="assets/imgs/chat.png" id="modalOpenButton"></img>
+
+					<button id="close">X</button>
+				<div id="modalContainer" class="smallgap">
+					<div id="modalContent"></div>
+				</div>
+			</div>
             <!-- 진단 결과 -->
             <div id="diagnosisResult">
                 진단 결과

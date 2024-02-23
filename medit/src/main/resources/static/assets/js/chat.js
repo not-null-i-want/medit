@@ -19,7 +19,27 @@ let test = modal.getElementsByClassName("test");
 // 채팅 리스트 불러오기
 let dlist = $("#modalContent");
 
+$("#close").click(function() {
+	$("#modalContainer").fadeOut();
+	$("#close").css("width", "0px");
+	$("#close").css("height", "0px");
+});
+
 $("#modalOpenButton").on("click", function() {
+	var sa = $(this).text();
+	$(this).text("");
+	$(this).addClass("ball");
+	setTimeout(function() {
+		$("#modalContainer").fadeIn();
+		$("#close").css("width", "30px");
+		$("#close").css("height", "30px");
+		setTimeout(function() {
+			$("#modalOpenButton").removeClass("ball");
+			$("#modalOpenButton").text(sa);
+		}, 500);
+	}, 800);
+	
+	$('#modalContainer').css('height', '150%');
 
 	$.ajax({
 		url: "/dlist",
@@ -34,15 +54,12 @@ $("#modalOpenButton").on("click", function() {
 				var link = "/doctor/" + d.doctorId;
 
 				dlist.append(`
-				<table id="dlist">		
-                	<tr>
-                    	<td>
+				<div>
+				<img src="assets/imgs/dicon.png" class="dicon">
                     	<a class="detail-link" href="${link}">
                         	${d.doctorName}
                     	</a>
-                    	</td>
-                	</tr>
-				</table>
+                    	</div> <br>
             `).trigger("create");
 			})
 
@@ -50,7 +67,7 @@ $("#modalOpenButton").on("click", function() {
 				event.preventDefault();  // 페이지 전환을 막습니다.
 
 				var url1 = $(this).attr('href');  // 링크의 href 속성을 가져옵니다.
-
+				
 				$.ajax({
 					url: url1,
 					contentType: "application/json;charset=UTF-8",
@@ -61,29 +78,30 @@ $("#modalOpenButton").on("click", function() {
 
 						dlist.append(`<div id="chatBox"></div>
 	<input id="messageInput" type="text" class="test">
-	<button id="sendButton">Send</button>`).trigger("create");
+	<img src="assets/imgs/send.png" id="sendButton">`).trigger("create");
 
 						data.forEach(function(c) {
-
 							let check = c.doctorId.doctorId == $('#modalCloseButton').text();
-							
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/dicon.png';
+							let content = check ? `${c.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${c.chatting}`;
 
 							let msgDiv = `
-						<div class="chatBox ${check ? 'broadcater' : ''}">
-							<div>
-								<div class="message ${check ? 'my' : ''}">${c.chatting}</div>
-							</div>
-						</div>
-							`
-
+        <div class="chatBox">
+            <div>
+                <div class="message ${check ? 'my' : ''}">
+                    ${content}
+                </div>
+            </div>
+        </div>
+    `;
 							$('#chatBox').append(msgDiv).trigger("create");
-
-
 						});
 
 						$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
 
 						console.log($('#modalCloseButton').text())
+						
+						$('#modalContainer').css('height', '350%');
 
 						let chat = {
 							"roomSeq": `${data[0].roomSeq.roomSeq}`,
@@ -143,7 +161,7 @@ $("#modalOpenButton").on("click", function() {
 	<div class="chatBox">
 		<div>
 			
-			<div class="message ${check ? 'my' : ''}">${json.chatting}</div>
+			<div class="message ${check ? 'my' : ''}"><img src=> ${json.chatting}</div>
 		</div>
 	</div>
 	`;
@@ -169,34 +187,4 @@ $("#modalOpenButton").on("click", function() {
 
 })
 
-
-
-
-// 채팅 관련
-/*let chat = {
-	"roomSeq": $('#roomseq').html(),
-	"doctorId": $('#chatter').html(),
-	"chatting": "",
-	"emoticon": "",
-}
-*/
-
-
-
-
-/*$("#chatBox").on("click", function() {
-
-	var url = "ws://localhost:8089/chat";
-
-	websocket = new WebSocket(url);
-
-	websocket.onopen = function() {
-		console.log("연결 성공");
-	}
-
-	websocket.onmessage = onMessage;
-
-	sendBtn.on("click", msgSend);
-
-})*/
 

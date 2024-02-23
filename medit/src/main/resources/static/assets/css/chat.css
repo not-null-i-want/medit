@@ -1,24 +1,31 @@
 /* 채팅창 관련 */
-
 #chatBox {
-	width: 500px;
-	height: 500px;
-	border: 1px solid black;
+	width: 250px;
+	height: 450px;
 	overflow: auto;
+	
 }
 
 #messageInput {
-	width: 400px;
+	width: 153px;
 }
 
 .message.my {
 	text-align: right;
-	background-color: #b2d8b2;
+	background-color: #c0c0c0;
+	border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .message {
 	text-align: left;
 	background-color: #d8d8d8;
+	border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .chatBox {
@@ -27,6 +34,111 @@
 	border-radius: 5px;
 }
 
-#modalCloseButton{
-	display:none;
+#modalCloseButton {
+	display: none;
+}
+
+#sendButton {
+	width: 21px;
+	height: 21px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.dicon{
+	width: 30px;
+	height: 30px;
+}
+
+/* 모달창 */
+
+#modalOpenButton {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  -webkit-transition: 0s all;
+  transition: 0s all;
+  padding: 10px;
+  line-height: 1px;
+}
+
+/* button:focus {
+  outline: none;
+} */
+
+@keyframes bigandfit {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+  5% {
+    width: 70px;
+  }
+  12% {
+    width: 100px;
+  }
+  /* 20% {
+    width: 70px;
+  }
+  25% {
+    width: 50px;
+    height: 50px;
+    margin: 255px 0 0 calc(50% - 20px);
+    border-radius: 100%;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    margin: calc(275px - 100%) 0 0 calc(50% - 100%);
+  } */
+}
+
+.ball {
+  animation-name: bigandfit;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#modalContainer {
+  width: 105%;
+  left: 0;
+  top: 0;
+  height: 150%;
+  background: rgb(233, 233, 233);
+  z-index: 100;
+  display: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 6px 18px -5px rgba(245, 245, 245, 1);
+  
+}
+
+.smallgap {
+  width: 550px;
+  height: 550px;
+  margin: 25px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#close {
+  width: 0px;
+  height: 0px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transition: 0.4s all;
+}
+
+#modalContent {
+	width: 200px;
+	height: 300px;
+	padding: 15px;
 }
