@@ -18,7 +18,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.notnulliwant.medit.serializer.DoctorSerializer;
-import com.notnulliwant.medit.serializer.PatientsSerializer;
 
 import lombok.Data;
 
@@ -38,10 +37,8 @@ public class Diagnosis {
    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "diagnosis_seq")
    private Integer diagSeq;
    
-   @ManyToOne
-   @JsonSerialize(using = PatientsSerializer.class)
-   @JoinColumn(name = "ptntId")
-   private Patients ptntId;
+   @Column(name = "PTNT_ID")
+   private Integer ptntId;
    
    @ManyToOne
    @JsonSerialize(using = DoctorSerializer.class)

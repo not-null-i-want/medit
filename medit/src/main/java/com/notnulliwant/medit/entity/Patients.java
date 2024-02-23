@@ -1,4 +1,4 @@
-package com.notnulliwant.medit.entity;
+	package com.notnulliwant.medit.entity;
 
 import java.util.List;
 
@@ -57,9 +57,6 @@ public class Patients {
    @Column(name = "PTNT_TYPE")
    private Character ptntType;
    
-   @OneToMany(mappedBy = "ptntId")
-   private List<Diagnosis> diagnosis;
-
    public String toString() {
       return "Patients";
    }
