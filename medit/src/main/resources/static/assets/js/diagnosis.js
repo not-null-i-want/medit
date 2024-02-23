@@ -1,4 +1,4 @@
-$(".diagnosis").on("click", selectPtnt);
+/*$(".diagnosis").on("click", selectPtnt);
 
 function selectPtnt() {
     let ptnt_id = $(this).find(".ptntId").html();	
@@ -18,7 +18,7 @@ function selectPtnt() {
 		}
 		
 	});
-}
+}*/
 
 /*function openEditForm() {
     var currentContent = document.getElementById("content").value;
