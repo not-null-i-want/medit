@@ -1,4 +1,6 @@
-package com.notnulliwant.medit.entity;
+	package com.notnulliwant.medit.entity;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -53,7 +55,10 @@ public class Patients {
 
    @Column(name = "PTNT_TYPE")
    private Character ptntType;
-
+   
+   @Column(name = "REGISTERED_AT")
+   private Date registeredAt;
+   
    public String toString() {
       return "Patients";
    }

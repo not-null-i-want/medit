@@ -46,6 +46,8 @@ public class DiagnosisController {
 	@RequestMapping("/diagnose")
 	public String diagnose(MultipartFile file, Diagnosis diagnosis) throws IOException {
 		
+		System.out.println(diagnosis.getDoctorId().getDoctorId());
+		System.out.println(diagnosis.getPtntId());
 		
 		Diagnosis diag = diagRepo.save(diagnosis); // DB 진단 추가
 		
@@ -54,7 +56,7 @@ public class DiagnosisController {
 		String fileName = UUID.randomUUID() + file.getOriginalFilename(); // UUID + 업로드 파일 이름
         ObjectMetadata objectMetadata = new ObjectMetadata();
         objectMetadata.setContentLength(file.getInputStream().available());
-        // 	amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
+        // amazonS3.putObject(bucket, fileName, file.getInputStream(), objectMetadata); // 업로드
         
         String fileRealName = amazonS3.getUrl(bucket, fileName).toString(); // S3 주소 + 파일 이름
         
@@ -78,7 +80,7 @@ public class DiagnosisController {
         
         cxrsRepo.save(cxrs); // DB CXR 추가
         
-        return "SM";
+        return "redirect:Main";
 	}
 	
 }

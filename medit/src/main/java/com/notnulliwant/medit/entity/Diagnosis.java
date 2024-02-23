@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.notnulliwant.medit.serializer.DoctorSerializer;
 
@@ -43,12 +46,14 @@ public class Diagnosis {
    @JoinColumn(name = "doctorId")
    private Doctors doctorId;
    
+   @CreationTimestamp
    @Column(name = "DIAG_AT")
    private Date diagAt;
    
    @Column(name = "DOCTOR_OPINION")
    private String doctorOpinion;
    
+   @JsonManagedReference
    @OneToMany(mappedBy = "diagSeq")
    private List<Cxrs> cxrs;
    

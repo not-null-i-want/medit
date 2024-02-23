@@ -121,7 +121,7 @@ let next = () => {
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
-                  <span class="num">${i}</span>
+                  <span class="pageNumber num">${i}</span>
                   `).trigger("create");
                }
          }
