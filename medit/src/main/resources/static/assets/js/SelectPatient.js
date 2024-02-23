@@ -20,7 +20,6 @@ $(document).on('click', '.selectPtnt', function() {
       url : "ShowPatientDetail",
       data : {"ptntId" : seletedPtntId},
       success : function(res){
-         
          let doctorName = res.doctorId.doctorName;
          let ptntName = res.ptntName;
          let ptntPhone = res.ptntPhone;

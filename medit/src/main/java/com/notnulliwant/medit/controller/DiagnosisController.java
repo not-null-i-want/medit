@@ -46,6 +46,8 @@ public class DiagnosisController {
 	@RequestMapping("/diagnose")
 	public String diagnose(MultipartFile file, Diagnosis diagnosis) throws IOException {
 		
+		System.out.println(diagnosis.getDoctorId().getDoctorId());
+		System.out.println(diagnosis.getPtntId());
 		
 		Diagnosis diag = diagRepo.save(diagnosis); // DB 진단 추가
 		
@@ -78,7 +80,7 @@ public class DiagnosisController {
         
         cxrsRepo.save(cxrs); // DB CXR 추가
         
-        return "SM";
+        return "redirect:Main";
 	}
 	
 }

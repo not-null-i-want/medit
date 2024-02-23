@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.notnulliwant.medit.serializer.DoctorSerializer;
 
@@ -52,6 +53,7 @@ public class Diagnosis {
    @Column(name = "DOCTOR_OPINION")
    private String doctorOpinion;
    
+   @JsonManagedReference
    @OneToMany(mappedBy = "diagSeq")
    private List<Cxrs> cxrs;
    

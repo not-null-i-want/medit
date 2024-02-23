@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.Data;
 
 @Entity
@@ -34,6 +36,7 @@ public class Cxrs {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "cxrs_seq")
 	private Integer cxrSeq;
 	
+	@JsonBackReference 
 	@ManyToOne
 	@JoinColumn(name = "diagSeq")
 	private Diagnosis diagSeq;
