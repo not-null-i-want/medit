@@ -40,7 +40,7 @@ public class Diagnosis {
    
    @ManyToOne
    @JsonSerialize(using = PatientsSerializer.class)
-   @Column(name = "PTNT_ID")
+   @JoinColumn(name = "ptntId")
    private Patients ptntId;
    
    @ManyToOne
