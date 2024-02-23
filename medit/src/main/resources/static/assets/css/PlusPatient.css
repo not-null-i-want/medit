@@ -32,7 +32,7 @@
 	margin-left:200px; 
 	height: 960px;
 }
-input {
+/* input {
   width: 350px;
   height: 40px;
   font-size: 15px;
@@ -40,7 +40,7 @@ input {
   border-radius: 10px;
   padding-left: 20px;
   background-color: rgb(233, 233, 233);
-}
+} */
 input#sample4_postcode{
   width: 150px;
   font-size: 15px;
