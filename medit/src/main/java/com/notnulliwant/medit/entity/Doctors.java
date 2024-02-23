@@ -30,19 +30,15 @@ public class Doctors {
 	@Column(name = "DOCTOR_PHONE")
 	private String doctorPhone;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Patients> patient;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Diagnosis> diagnosis;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Chatroom_Members> chatroom_members;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "doctorId")
 	private List<Chattings> chattings;
 	
