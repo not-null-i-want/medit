@@ -16,7 +16,6 @@ $(document).on('click', '.selectPtnt', function() {
 			
 			let Arr_ptntAt = [];
 			let Arr_diagSeq = [];
-			/*console.log(res[0].diagSeq); */
 
 			// 배열에 진단날짜들 담아주는 부분 
 			for (let i = 0; i < res.length; i++) {
@@ -32,7 +31,6 @@ $(document).on('click', '.selectPtnt', function() {
 			}
 			
 			
-			/*console.log(Arr_diagSeq)*/
 			
 			// 테이블 생성
 			let tableHtml = '<table class="diagAtTable">';
@@ -72,7 +70,6 @@ $(document).on('click', '.selectPtnt', function() {
 			let selectedDiagAt = $(this).find('td:eq(0)').text(); // 솔직히 여기 0으로 해도 다적용되는지 잘모르겠음, 복습하기, 환자 테이블코드랑 같은 맥락인듯?
 		/*	alert("test444");*/
 /*			let selectedDiagAt  = $(this)[0].cells[0].innerText;*/
-			console.log(selectedDiagAt);
 			
 			$.ajax({
 				url: "ShowDiagOpinion",// Opinioin_Controller에있음
@@ -120,7 +117,6 @@ $(document).on('click', '.selectPtnt', function() {
 					}, 
 					
 					success: function(res) {
-					console.log(res.doctorOpinion);
 					let doctorOpinion = res.doctorOpinion;
 					
 					// 아직 진단전이면 공백으로 출력되게
