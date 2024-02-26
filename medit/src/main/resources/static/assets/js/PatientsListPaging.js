@@ -387,3 +387,7 @@ $(document).on('click', '.pageNumber', function() {
          }})
 });
 ///////////////////////////////////////////////////////////
+// 로고 클릭시 메인으로 이동
+$('#logo').on('click', function() {
+   location.href = '/Main';
+});
