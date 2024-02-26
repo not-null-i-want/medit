@@ -1,16 +1,12 @@
 // 환자 등록 버튼 클릭 시 이벤트 처리
 document.getElementById("plusBtn").addEventListener("click", function() {
 
-	// input 창 생성
-	let inputDiv = $("#inputPtnt");
-	//let videoSec = $("#video-section");
-	// var inputDiv = document.getElementById("inputPtnt");
-	
-	inputDiv.empty()
-	
+let videoElement = $("#main-section");
+    videoElement.html("");
+
 	// videoSec.html("")
 	
-	inputDiv.append(`
+	videoElement.append(`
 	<div id="inputDiv_Title">
 		<b id="patientPlus">환자등록</b>
 	</div>
