@@ -38,7 +38,7 @@ $("#modalOpenButton").on("click", function() {
 			$("#modalOpenButton").text(sa);
 		}, 500);
 	}, 800);
-	
+
 	$('#modalContainer').css('height', '150%');
 
 	$.ajax({
@@ -67,7 +67,7 @@ $("#modalOpenButton").on("click", function() {
 				event.preventDefault();  // 페이지 전환을 막습니다.
 
 				var url1 = $(this).attr('href');  // 링크의 href 속성을 가져옵니다.
-				
+
 				$.ajax({
 					url: url1,
 					contentType: "application/json;charset=UTF-8",
@@ -77,12 +77,14 @@ $("#modalOpenButton").on("click", function() {
 						dlist.empty();
 
 						dlist.append(`<div id="chatBox"></div>
-	<input id="messageInput" type="text" class="test">
-	<img src="assets/imgs/send.png" id="sendButton">`).trigger("create");
+	<div id="inputContainer">
+  　<input id="messageInput" type="text">　
+  <img src="assets/imgs/send.png" id="sendButton">
+</div>`).trigger("create");
 
 						data.forEach(function(c) {
 							let check = c.doctorId.doctorId == $('#modalCloseButton').text();
-							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/dicon.png';
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
 							let content = check ? `${c.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${c.chatting}`;
 
 							let msgDiv = `
@@ -100,7 +102,7 @@ $("#modalOpenButton").on("click", function() {
 						$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
 
 						console.log($('#modalCloseButton').text())
-						
+
 						$('#modalContainer').css('height', '350%');
 
 						let chat = {
@@ -156,14 +158,17 @@ $("#modalOpenButton").on("click", function() {
 							}
 
 							let check = json.doctorId.doctorId == chat.doctorId;
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
+							let content = check ? `${json.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${json.chatting}`;
 
 							let msgDiv = `
 	<div class="chatBox">
-		<div>
-			
-			<div class="message ${check ? 'my' : ''}"><img src=> ${json.chatting}</div>
-		</div>
-	</div>
+            <div>
+                <div class="message ${check ? 'my' : ''}">
+                    ${content}
+                </div>
+            </div>
+        </div>
 	`;
 							$('#chatBox').append(msgDiv);
 
