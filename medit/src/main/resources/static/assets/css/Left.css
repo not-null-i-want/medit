@@ -9,13 +9,6 @@
    display: block;
 }
 
-/* 환자 디테일 디폴트 이미지*/
-#ptntDetailDefault{
-	width: 100%;
-	height: 100%;
-	opacity: 5%;
-}
-
 /****** 검색창 ******/
 .search {
    position: relative;

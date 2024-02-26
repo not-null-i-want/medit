@@ -10,6 +10,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LeferiPoint-SpecialA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-SpecialA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html, body{
 	margin: 0;
@@ -20,9 +26,63 @@ html, body{
 	overflow-x: hidden; 
 	overflow-y: auto;
 	font-family: 'SUITE-Regular';
+	animation: mainConn 0.5s;
 }
 .container{
 	display: flex;
 	width: 100%;
 	height: 100%;
+}
+
+@keyframes mainConn{
+	from{
+		transform: scale(0.8);
+	}
+	to{
+		transform: scale(1);
+	}
+}
+
+
+/* 환자 디테일 디폴트 동영상*/
+#ptntDetail{
+	position: relative;
+}
+#ptntDetailDefault{
+	width: 100%;
+	height: 100%;
+	opacity: 30%;
+	object-fit: fill;
+	border-radius: 5px;
+	filter: grayscale(50%);
+	position: absolute;
+}
+#ptntDetailDefaultMsg{
+	display: inline-block;
+	font-family: LeferiPoint-SpecialA;
+	font-size: 19px;
+	color: rgba(255, 255, 255, 0.8);
+	animation: defaultMsg 2.5s infinite;
+	position: absolute;
+	margin: 130px 0px 130px 77px;
+}
+
+@keyframes defaultMsg{
+	0%{
+		opacity: 0%;
+	}
+	50%{
+		opacity: 100%;
+	}
+	100%{
+		opacity: 0%;
+	}
+}
+
+
+#diagAtDefault{
+	object-fit: fill;
+	width: 100%;
+	opacity: 10%;
+	filter: grayscale(70%);
 }

@@ -52,4 +52,5 @@ section {
 	border: none;
 	border-radius: 10px;
 	object-fit: cover; 
+	filter: grayscale(50%);
 }
