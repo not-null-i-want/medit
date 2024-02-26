@@ -206,7 +206,7 @@
 	display: block;
 	font-family: "MBC1961GulimM";
 	color: white;
-	margin-left: 30px;
+	margin-left: 70px;
 }
 .rgst_inputBox{
 	border-radius: 5px;
@@ -219,6 +219,7 @@
 	position: absolute;
 	outline: none;
 	color: #666666;
+	left: 350px;
 }
 .rgst_inputBox:focus{
 	background-color: #39568d;
@@ -262,7 +263,7 @@
 }
 .genderIcon{
 	width: 100px;
-	margin-left: 20px;
+	margin-left: 40px;
 }
 .genderIconPassive{
 	filter: grayscale(100%);
@@ -311,7 +312,7 @@
 }
 .searchAddr{
 	display:block;
-	margin-left: 250px;
+	margin-left: 290px;
 	margin-top: 7px;
 	position: absolute;
 	font-family: SUITE-Regular;
@@ -325,7 +326,7 @@
 
 #ptntBtn_rgst{
 	width: 1200px;
-	margin-left: 570px;
+	margin-left: 550px;
 	margin-top: 160px;
 	position: absolute;
 }
@@ -349,7 +350,7 @@
 	height: 30px;
 	display: inline;
 	position: absolute;
-	left: 307px;
+	left: 347px;
 	top: 109px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
@@ -358,7 +359,7 @@
 	height: 30px;
 	display: inline;
 	position: absolute;
-	left: -5px;
+	left: 35px;
 	top: 0px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
@@ -367,7 +368,7 @@
 	height: 30px;
 	display: inline;
 	position: absolute;
-	left: 310px;
+	left: 350px;
 	top: 225px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
@@ -376,7 +377,7 @@
 	height: 25px;
 	display: inline;
 	position: absolute;
-	left: 304px;
+	left: 346px;
 	top: 343px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
@@ -385,7 +386,7 @@
 	height: 28px;
 	display: inline;
 	position: absolute;
-	left: 310px;
+	left: 350px;
 	top: 455px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
