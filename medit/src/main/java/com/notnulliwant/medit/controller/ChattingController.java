@@ -18,7 +18,7 @@ import com.notnulliwant.medit.repository.ChattingsRepository;
 import com.notnulliwant.medit.repository.DoctorsRepository;
 
 @RestController
-public class YH_Controller {
+public class ChattingController {
 	
 	@Autowired
 	private DoctorsRepository d_repo;
