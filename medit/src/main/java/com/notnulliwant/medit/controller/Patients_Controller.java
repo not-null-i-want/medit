@@ -14,26 +14,19 @@ import com.notnulliwant.medit.repository.DoctorsRepository;
 import com.notnulliwant.medit.repository.PatientsRepository;
 
 @Controller
-public class JH_Controller {
+public class Patients_Controller {
    
    @Autowired
    private PatientsRepository repo;
   
    
-   @RequestMapping("/JH")
-    public String showPatientList(Model model) {
-        List<Patients> patientsList = repo.findAll();
-        
-        model.addAttribute("patientsList", patientsList);
-        
-        return "JH";
-    }
+   // 리다이렉트 할때 메인화면 불러오는 메소드
    @GetMapping("/Main")
    public String main() {
 		return "Main";
    }
    
-   
+   // 환자등록을 위한 메소드
    @RequestMapping("/savePatients")
 	public String join( Patients patients, String addr1, String addr2, String addr3) {
 		
