@@ -332,6 +332,15 @@ margin: 0px auto 10px;
    
 }
 
+#head-cell {
+    text-align: center;
+    font-size: 18px;
+}
+
+.hidden-cell {
+    display: none;
+}
+
 .diagAtTable td {
    padding: 0 30px;
        border: 1px solid rgb(255, 255, 255, 0.3);

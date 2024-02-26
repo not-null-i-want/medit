@@ -16,8 +16,9 @@ public class RestDiagnosis_Controller {
 	@Autowired
 	private DiagnosisRepository Diagrepo;
 
+	//진단 날짜 띄워주는 컨트롤러
 	@ResponseBody
-	@RequestMapping("/ShowPatientAt") // 진달 날짜 띄워주는 컨트롤러임 // 트러블슈팅, postmapping으로해놔서 오류가 405오류가 뜨던걸 requestmapping으로	바꿔주니 해결됨!
+	@RequestMapping("/ShowPatientAt") // 트러블슈팅, postmapping으로해놔서 오류가 405오류가 뜨던걸 requestmapping으로	바꿔주니 해결됨!
 	public List<Diagnosis> ShowPatientAt(Integer ptntId) {
 
 		List<Diagnosis> diag = Diagrepo.findAllByPtntId(ptntId);
@@ -26,22 +27,20 @@ public class RestDiagnosis_Controller {
 	
 		}
 	
+	//의사소견 띄워주는 컨트롤러
 	@ResponseBody
-	@RequestMapping("/ShowDiagOpinion") // 의사소견 띄워주는 컨트롤러
+	@RequestMapping("/ShowDiagOpinion")
 	public Diagnosis showDiagOpinion(Integer diagSeq) {
 
 		Diagnosis docOpinion = Diagrepo.findAllBydiagSeq(diagSeq);
-		System.out.println(docOpinion);
 		return docOpinion;
 
 	}
 
+	//의사소견 DB저장해주는 컨트롤러
 	@ResponseBody
 	@RequestMapping("/saveOpinion")
 	public String updateOpinion(Integer saveSeq, String saveOpinion) {
-
-		System.out.println(saveOpinion);
-		System.out.println(saveSeq);
 
 		Integer diagSeq = saveSeq;
 		String doctorOpinion = saveOpinion;
