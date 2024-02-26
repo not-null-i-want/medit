@@ -43,7 +43,7 @@ $(document).on('click', '.selectPtnt', function() {
 
 			for (let i = 0; i < res.length; i++) {
 				tableHtml += `
-					<tr class="test123">
+					<tr class="diagDate">
             			<td style="display: none;">${Arr_diagSeq[i]}</td>
            				<td>${Arr_ptntAt[i]}</td>
         			</tr>`;
@@ -60,9 +60,7 @@ $(document).on('click', '.selectPtnt', function() {
 			diagAt.html(tableHtml).trigger("create"); // jQueru를 사용하여 'diagDetail'이라는 HTML 엘리먼트의 내부 HTML을 'tableHtml'로 설정하는 부분임.
 
 
-
-
-			$('.test123').on('click', function(event) {
+			$('.diagDate').on('click', function(event) {			
 
 				$(this).addClass("PtntDiagAtActivity"); 			  // 현재 선택된 요소(this)에 "PtntDiagAt" 클래스를 추가	
 				$(this).siblings().removeClass("PtntDiagAtActivity"); // 현재 선택된 요소의 형제 요소들 중에서 "PtntDiagAt" 클래스를 가진 요소들을 찾아서 해당 클래스를 제거, 이 부분은 선택된 요소를 제외한 다른 형제 요소들의 클래스를 조작하는거임
