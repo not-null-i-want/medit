@@ -16,7 +16,7 @@ let lastBtn = document.getElementById("last");
 
 //////////////////// 첫 진입시 페이지 로딩 ///////////////
 $(document).ready(function() {
-   
+	
    $.ajax({
       url: "/paging",
       contentType: "application/json;charset=UTF-8",

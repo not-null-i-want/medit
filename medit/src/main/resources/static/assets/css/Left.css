@@ -212,17 +212,21 @@
 @keyframes ptntDetailAnim-1{
 	from{
 		opacity: 0%;
+		transform: scale(1.02);
 	}
 	to{
+		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes ptntDetailAnim-2{
 	from{
 		opacity: 0%;
+		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
+		transform: scale(1.0);
 	}
 }
 .ptntDetailBoxAnim-1{

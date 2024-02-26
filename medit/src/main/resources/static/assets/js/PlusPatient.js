@@ -2,52 +2,76 @@
 document.getElementById("plusBtn").addEventListener("click", function() {
 
 let mainSection = $("#main-section");
-   mainSection .html("");
-
-	// videoSec.html("")
 	
+	mainSection.empty();
 	mainSection.append(`
-	<div id="inputDiv_Input">
-    <form action="/savePatients" method="post" id="form_Input">
-        <p>환자명</p>
-        <input id="ptntName" name="ptntName" type="text" placeholder="환자명을 입력하세요">
-        <input id="ptntGender" type="radio" name="ptntGender" value="0">남
-        <input id="ptntGender" type="radio" name="ptntGender" value="1">여
-        <br><br>
+		<div class="tabName-2">
+			<div class="box">
 
-        <p>생년월일</p>
-        <input id="ptntBirthdate" type="date" name="ptntBirthdate">
-        <br><br>
+				<div class="title">
+					<span class="block"></span>
+					<h1>
+						Registration<span></span>
+					</h1>
+				</div>
 
-        <p>연락처</p>
-        <input id="ptntPhone" type="text" name="ptntPhone" placeholder="연락처를 입력하세요">
-        <br><br>
+				<div class="role">
+					<div class="block"></div>
+					<p>Patient</p>
+				</div>
 
-        <p>ID</p>
-        <input id="doctorId" type="text" name="doctorId" placeholder="ID를 입력하세요">
-        <br><br>
-
-        <p>주소</p>
-        <input type="text" id="sample4_postcode" placeholder="우편번호" name="addr3">
-        <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="searchAddr">
-        <br><br>
-
-        <input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="60" name="addr1" >
-        <br><br>
-
-        <input type="hidden" id="sample4_jibunAddress" placeholder="지번주소"  size="60">
-        <span id="guide" style="color:#999;display:none"></span>
-        <input type="text" id="sample4_detailAddress" placeholder="상세주소"  size="60" name="addr2">
-        <br>
-
-        <input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
-        <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" >
-        <br><br>
-
-        <input type="submit" value="등록　" id="inputBtn">
-        <input type="submit" value="취소　" id="outBtn"  onclick="window.open('Main')">
-    </form>
-</div>
+			</div>
+		</div>
+		<div id="ptntRegistration">
+			<video src="assets/videos/writeDiagnosis.mp4" id="ptntRegistrationVideo" autoplay loop muted></video>
+	        <form action="/savePatients" method="post" id="form_Input">
+	            <div id="ptntName_rgst" class="rgstCommon">
+					<img src="assets/imgs/rgst-name.png" class="rgst_icon_1"/>
+	                <label class="rgstLabel">환자명</label>
+	                <input id="ptntName" class="rgst_inputBox" name="ptntName" type="text" placeholder="환자명을 입력하세요">
+					<div id="ptntGender_rgst">
+						<img src="assets/imgs/rgst-gender.png" class="rgst_icon_2"/>
+						<label class="rgstLabel">성별</label>
+		                <input type="radio" name="ptntGender" value="0" id="male" hidden>
+						<label for="male">
+							<img src="assets/imgs/registration_male.png" class="genderIcon genderIconPassive" id="maleIcon"/>
+						</label>
+						<input type="radio" name="ptntGender" value="1" id="female" hidden>
+						<label for="female">
+		                	<img src="assets/imgs/registration_female.png" class="genderIcon genderIconPassive" id="femaleIcon"/>
+						</label>
+					</div>
+	            </div>
+	            <div id="ptntBirth_rgst" class="rgstCommon">
+					<img src="assets/imgs/rgst-birth.png" class="rgst_icon_3"/>
+	                <label class="rgstLabel">생년월일</label>
+	                <input id="ptntBirthdate" class="rgst_inputBox" type="date" name="ptntBirthdate">
+	            </div>
+	            <div id="ptntPhone_rgst" class="rgstCommon">
+					<img src="assets/imgs/rgst-phone.png" class="rgst_icon_4"/>
+	                <label class="rgstLabel">연락처</label>
+	                <input id="ptntPhone" class="rgst_inputBox" type="text" name="ptntPhone" placeholder="연락처를 입력하세요">
+	            </div>
+	            <div id="ptntAddr_rgst" class="rgstCommon">
+					<img src="assets/imgs/rgst-addr.png" class="rgst_icon_5"/>
+	                <label class="rgstLabel">주소</label>
+	                <input type="text" id="sample4_postcode" class="rgst_inputBox" placeholder="우편번호" name="addr3">
+	                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="searchAddr">
+	                <input type="text" id="sample4_roadAddress" class="rgst_inputBox" placeholder="도로명주소" name="addr1" >
+	        
+	                <input type="hidden" id="sample4_jibunAddress" class="rgst_inputBox" placeholder="지번주소">
+	                <span id="guide" style="color:#999;display:none"></span>
+	                <input type="text" id="sample4_detailAddress" class="rgst_inputBox" placeholder="상세주소" name="addr2">
+	        
+	                <input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
+	                <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" >
+	            </div>
+	            <div id="ptntBtn_rgst" class="rgstCommon">
+	                <input type="submit" value="등록" id="inputBtn" class="rgst_btn">
+	                <input type="submit" value="취소" id="outBtn" class="rgst_btn" onclick="window.open('Main')">
+	            </div> 
+	        </form>
+		</div>
     `).trigger("create");
 });
 
@@ -111,8 +135,24 @@ function searchAddress() {
 }
 
 
-
-
-
-
-
+/* 성별 이미지 눌렀을 때  */
+$(document).on('click', '#maleIcon', function(){
+	if($(this).hasClass("genderIconPassive")){
+		$(this).removeClass("genderIconPassive");
+		$(this).addClass("genderIconActive");
+		if($("#femaleIcon").hasClass("genderIconActive")){
+			$("#femaleIcon").removeClass("genderIconActive");
+			$("#femaleIcon").addClass("genderIconPassive");
+		}
+	}
+});
+$(document).on('click', '#femaleIcon', function(){
+	if($(this).hasClass("genderIconPassive")){
+		$(this).removeClass("genderIconPassive");
+		$(this).addClass("genderIconActive");
+		if($("#maleIcon").hasClass("genderIconActive")){
+			$("#maleIcon").removeClass("genderIconActive");
+			$("#maleIcon").addClass("genderIconPassive");
+		}
+	}
+});

@@ -16,7 +16,7 @@ const loadWriteDiag = () => {
 				<div class="title">
 					<span class="block"></span>
 					<h1>
-						Diagnose<span></span>
+						Diagnosis<span></span>
 					</h1>
 				</div>
 

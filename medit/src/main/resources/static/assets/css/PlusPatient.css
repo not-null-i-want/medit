@@ -1,76 +1,392 @@
-/****** 환자등록창 *******/
-#inputDiv_Title {
-	text-align: center;
-	width: 200px;
-	height: 40px;
+/* 탭 */
+.tabName-2 {
+	margin-top: 58px;
+	width: 300px;
+	height: 100px;
 	border: 1px solid rgb(255, 255, 255, 0.3);
-	border-radius: 20px;
-	color:white;
-	margin-top: 100px;
-	margin-left: 100px;
-	align-items: center;
-	justify-content: center;
-	line-height: 40px;
-	border-bottom-left-radius : 0px;
-	border-bottom-right-radius : 0px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: #383838;
 }
 
+#ptntRegistration, .tabName-2{
+  animation: diagnose 2s;
+}
 
-#inputDiv_Input{
-	margin-left: 100px; 
-	border: 1px solid rgb(255, 255, 255, 0.3);
-	border-radius: 10px;
-	margin-bottom: 400px; 
-	width: 70%;
-	height: 800px;
-	background: #525252;
-	color:white;
-	border-top-left-radius : 0px;
+.tabName-2 .box {
+  width: 250px;
+  height: 250px;
+  margin-left: 55px;
+  margin-top: 10px;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
 }
-#form_Input{
-	margin-top:80px;
-	margin-left:200px; 
-	height: 960px;
+.tabName-2 .box .title {
+  width: 78%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
-/* input {
-  width: 350px;
-  height: 40px;
-  font-size: 15px;
-  border: 0;
-  border-radius: 10px;
-  padding-left: 20px;
-  background-color: rgb(233, 233, 233);
-} */
-input#sample4_postcode{
-  width: 150px;
-  font-size: 15px;
+.tabName-2 .box .title .block {
+  width: 0%;
+  height: inherit;
+  background: #374e8b;
+  position: absolute;
+  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  display: flex;
 }
-input.searchAddr{
-    background-color:#0a0a23;
-    color: #fff;
-    border:none; 
-    border-radius: 10px; 
-    padding:4px;
-    width: 200px;
-    height: 40px;
+.tabName-2 .box .title h1 {
+  font-family: "Poppins";
+  color: #fff;
+  font-size: 32px;
+  -webkit-animation: mainFadeIn 2s forwards;
+  -o-animation: mainFadeIn 2s forwards;
+  animation: mainFadeIn 2s forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.tabName-2 .box .title h1 span {
+  width: 0px;
+  height: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #ffb510;
+  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  margin-left: 5px;
+  margin-top: -10px;
+  position: absolute;
+  bottom: 13px;
+  right: -12px;
+}
+.tabName-2 .box .role {
+  width: 32%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -10px;
+}
+.tabName-2 .box .role .block {
+  width: 0%;
+  height: inherit;
+  background: #369676;
+  position: absolute;
+  animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  display: flex;
+}
+.tabName-2 .box .role p {
+  animation: secFadeIn 2s forwards;
+  animation-delay: 3.2s;
+  opacity: 0;
+  font-weight: 400;
+  font-family: "Lato";
+  color: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
   }
-input#ptntGender{
-  width: 30px;
-  height: 20px;
-}  
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #e9d856;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #e9d856;
+    opacity: 1;
+    bottom: 45px;
+  }
+  65% {
+    width: 7px;
+    height: 7px;
+    bottom: 0px;
+    width: 15px;
+  }
+  80% {
+    width: 10px;
+    height: 10px;
+    bottom: 20px;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #e9d856;
+    border: 0px solid #222;
+    bottom: 13px;
+  }
+}
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
 
-input#inputBtn{
-	background-color:#0a0a23;
-	margin-left:80px;
-	width: 80px;
-	height: 40px;
-	color: white;
-	line-height: 20px;
+/* 환자 등록 비디오 */
+#ptntRegistrationVideo{
+	left: -400px;
+	opacity: 5%;
+	height: 840px;
+	width: 1860px;
+	border: none;
+	border-radius: 10px;
+	position: absolute;
 }
-input#outBtn{
-	background-color:#0a0a23;
-	width: 80px;
-	height: 40px;
-	color: white;
-	line-height: 20px;
+
+
+/* 환자 등록 */
+#ptntRegistration{
+	position: absolute;
+	margin-top: 98px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 1px solid rgb(255, 255, 255, 0.3);
+	/* background-color: red; */
+	width: 99.5%;
+	height: 840px;
+	top: 61px;
+	font-size: 20px;
 }
+
+.rgstLabel{
+	font-size: 30px;
+	display: block;
+	font-family: "MBC1961GulimM";
+	color: white;
+	margin-left: 30px;
+}
+.rgst_inputBox{
+	border-radius: 5px;
+	height: 40px;
+	font-family: SUITE-Regular;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: none;
+	position: absolute;
+	outline: none;
+	color: #666666;
+}
+.rgst_inputBox:focus{
+	background-color: #39568d;
+	color: white;
+	animation: textBoxPop 0.3s;
+}
+.rgst_inputBox:focus::placeholder{
+	color: white;
+}
+@keyframes textBoxPop{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.04);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+
+.rgst_AddrBox{
+	display: block;
+	margin-top: 8px;
+}
+.searchAddr:active{
+	background-color: #39568d;
+}
+
+#ptntName_rgst{
+	margin-top: 110px;
+	width: 1200px;
+}
+
+
+#ptntGender_rgst{
+	display: inline;
+	position: absolute;
+	left: 600px;
+	top: 110px;
+}
+.genderIcon{
+	width: 100px;
+	margin-left: 20px;
+}
+.genderIconPassive{
+	filter: grayscale(100%);
+}
+.genderIconActive{
+	filter: grayscale(0%);
+	animation: iconActive 0.3s;
+}
+@keyframes iconActive{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+
+
+
+#ptntBirth_rgst{
+	width: 1200px;
+	margin-top: 80px;
+}
+
+
+#ptntPhone_rgst{
+	width: 1200px;
+	margin-top: 80px;
+}
+
+
+#ptntAddr_rgst{
+	width: 1200px;
+	margin-top: 80px;
+}
+#sample4_roadAddress{
+	margin-top: 50px;
+	width: 500px;
+}
+#sample4_detailAddress{
+	margin-top: 100px;
+	width: 500px;
+}
+.searchAddr{
+	display:block;
+	margin-left: 250px;
+	margin-top: 7px;
+	position: absolute;
+	font-family: SUITE-Regular;
+	font-size: 15px;
+	height: 30px;
+	width: 130px;
+	border-radius: 7px;
+	border: none;
+}
+
+
+#ptntBtn_rgst{
+	width: 1200px;
+	margin-left: 570px;
+	margin-top: 160px;
+	position: absolute;
+}
+.rgst_btn{
+	font-family: SUITE-Regular;
+	font-size: 15px;
+	width: 70px;
+	height: 30px;
+	border-radius: 7px;
+	border: none;
+}
+
+.rgstCommon{
+	margin-left: 310px;
+	margin-top: 50px;
+}
+
+
+.rgst_icon_1{
+	width: 30px;
+	height: 30px;
+	display: inline;
+	position: absolute;
+	left: 307px;
+	top: 109px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
+}
+.rgst_icon_2{
+	width: 30px;
+	height: 30px;
+	display: inline;
+	position: absolute;
+	left: -5px;
+	top: 0px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
+}
+.rgst_icon_3{
+	width: 25px;
+	height: 30px;
+	display: inline;
+	position: absolute;
+	left: 310px;
+	top: 225px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
+}
+.rgst_icon_4{
+	width: 35px;
+	height: 25px;
+	display: inline;
+	position: absolute;
+	left: 304px;
+	top: 343px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
+}
+.rgst_icon_5{
+	width: 25px;
+	height: 28px;
+	display: inline;
+	position: absolute;
+	left: 310px;
+	top: 455px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
+}
+
