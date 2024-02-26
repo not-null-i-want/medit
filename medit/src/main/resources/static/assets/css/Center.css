@@ -28,15 +28,6 @@ section {
 	position: relative;
 }
 
-video{
-    opacity: 30%;
-    width: auto;
-    height: auto;
-    max-width: 150%;
-    max-height: 100%;
-    right: 120px;
-    border: 1px solid white;
-}
 #main-section-sub{
 	position: absolute;
 	margin-top: 38px;

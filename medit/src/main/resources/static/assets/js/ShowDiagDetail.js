@@ -6,7 +6,11 @@ $(document).on("click", ".diagDate", function(){
 		url: "showDiagDetail",
 		data: {"diagSeq" : seletedDiagSeq},
 		success: function(res){
-			console.table(res);
+			CxrPath = res;
+			
+			$("#main-section").append(`
+				<img src="${CxrPath}" width="700px" height="700px">
+			`)
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
