@@ -107,28 +107,6 @@ function searchAddress() {
 		}
 	}).open();
 }
-/////////////////////////////////////////////////////////////////////////////////////////////
-/*// 작성버튼 발생시 
-$("#inputBtn").on('click',inputPtnt);
-function inputPtnt() {
-	$.ajax({
-		url: "/savePatients",
-		method: "post",
-		data: {
-			ptntName : $("#ptntName").val(),
-			ptntGender : $("#ptntGender").val(),
-			ptntBirthdate : $("#ptntBirthdate").val(),
-			ptntPhone : $("#ptntPhone").val(),
-			doctorId : $("#doctorId").val()},
-			success : function(){
-				alert("굿")
-			},
-			error : function(){
-				alert("다시해라");
-			}
-	})*/
-// 취소버튼 발생시	
-//$(document).on('click', "#outButton", inputPtnt);
 
 
 
