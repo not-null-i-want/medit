@@ -29,6 +29,7 @@ const loadWriteDiag = () => {
 		</div>
 		<div id="writeDiagnosis">
 			<form action="diagnose" method="post" enctype="multipart/form-data">
+				<video src="assets/videos/writeDiagnosis.mp4" id="writeDiagVideo" autoplay loop muted></video>
 				<div class="writeDiagnosis_ptntName">
 					<img src="assets/imgs/diag_patient.svg" class="diag-person diag-pt">
 					<label for="ptntName-diag">환자명</label> 

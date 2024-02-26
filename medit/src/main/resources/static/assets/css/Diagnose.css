@@ -8,6 +8,16 @@
 	background-color: #383838;
 }
 
+#writeDiagVideo{
+	left: -400px;
+	opacity: 5%;
+	height: 840px;
+	width: 1830px;
+	border: none;
+	border-radius: 10px;
+	position: absolute;
+}
+
 #writeDiagnosis {
 	position: absolute;
 	margin-top: 98px;
