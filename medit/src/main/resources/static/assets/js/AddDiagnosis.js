@@ -30,17 +30,22 @@ const loadWriteDiag = () => {
 		<div id="writeDiagnosis">
 			<form action="diagnose" method="post" enctype="multipart/form-data">
 				<div class="writeDiagnosis_ptntName">
+					<img src="assets/imgs/diag_patient.svg" class="diag-person diag-pt">
 					<label for="ptntName-diag">환자명</label> 
 					<input type="text" value="${selectedPtntName_addDiagnosis}" class="fixedTextBox" id="ptntName-diag" disabled>
+					<div id="ptntName-underline">
+					</div>
 				</div>
 				<div class="writeDiagnosis_doctorName">
+					<img src="assets/imgs/diag_doctor.svg" class="diag-person diag-dc">
 					<label for="doctorName-diag">담당의</label>
 					<input type="text" value="${selectedDoctorName_addDiagnosis}" class="fixedTextBox" id="doctorName-diag" disabled>
+					<div id="doctorName-underline">
+					</div>
 				</div>
 				<div>
 					<input type="hidden" value="${selectedPtntId_addDiagnosis}" name="ptntId">
 					<input type="hidden" value="${selectedDoctorId_addDiagnosis}" name="doctorId"> 
-					
 					<div class="upload">
                         <div class="upload-files">
                             <header>

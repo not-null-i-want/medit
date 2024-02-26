@@ -1,6 +1,6 @@
 /* 업로드 박스 */
 .upload {
-  position: relative;
+  position: absolute;
   width: 40%;
   min-height: 355px;
   box-sizing: border-box;
@@ -292,6 +292,8 @@
   transform: translateY(15px);
   opacity: 0;
   visibility: hidden;
+  font-family: SUITE-Regular;
+  font-size: 15px;
 }
 .upload .upload-files footer .importar.active {
   transition: transform 0.5s 1.5s ease, opacity 0.5s 1.5s ease, background;
