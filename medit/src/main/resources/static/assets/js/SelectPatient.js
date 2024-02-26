@@ -15,6 +15,16 @@ $(document).on('click', '.selectPtnt', function() {
 	// 요소 선택시 해당 요소에 클래스 추가, 다른 형제 요소들 클래스 삭제 == 배경색 변경
 	$(this).addClass("selectPtntActive");
 	$(this).siblings().removeClass("selectPtntActive");
+	
+	// 환자 클릭시 환자 디테일 박스 투명도 애니메이션
+	if($("#ptntDetail").hasClass("ptntDetailBoxAnim-1") === true){
+		$("#ptntDetail").removeClass("ptntDetailBoxAnim-1");
+		$("#ptntDetail").addClass("ptntDetailBoxAnim-2");
+	} else {
+		$("#ptntDetail").removeClass("ptntDetailBoxAnim-2");
+		$("#ptntDetail").addClass("ptntDetailBoxAnim-1");
+		
+	}
    
    $.ajax({
       url : "ShowPatientDetail",
