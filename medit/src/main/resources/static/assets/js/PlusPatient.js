@@ -1,47 +1,53 @@
 // 환자 등록 버튼 클릭 시 이벤트 처리
 document.getElementById("plusBtn").addEventListener("click", function() {
 
-let videoElement = $("#main-section");
-    videoElement.html("");
+let mainSection = $("#main-section");
+   mainSection .html("");
 
 	// videoSec.html("")
 	
-	videoElement.append(`
-	<div id="inputDiv_Title">
-		<b id="patientPlus">환자등록</b>
-	</div>
+	mainSection.append(`
 	<div id="inputDiv_Input">
     <form action="/savePatients" method="post" id="form_Input">
-    환자명<br>
-    <input id="ptntName" name="ptntName" type="text" placeholder="환자명을 입력하세요">
-    <input id="ptntGender" type="radio" name="ptntGender" value="0">남
-    <input id="ptntGender" type="radio" name="ptntGender" value="1">여<br>
-    <br>
-    생년월일
-	<br>
-    <input id="ptntBirthdate" type="date" name="ptntBirthdate"><br><br><br>
-    연락처<br>
-	<input id="ptntPhone" type="text" name="ptntPhone" placeholder="연락처를 입력하세요"><br><br>
-    ID<br>
-	<input id="doctorId" type="text" name="doctorId" placeholder="ID를 입력하세요"><br><br><br>
-    주소
-	<br>
-	<input type="text" id="sample4_postcode" placeholder="우편번호" name="addr3">
-	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="searchAddr"><br><br>
-	<input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="60" name="addr1" ><br><br>
-	<input type="hidden" id="sample4_jibunAddress" placeholder="지번주소"  size="60">
-	<span id="guide" style="color:#999;display:none"></span>
-	<input type="text" id="sample4_detailAddress" placeholder="상세주소"  size="60" name="addr2"><br>
-	<input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
-	<input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" ><br>
-	<br><br>
-	<input type="submit" value="등록　" id="inputBtn">
-	<input type="submit" value="취소　" id="outBtn"  onclick="window.open('Main')">
-	</div>
-</form>
+        <p>환자명</p>
+        <input id="ptntName" name="ptntName" type="text" placeholder="환자명을 입력하세요">
+        <input id="ptntGender" type="radio" name="ptntGender" value="0">남
+        <input id="ptntGender" type="radio" name="ptntGender" value="1">여
+        <br><br>
 
+        <p>생년월일</p>
+        <input id="ptntBirthdate" type="date" name="ptntBirthdate">
+        <br><br>
+
+        <p>연락처</p>
+        <input id="ptntPhone" type="text" name="ptntPhone" placeholder="연락처를 입력하세요">
+        <br><br>
+
+        <p>ID</p>
+        <input id="doctorId" type="text" name="doctorId" placeholder="ID를 입력하세요">
+        <br><br>
+
+        <p>주소</p>
+        <input type="text" id="sample4_postcode" placeholder="우편번호" name="addr3">
+        <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="searchAddr">
+        <br><br>
+
+        <input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="60" name="addr1" >
+        <br><br>
+
+        <input type="hidden" id="sample4_jibunAddress" placeholder="지번주소"  size="60">
+        <span id="guide" style="color:#999;display:none"></span>
+        <input type="text" id="sample4_detailAddress" placeholder="상세주소"  size="60" name="addr2">
+        <br>
+
+        <input type="hidden" id="sample4_extraAddress" placeholder="참고항목"  size="60">
+        <input type="hidden" id="sample4_engAddress" placeholder="영문주소"  size="60" >
+        <br><br>
+
+        <input type="submit" value="등록　" id="inputBtn">
+        <input type="submit" value="취소　" id="outBtn"  onclick="window.open('Main')">
+    </form>
 </div>
-
     `).trigger("create");
 });
 
