@@ -1,5 +1,3 @@
-let writeDiagBtn = document.getElementById("testBtn");
-
 // console.log(selectedPtntId_addDiagnosis); // SelectPatient.js에서 가져온 변수
 // console.log(selectedDoctorId_addDiagnosis);
 // selectedPtntName_addDiagnosis;
@@ -76,11 +74,8 @@ const loadWriteDiag = () => {
 			</form>
 		</div>
 	`).trigger("create");
-	
 };
-writeDiagBtn.addEventListener("click", loadWriteDiag);
-
-
+$(document).on("click", ".diagAt-icon", loadWriteDiag);
 
 /* CXR 업로드 박스 */
 let App = {};
