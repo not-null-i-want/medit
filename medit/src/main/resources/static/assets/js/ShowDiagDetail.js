@@ -6,11 +6,21 @@ $(document).on("click", ".diagDate", function(){
 		url: "showDiagDetail",
 		data: {"diagSeq" : seletedDiagSeq},
 		success: function(res){
-			CxrPath = res;
 			
-			$("#main-section").append(`
-				<img src="${CxrPath}" width="700px" height="700px">
-			`)
+			$("#main-section").html(`
+				<img src="${res}" id="cxrImg"/>
+                <div id="graph">
+
+                </div>
+                <div id="originalCxr">
+                    <div>
+
+                    </div>
+                    <div>
+                        <span>현재 환자 CXR</span>
+                    </div>
+                </div>
+			`).trigger("create");
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
