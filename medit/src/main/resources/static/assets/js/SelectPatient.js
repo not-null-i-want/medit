@@ -23,7 +23,6 @@ $(document).on('click', '.selectPtnt', function() {
 	} else {
 		$("#ptntDetail").removeClass("ptntDetailBoxAnim-2");
 		$("#ptntDetail").addClass("ptntDetailBoxAnim-1");
-		
 	}
    
    $.ajax({

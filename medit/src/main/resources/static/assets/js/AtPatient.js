@@ -26,6 +26,24 @@ $(document).on('click', '.selectPtnt', function() {
 	seletedPtntId = $(this)[0].cells[0].innerText;
 	/*diagAtList = [];*/
 	
+	// 환자 클릭시 환자 디테일 박스 투명도 애니메이션
+	if($("#diagnosisDate").hasClass("diagnosisDateBoxAnim-1") === true){
+		$("#diagnosisDate").removeClass("diagnosisDateBoxAnim-1");
+		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-2");
+	} else {
+		$("#diagnosisDate").removeClass("diagnosisDateBoxAnim-2");
+		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-1");
+	}
+	
+	if($("#pageNumberSpace_AT").hasClass("pageNumberSpace_ATBoxAnim-1") === true){
+		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-1");
+		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-2");
+	} else {
+		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-2");
+		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-1");
+	}
+	
+	
 	$.ajax({
 		url: "/diagAtPaging",
 		data: { "ptntId": seletedPtntId },
@@ -83,7 +101,7 @@ $(document).on('click', '.selectPtnt', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 			
@@ -155,7 +173,7 @@ $(document).on('click', '#next_AT', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 			
@@ -229,7 +247,7 @@ $(document).on('click', '#pre_AT', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 			
@@ -304,7 +322,7 @@ $(document).on('click', '#first_AT', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 			
@@ -379,7 +397,7 @@ $(document).on('click', '#last_AT', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 
@@ -456,7 +474,7 @@ $(document).on('click', '.pageNumber_AT', function() {
            				<td>${Arr_ptntAt[i]}</td>
         				</tr>`;}
 				tableHtml += '</table>';
-				tableHtml += '<div class="circle-icon">' + '<img src="assets/imgs/test2.png" >' + '</div>';
+				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
 				opinion.html("").trigger("create");
 			
@@ -513,7 +531,7 @@ $(document).on('click', '.diagDate', function() {
 							<td>${doctorOpinion}</td>
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/test2.png" >
+					<img src="assets/imgs/OpinionSave_icon.png" >
 					</div>
 					`)
 
@@ -553,7 +571,7 @@ $(document).on('click', '.saveOpinion', function() {
 						</tr>		
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/test2.png" >
+					<img src="assets/imgs/OpinionSave_icon.png" >
 					</div>
 					`)
 		}
