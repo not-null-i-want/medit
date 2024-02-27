@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.notnulliwant.medit.entity.Diagnosis;
+import com.notnulliwant.medit.entity.PagingDiagAt;
 import com.notnulliwant.medit.entity.PagingPatients;
 import com.notnulliwant.medit.entity.Patients;
 import com.notnulliwant.medit.repository.DiagnosisRepository;
@@ -28,27 +30,30 @@ public class DiagAtPaging_Controller {
 	@Autowired
 	private DiagnosisRepository diagnosisRepo;
 
-	// 환자 목록 페이징 //
-	/*
-	 * @GetMapping("/paging") public PagingPatients paging(@PageableDefault(page =
-	 * 1) Pageable pageable, Model mdl) { Page<Patients> ptntList =
-	 * diagnosisService.paging(pageable);
-	 * 
-	 * List<Patients> ptnts = ptntList.getContent();
-	 * 
-	 * PagingPatients pagingpatients = new PagingPatients();
-	 * 
-	 * int blockLimit = 5; // 페이지 개수 조정 int startPage = (((int) Math.ceil(((double)
-	 * pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; int endPage =
-	 * Math.min((startPage + blockLimit - 1), ptntList.getTotalPages());
-	 * 
-	 * pagingpatients.setPatients(ptnts);
-	 * pagingpatients.setFirst(ptntList.isFirst());
-	 * pagingpatients.setLast(ptntList.isLast());
-	 * pagingpatients.setNumber(ptntList.getNumber());
-	 * pagingpatients.setTotalPage(ptntList.getTotalPages());
-	 * pagingpatients.setStartPage(startPage); pagingpatients.setEndPage(endPage);
-	 * 
-	 * return pagingpatients; }
-	 */
+	// 진단 목록 페이징 //
+	@GetMapping("/diagAtPaging") 
+	public PagingDiagAt paging_AT(@PageableDefault(page = 1) Pageable pageable, Integer ptntId) { 
+			
+		Page<Diagnosis> diaList = diagnosisService.Atpaging(pageable, ptntId);
+			
+		List<Diagnosis> diag = diaList.getContent();
+			
+		PagingDiagAt pagingdiagat = new PagingDiagAt();
+		  
+		int blockLimit = 4; // 페이지 개수 조정 
+		int startPage = (((int) Math.ceil(((double)pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; 
+		int endPage = Math.min((startPage + blockLimit - 1), diaList.getTotalPages());
+		  
+		pagingdiagat.setDiagnosis(diag);
+		pagingdiagat.setFirst(diaList.isFirst());
+		pagingdiagat.setLast(diaList.isLast());
+		pagingdiagat.setNumber(diaList.getNumber());
+		pagingdiagat.setTotalPage(diaList.getTotalPages());
+		pagingdiagat.setStartPage(startPage); 	
+		pagingdiagat.setEndPage(endPage);
+		  
+		return pagingdiagat; 
+		
+		}
+		
 }

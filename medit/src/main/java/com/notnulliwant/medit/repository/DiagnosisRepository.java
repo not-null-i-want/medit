@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,13 +18,12 @@ import com.notnulliwant.medit.entity.Doctors;
 @Repository
 public interface DiagnosisRepository extends JpaRepository<Diagnosis, Integer> {
    
-   //@Query(value="SELECT * FROM DIAGNOSIS WHERE PTNT_ID = :ptntId", nativeQuery=true)
    List<Diagnosis> findAllByPtntId(Integer ptntId); // BH , 환자 번호가져올거임
    
    Diagnosis findAllBydiagSeq(Integer diagSeq);  // 의사소견쪽
    
+   public Page<Diagnosis> findByPtntId(Pageable pageable, Integer keyword);
    
-	/* void updateDoctorOpinionByDiagSeq(Integer diagSeq, String doctorOpinion); */
    @Transactional
    @Modifying
    @Query("UPDATE Diagnosis d SET d.doctorOpinion = :doctorOpinion WHERE d.diagSeq = :diagSeq")
