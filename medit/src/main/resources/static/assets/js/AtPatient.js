@@ -12,6 +12,7 @@ let startPage_AT;
 let endPage_AT;
 
 let isHidden = true;
+
 let numtable;
 let seletedPtntId;
 let tableHtmlAT;
@@ -26,7 +27,7 @@ $(document).on('click', '.selectPtnt', function() {
 	seletedPtntId = $(this)[0].cells[0].innerText;
 	/*diagAtList = [];*/
 	
-	// 환자 클릭시 환자 디테일 박스 투명도 애니메이션
+	// 환자 클릭시 진단날짜 디테일 박스 투명도 애니메이션
 	if($("#diagnosisDate").hasClass("diagnosisDateBoxAnim-1") === true){
 		$("#diagnosisDate").removeClass("diagnosisDateBoxAnim-1");
 		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-2");
@@ -35,6 +36,7 @@ $(document).on('click', '.selectPtnt', function() {
 		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-1");
 	}
 	
+	// 환자 클릭시 진단날짜 관련 페이징 투명도 애니메이션
 	if($("#pageNumberSpace_AT").hasClass("pageNumberSpace_ATBoxAnim-1") === true){
 		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-1");
 		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-2");
@@ -42,7 +44,6 @@ $(document).on('click', '.selectPtnt', function() {
 		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-2");
 		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-1");
 	}
-	
 	
 	$.ajax({
 		url: "/diagAtPaging",
@@ -57,7 +58,7 @@ $(document).on('click', '.selectPtnt', function() {
 			startPage_AT = res.startPage;
 			endPage_AT = res.endPage;
 			
-			// 페이징 hidden고나련 숨겨져있는 경우에만 토글 실행하게 하기
+			// 페이징 hidden관련 숨겨져있는 경우에만 토글 실행하게 하기
 			if (isHidden) { 
 				$('.hiddenAT').toggle();
 				isHidden = false; 
