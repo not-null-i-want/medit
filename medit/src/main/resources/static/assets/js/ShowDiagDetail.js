@@ -20,10 +20,14 @@ $(document).on("click", ".diagDate", function(){
                         <span>현재 환자 CXR</span>
                     </div>
                 </div>
+				<div id="proCxr">
+
+				</div>
 			`).trigger("create");
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
 		}
 	});
+	
 });

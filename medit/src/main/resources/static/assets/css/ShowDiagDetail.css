@@ -9,12 +9,12 @@
 
 #graph {
 	position: absolute;
-	margin-right: 2px;
+	margin-right: 6px;
 	margin-top: 2px;
 	left: 780px;
 	width: 500px;
 	height: 760px;
-	border-radius: 5px;
+	border-radius: 6px;
 	border: 1px solid rgb(255, 255, 255, 0.3);
 }
 
@@ -63,4 +63,14 @@
 	height: 100%;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+}
+
+#proCxr{
+	position: absolute;
+	bottom: 20px;
+	left: 200px;
+	border: 1px solid rgb(255, 255, 255, 0.3);
+	border-radius: 5px;
+	width: 1080px;
+	height: 220px;
 }
