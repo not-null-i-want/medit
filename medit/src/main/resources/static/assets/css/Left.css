@@ -320,10 +320,11 @@ margin: 0px auto 10px;
        border: 1px solid white;
        margin: 5px auto;
        width: 90%;
-       height: 205px;  
+       height: 220px;  
        border: 1px solid rgb(255, 255, 255, 0.3);
        border-radius: 5px;
        position: relative;
+        overflow: hidden;
 }
 
 
@@ -385,12 +386,13 @@ margin: 0px auto 10px;
 }
 
 .diagAtTable {
-   font-size: 15px;
+   font-size: 18px;
    color: #fff;
    border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
    border-style: hidden;
    table-layout: fixed;
+    overflow: hidden;
+    border: none;
 }
 
 #diagnosisDate tr:first-child {
@@ -410,7 +412,9 @@ margin: 0px auto 10px;
 
 #head-cell {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    height: 35px;
+    /* font-weight: bold; */
 }
 
 .hidden-cell {
@@ -421,13 +425,17 @@ margin: 0px auto 10px;
    /* padding: 0 30px; */
       /*  border: 1px solid rgb(255, 255, 255, 0.3); */
        width: 300px;
-       height: 40.3px;
+       height: 45.9px;
        align-items: center;
+       font-size: 18px;
        /* padding-left: 50px;  */
        /* border: 1px solid rgb(255, 255, 255, 0.3); */
        text-align: left;
        /* test-magin:left; */
+       
+       
 }
+
 
 
 .diagAtTable tr:nth-child(even)  {
@@ -443,13 +451,14 @@ margin: 0px auto 10px;
     }
     
 .diagAtTable tr:nth-child(1) td{
+	
    border-top-left-radius: 3.8px;
    border-top-right-radius: 5px;
 }
     
 .diagAtTable tr:nth-child(5) td{
-   border-bottom-left-radius: 5px;
-   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 6.5px;
+   border-bottom-right-radius: 6.5px;
 }
     
 
@@ -464,7 +473,6 @@ margin: 0px auto 10px;
 
 .diagAtTable td {
    padding: 0 10px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
 } 
 
 #pageNumberSpace_AT {
@@ -560,6 +568,6 @@ margin: 0px auto 10px;
 
 
 
-table, tr, td {
+/* table, tr, td {
    border: 1px solid white;
-}
+} */
