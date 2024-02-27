@@ -361,7 +361,7 @@ margin: 0px auto 10px;
     height: 30px; /* 아이콘의 높이 */
     border-radius: 50%; /* 원 모양으로 만들기 */
     cursor: pointer; /* 마우스 포인터 모양 변경 */
-    margin-top: 5.5px;
+    margin-top: 4px;
     margin-right: 5px;
     filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
@@ -404,7 +404,7 @@ margin: 0px auto 10px;
 
 #head-cell {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     height: 35px;
     /* font-weight: bold; */
 }
