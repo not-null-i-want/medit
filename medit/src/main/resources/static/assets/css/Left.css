@@ -328,21 +328,17 @@ margin: 0px auto 10px;
 @keyframes diagnosisDateAnim-1{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
-		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes diagnosisDateAnim-2{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
-		transform: scale(1.0);
 	}
 }
 .diagnosisDateBoxAnim-1{
@@ -382,7 +378,7 @@ margin: 0px auto 10px;
 }
 
 .diagAtTable {
-   font-size: 18px;
+   font-size: 15px;
    color: #fff;
    border-collapse: collapse;
    border-style: hidden;
@@ -423,7 +419,7 @@ margin: 0px auto 10px;
        width: 300px;
        height: 45.9px;
        align-items: center;
-       font-size: 18px;
+       font-size: 16px;
        /* padding-left: 50px;  */
        /* border: 1px solid rgb(255, 255, 255, 0.3); */
        text-align: left;
@@ -485,21 +481,17 @@ margin: 0px auto 10px;
 @keyframes pageNumberSpace_ATAnim-1{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
-		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes pageNumberSpace_ATAnim-2{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
-		transform: scale(1.0);
 	}
 }
 .pageNumberSpace_ATBoxAnim-1{
