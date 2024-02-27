@@ -28,13 +28,11 @@ $("#close").click(function() {
 $("#modalOpenButton").on("click", function() {
 	var sa = $(this).text();
 	$(this).text("");
-	$(this).addClass("ball");
 	setTimeout(function() {
 		$("#modalContainer").fadeIn();
 		$("#close").css("width", "30px");
 		$("#close").css("height", "30px");
 		setTimeout(function() {
-			$("#modalOpenButton").removeClass("ball");
 			$("#modalOpenButton").text(sa);
 		}, 500);
 	}, 800);
