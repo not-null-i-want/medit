@@ -14,7 +14,7 @@ $(document).on("click", ".diagDate", function(){
                 </div>
                 <div id="originalCxr">
                     <div>
-
+						<img src="${res}" id="originalCxrBottom"/>
                     </div>
                     <div>
                         <span>현재 환자 CXR</span>
