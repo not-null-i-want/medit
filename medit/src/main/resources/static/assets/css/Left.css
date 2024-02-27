@@ -449,8 +449,8 @@ margin: 0px auto 10px;
 }
     
 .diagAtTable tr:nth-child(5) td{
-   border-bottom-left-radius: 6.5px;
-   border-bottom-right-radius: 6.5px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
 }
     
 

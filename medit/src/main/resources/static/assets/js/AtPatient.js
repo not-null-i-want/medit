@@ -11,7 +11,8 @@ let totalPage_AT;
 let startPage_AT;
 let endPage_AT;
 
-let isHidden = true;
+let AtHidden = true;
+/*let OpiHidden = true;*/
 
 let numtable;
 let seletedPtntId;
@@ -59,10 +60,11 @@ $(document).on('click', '.selectPtnt', function() {
 			endPage_AT = res.endPage;
 			
 			// 페이징 hidden관련 숨겨져있는 경우에만 토글 실행하게 하기
-			if (isHidden) { 
+			if (AtHidden) { 
 				$('.hiddenAT').toggle();
-				isHidden = false; 
+				AtHidden = false; 
 			}
+			
 			/*tableHtmlAT = `
 			<div id="diagLeftSpace">
 						<img src="assets/imgs/firstBtn.svg" id="first_AT"
@@ -543,6 +545,11 @@ $(document).on('click', '.diagDate', function() {
 
 /////// 의사소견창 수정 아이콘 누르면 수정하는 부분 ///////
 $(document).on('click', '.opinion-icon', function() {
+	
+	/*if (OpiHidden) { 
+				$('.hiddenOpinion').toggle();
+				OpiHidden = false; 
+			}*/
 	// 현재 opinion 영역의 내용 가져오기
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
 	// textarea로 교체
