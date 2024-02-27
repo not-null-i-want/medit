@@ -5,10 +5,82 @@
 }
 /* 우측 상단 버튼모음 */
 #btns {
-	border: 1px solid white;
 	width: 100%;
 	height: 150px;
 	box-sizing: border-box;
+}
+#plusBtn {
+	position: relative;
+	background-color: #525252;
+	top: 50px;
+	right: -40px;
+	width: 80px;
+	height: 80px;
+	border-radius: 30px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-webkit-transition: all 0.25s ease-in-out;
+  	-moz-transition: all 0.25s ease-in-out;
+  	-ms-transition: all 0.25s ease-in-out;
+  	-o-transition: all 0.25s ease-in-out;
+  	transition: all 0.25s ease-in-out;
+}
+#plusBtn:hover {
+	background-color: #39568d;
+	animation: btnHover 0.3s;
+}
+#addPtntIcon{
+	position: absolute;
+	left: 13px;
+	top: 10px;
+	width: 55px;
+	height: 55px;
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(110%) contrast(101%);
+}
+#chatBtn{
+	position: relative;
+	top: -30px;
+	right: -140px;
+	background-color: #525252;
+	width: 80px;
+	height: 80px;
+	border-radius: 30px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-webkit-transition: all 0.25s ease-in-out;
+  	-moz-transition: all 0.25s ease-in-out;
+  	-ms-transition: all 0.25s ease-in-out;
+  	-o-transition: all 0.25s ease-in-out;
+  	transition: all 0.25s ease-in-out;
+}
+#chatBtn:hover {
+	background-color: #39568d;
+	animation: btnHover 0.3s;
+}
+@keyframes btnHover{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1.0);	
+	}
+}
+#modalOpenButton{
+	position: absolute;
+	left: 13px;
+	top: 12px;
+	width: 55px;
+	height: 55px;
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(110%) contrast(101%);
 }
 
 /* 진단 결과 */
