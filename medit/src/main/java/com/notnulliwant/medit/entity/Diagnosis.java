@@ -15,12 +15,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.notnulliwant.medit.serializer.DoctorSerializer;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -31,6 +33,8 @@ import lombok.Data;
        initialValue=1,
        allocationSize = 1
        )
+@DynamicInsert
+@NoArgsConstructor
 public class Diagnosis {
    
    @Id
@@ -60,5 +64,15 @@ public class Diagnosis {
    public String toString() {
       return "Diagnosis";
    }
+   
+// 진단 날짜 목록 페이징에 사용할 생성자
+public Diagnosis(Integer DiagSeq, Integer PtntId, Doctors DoctorId, 
+		   Date DiagAt, String DoctorOpinion ) {
+   this.diagSeq = DiagSeq;
+   this.ptntId = PtntId;
+   this.doctorId = DoctorId;
+   this.diagAt = DiagAt;
+   this.doctorOpinion = DoctorOpinion;
+}
    
 }

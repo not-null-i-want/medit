@@ -23,24 +23,21 @@ public class DiagnosisService {
 	public DiagnosisRepository diagRepo;
 
 	
-	// 환자 목록 페이징 //
-	/*public Page<Patients> paging(Pageable pageable) {
+	// 진단 목록 페이징 //
+		public Page<Diagnosis> Atpaging(Pageable pageable, Integer ptntId ) {
 
-		int page = pageable.getPageNumber() - 1;
-		int pageLimit = 5; // 한 번에 출력되는 페이지 수
-	
-		Pageable pageRequest = PageRequest.of(page, pageLimit, Sort.by("ptntId").descending());
+			int page = pageable.getPageNumber() - 1;
+			int pageLimit = 4; // 한 번에 출력되는 페이지 수
+		
+			Pageable pageRequest = PageRequest.of(page, pageLimit, Sort.by("diagSeq").descending());
 
-		Page<Diagnosis> ptntEntities = diagRepo.findAll(pageRequest);*/
-
-		/*
-		 * Page<Diagnosis> diagList = diagEntities.map(diagnosis -> new
-		 * Diagnosis(diagnosis.getPtntId(), patient.getDoctorId(), patient.,
-		 * patient.getPtntGender(), patient.getPtntBirthdate(), patient.getPtntAddr(),
-		 * patient.getPtntPhone()));
-		 * 
-		 * return ptntList;
-		 */
-	}
-	/* } */
- 
+			Page<Diagnosis> diagEntities = diagRepo.findByPtntId(pageRequest, ptntId);
+			
+			Page<Diagnosis> diagList = diagEntities.map(diagnosis -> new Diagnosis(diagnosis.getDiagSeq(), diagnosis.getPtntId(), 
+					diagnosis.getDoctorId(), diagnosis.getDiagAt(), 
+					diagnosis.getDoctorOpinion()));
+			 
+			return diagList;
+			
+		}
+	 } 

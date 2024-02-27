@@ -19,11 +19,7 @@ let test = modal.getElementsByClassName("test");
 // 채팅 리스트 불러오기
 let dlist = $("#modalContent");
 
-$("#close").click(function() {
-	$("#modalContainer").fadeOut();
-	$("#close").css("width", "0px");
-	$("#close").css("height", "0px");
-});
+
 
 $("#modalOpenButton").on("click", function() {
 	var sa = $(this).text();
@@ -52,14 +48,21 @@ $("#modalOpenButton").on("click", function() {
 				var link = "/doctor/" + d.doctorId;
 
 				dlist.append(`
-				<div>
-				<img src="assets/imgs/dicon.png" class="dicon">
-                    	<a class="detail-link" href="${link}">
+				<button id="close"></button>
+				<div class="dicon">
+				<img src="assets/imgs/dicon.png" class="dicon"></div>
+                    	<div class="detail-link"><a class="detail-link" href="${link}">
                         	${d.doctorName}
-                    	</a>
-                    	</div> <br>
+                    	</a></div>
+                    	 <br>
             `).trigger("create");
 			})
+
+			$("#close").click(function() {
+				$("#modalContainer").fadeOut();
+				$("#close").css("width", "0px");
+				$("#close").css("height", "0px");
+			});
 
 			$('.detail-link').on('click', function(event) {
 				event.preventDefault();  // 페이지 전환을 막습니다.
@@ -75,10 +78,10 @@ $("#modalOpenButton").on("click", function() {
 						dlist.empty();
 
 						dlist.append(`<div id="chatBox"></div>
-	<div id="inputContainer">
+	
   　<input id="messageInput" type="text">　
   <img src="assets/imgs/send.png" id="sendButton">
-</div>`).trigger("create");
+`).trigger("create");
 
 						data.forEach(function(c) {
 							let check = c.doctorId.doctorId == $('#modalCloseButton').text();

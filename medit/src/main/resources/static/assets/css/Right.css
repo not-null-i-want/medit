@@ -123,6 +123,7 @@
     border-radius: 50%; /* 원 모양으로 만들기 */
     cursor: pointer; /* 마우스 포인터 모양 변경 */
     margin-bottom: 5px;
+    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
 
 #opinion .opinion-icon img {

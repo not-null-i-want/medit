@@ -7,10 +7,19 @@
 }
 
 #messageInput {
-	width: 250px;
+	width: 180px;
+	height: 30px;
+	border: none;
+	position: absolute;
+	padding-left: 10px;
+	border-radius: 5px;
+	font-family: SUITE-Regular;
+	outline: none;
+	font-size: 18px;
 }
 
 .message.my {
+	font-size: 18px;
 	text-align: right;
 	background-color: #c0c0c0;
 	border-top-left-radius: 20px;
@@ -20,6 +29,7 @@
 }
 
 .message {
+	font-size: 18px;
 	text-align: left;
 	background-color: #d8d8d8;
 	border-top-left-radius: 20px;
@@ -34,6 +44,11 @@
 	border-radius: 5px;
 }
 
+.detail-link{
+	font-size: 18px;
+	display: inline-block;
+}
+
 #modalCloseButton {
 	display: none;
 }
@@ -41,10 +56,9 @@
 #sendButton {
 	width: 25px;
 	height: 25px;
-}
-
-#inputContainer {
-  display: flex;
+	bottom: 25px;
+	right: 35px;
+	position: absolute;
 }
 
 a {
@@ -55,10 +69,10 @@ a {
 .dicon{
 	width: 30px;
 	height: 30px;
+	display: inline-block;
 }
 
 /* 모달창 */
-
 #modalContainer {
   width: 115%;
   left: -10%;
@@ -72,7 +86,7 @@ a {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0px 6px 18px -5px rgba(245, 245, 245, 1);
-  
+    
 }
 
 .smallgap {
@@ -91,11 +105,12 @@ a {
   position: absolute;
   right: 20px;
   top: 20px;
-  transition: 0.4s all;
+  /* transition: 0.4s all; */
 }
 
 #modalContent {
 	width: 200px;
 	height: 300px;
 	padding: 15px;
+	
 }
