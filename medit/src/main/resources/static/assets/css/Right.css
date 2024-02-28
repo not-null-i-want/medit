@@ -114,18 +114,35 @@
        position: relative;
 }
 
-#opinion .opinion-icon {
+#opinion {
+    position: relative;
+}
+
+#opinion .opinion-icon, #opinion .save-icon {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 40px; /* 아이콘의 너비 */
-    height: 50px; /* 아이콘의 높이 */
-    border-radius: 50%; /* 원 모양으로 만들기 */
-    cursor: pointer; /* 마우스 포인터 모양 변경 */
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
     margin-left: 10px;
     margin-bottom: 10px;
     filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
+
+/* #opinion .opinion-icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px; 아이콘의 너비
+    height: 50px; 아이콘의 높이
+    border-radius: 50%; 원 모양으로 만들기
+    cursor: pointer; 마우스 포인터 모양 변경
+    margin-left: 10px;
+    margin-bottom: 10px;
+    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
+} */
 
 #opinion .opinion-icon img {
     width: 100%;
@@ -133,18 +150,19 @@
     object-fit: cover;
 }
 
-#opinion .save-icon {
+
+/* #opinion .save-icon {
 	position: absolute;
     bottom: 0;
-    left: 2px;
-    width: 40px; /* 아이콘의 너비 */
-    height: 50px; /* 아이콘의 높이 */
-    border-radius: 50%; /* 원 모양으로 만들기 */
-    cursor: pointer; /* 마우스 포인터 모양 변경 */
+    left: 1;
+    width: 40px; 아이콘의 너비
+    height: 50px; 아이콘의 높이
+    border-radius: 50%; 원 모양으로 만들기
+    cursor: pointer; 마우스 포인터 모양 변경
     margin-left: 10px;
     margin-bottom: 10px;
-    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
-}
+  	filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
+} */
 
 #opinion .save-icon img {
     width: 100%;
