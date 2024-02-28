@@ -10,5 +10,7 @@ import com.notnulliwant.medit.entity.Diagnosis;
 public interface CxrsRepository extends JpaRepository<Cxrs, Integer>{
 
 	Cxrs findByDiagSeq(Diagnosis diagSeq);
-
+	
+	Cxrs findCxrSeqByCxrRealname(String cxrRealname);
+	
 }

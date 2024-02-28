@@ -27,6 +27,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.notnulliwant.medit.entity.Cxrs;
+import com.notnulliwant.medit.entity.Deeps;
 import com.notnulliwant.medit.entity.Diagnosis;
 import com.notnulliwant.medit.repository.CxrsRepository;
 import com.notnulliwant.medit.repository.DeepsRepository;
@@ -88,7 +89,9 @@ public class DiagnosisController {
 		});
 		String s3_url = (String) map1.get("s3_url");
 		List<Map<String, String>> result = (List<Map<String, String>>) map1.get("result");
+		String resultStr = mapper.writeValueAsString(result);
 		System.out.println(result);
+		System.out.println(resultStr);
 
 		// 확장자 추출
 
@@ -121,6 +124,15 @@ public class DiagnosisController {
 		cxrs2.setCxrOriginal('1');
 		
 		cxrsRepo.save(cxrs2); // DB 출력 CXR 추가
+		
+		Cxrs cxrseq = cxrsRepo.findCxrSeqByCxrRealname(s3_url);
+		
+		Deeps deep = new Deeps();
+		
+		deep.setCxrSeq(cxrseq);
+		deep.setDeepResult(resultStr);
+		
+		deepsRepo.save(deep);
 		
 		return "redirect:Main";
 	}

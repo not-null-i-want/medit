@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.Data;
 
 @Entity
@@ -37,6 +39,7 @@ public class Deeps {
 	@Column(name = "DEEP_RESULT")
 	private String deepResult;
 	
+	@CreationTimestamp
 	@Column(name = "CREATED_AT")
 	private Date createdAt;
 	
