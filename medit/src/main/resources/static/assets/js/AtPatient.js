@@ -25,6 +25,8 @@ let currentOpinion;
 
 $(document).on('click', '.selectPtnt', function() {
 
+	$('#diagnosisDate').css('height', '220px');
+
 	seletedPtntId = $(this)[0].cells[0].innerText;
 	/*diagAtList = [];*/
 	
