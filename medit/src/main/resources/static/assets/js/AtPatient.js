@@ -13,7 +13,7 @@ let endPage_AT;
 
 let AtHidden = true;
 /*let OpiHidden = true;*/
-
+let OpiHidden = true;
 let numtable;
 let seletedPtntId;
 let tableHtmlAT;
@@ -551,7 +551,10 @@ $(document).on('click', '.opinion-icon', function() {
 				OpiHidden = false; 
 			}*/
 	// 현재 opinion 영역의 내용 가져오기
+	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
+	
+	$('#opinion').css('border', 'none');
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
@@ -572,6 +575,8 @@ $(document).on('click', '.saveOpinion', function() {
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
 
+			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
+			
 			opinion.html(`
 					<table class ="docOpinion"> 
 						<tr>

@@ -176,7 +176,7 @@
 
 #editableOpinion {
     width: 100%; /* 너비를 100%로 설정하여 부모 요소에 꽉 차도록 함 */
-    height: 375px; /* 높이를 조절할 수 있습니다. */
+    height: 385px; /* 높이를 조절할 수 있습니다. */
     max-height: 100%;
     padding: 10px; /* 내부 여백 추가 */
     font-size: 14px; /* 글꼴 크기 설정 */
