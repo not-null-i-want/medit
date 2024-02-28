@@ -553,8 +553,7 @@ $(document).on('click', '.opinion-icon', function() {
 	// 현재 opinion 영역의 내용 가져오기
 	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
-	
-	$('#opinion').css('border', 'none');
+	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
@@ -562,6 +561,14 @@ $(document).on('click', '.opinion-icon', function() {
 		<img src="assets/imgs/OpinionSave_icon.png" >
 		</div>
     `);
+
+	//$('#opinion').css('border', 'none');// 
+	
+	let editableOpinion = $('#editableOpinion');
+ 	$('#editableOpinion').focus();
+	let len = editableOpinion.val().length;
+    editableOpinion[0].setSelectionRange(len, len);
+
 })
 
 
@@ -576,6 +583,8 @@ $(document).on('click', '.save-icon', function() {
 		},
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
+			
+			opinion.removeClass('no-border');
 
 			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
 			
