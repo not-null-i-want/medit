@@ -2,6 +2,7 @@ package com.notnulliwant.medit.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -83,10 +84,11 @@ public class DiagnosisController {
 		String body = response.getBody();
 
 		ObjectMapper mapper = new ObjectMapper();
-		Map<String, String> map1 = mapper.readValue(body, new TypeReference<Map<String, String>>() {
+		Map<String, Object> map1 = mapper.readValue(body, new TypeReference<Map<String, Object>>() {
 		});
-		String s3_url = map1.get("s3_url");
-		System.out.println(s3_url);
+		String s3_url = (String) map1.get("s3_url");
+		List<Map<String, String>> result = (List<Map<String, String>>) map1.get("result");
+		System.out.println(result);
 
 		// 확장자 추출
 
@@ -107,8 +109,19 @@ public class DiagnosisController {
 		cxrs.setCxrExt(extension);
 		cxrs.setCxrOriginal('0');
 
-		cxrsRepo.save(cxrs); // DB CXR 추가
-
+		cxrsRepo.save(cxrs); // DB 원본 CXR 추가
+		
+		Cxrs cxrs2 = new Cxrs();
+		
+		cxrs2.setDiagSeq(tempDiagnosis);
+		cxrs2.setCxrName(fileName);
+		cxrs2.setCxrRealname(s3_url);
+		cxrs2.setCxrSize(file.getSize());
+		cxrs2.setCxrExt(extension);
+		cxrs2.setCxrOriginal('1');
+		
+		cxrsRepo.save(cxrs2); // DB 출력 CXR 추가
+		
 		return "redirect:Main";
 	}
 
