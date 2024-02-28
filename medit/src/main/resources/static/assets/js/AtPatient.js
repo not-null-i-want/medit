@@ -554,7 +554,7 @@ $(document).on('click', '.opinion-icon', function() {
 	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
 	
-	$('#opinion').css('border', 'none');
+	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
@@ -562,6 +562,13 @@ $(document).on('click', '.opinion-icon', function() {
 		<img src="assets/imgs/OpinionSave_icon.png" >
 		</div>
     `);
+
+	$('#opinion').css('border', 'none');
+	let editableOpinion = $('#editableOpinion');
+ 	$('#editableOpinion').focus();
+	let len = editableOpinion.val().length;
+    editableOpinion[0].setSelectionRange(len, len);
+
 })
 
 
