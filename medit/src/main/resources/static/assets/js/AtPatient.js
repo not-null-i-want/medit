@@ -537,11 +537,11 @@ $(document).on('click', '.diagDate', function() {
 						<div>소견서</div>
 					</div>
 					<div class ="docOpinion"> 
-						<td>${doctorOpinion}</td>
+						<div>${doctorOpinion}</div>
+						<div class="opinion-icon">
+							<img src="assets/imgs/OpinionEdit_icon.png" >
+						</div>
 					<div>				
-					<div class="opinion-icon">
-						<img src="assets/imgs/OpinionEdit_icon.png" >
-					</div>
 				</div>
 			`).trigger("create");
 
@@ -553,24 +553,17 @@ $(document).on('click', '.diagDate', function() {
 /////// 의사소견창 수정 아이콘 누르면 수정하는 부분 ///////
 $(document).on('click', '.opinion-icon', function() {
 	
-	/*if (OpiHidden) { 
-				$('.hiddenOpinion').toggle();
-				OpiHidden = false; 
-			}*/
 	// 현재 opinion 영역의 내용 가져오기
 	
-	currentOpinion = opinion.find('.docOpinion td').text().trim();
+	currentOpinion = opinion.find('.docOpinion div').text().trim();
 	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
-	opinion.html(`
+	$(".docOpinion").html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
         <div class="save-icon">
-		<img src="assets/imgs/OpinionSave_icon.png" >
+			<img src="assets/imgs/OpinionSave_icon.png" >
 		</div>
-    `);
-
-	$('#opinionBox').css('border', 'none');
-	$('#opinion').css('border', 'none');
+    `).trigger("create");
 	
 	let editableOpinion = $('#editableOpinion');
  	$('#editableOpinion').focus();
@@ -593,22 +586,19 @@ $(document).on('click', '.save-icon', function() {
 			let doctorOpinion = res.doctorOpinion;
 			
 		/*	$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');*/
-			
 			opinion.html(`
 					<div id="opinionBox">
 						<div id="opinionText">
 							<div>소견서</div>
 						</div>
-						<table class ="docOpinion"> 
-						<tr>
-							<td>${saveOpinion}</td>
-						</tr>		
-					</table>				
-					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionEdit_icon.png" >
+						<div class ="docOpinion">
+							<div>${saveOpinion}</div>		
+						</div>				
+						<div class="opinion-icon">
+							<img src="assets/imgs/OpinionEdit_icon.png" >
+						</div>
 					</div>
-					</div>
-					`)
+			`).trigger("create");
 		}
 	})
 })

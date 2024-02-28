@@ -79,7 +79,7 @@
 /****** 환자 목록 ******/
 #ptntList {
    margin: 20px auto 20px;
-   width: 90%;
+   width: 310px;
    height: 250px;
    border: 1px solid rgb(255, 255, 255, 0.2);
    border-radius: 5px;
@@ -87,8 +87,7 @@
 
 #ptntTable {
    margin: auto;
-   min-width: 305.5px;
-   max-width: 100%;
+   width: 308px;
    border-collapse: collapse;
    overflow: hidden;
 }

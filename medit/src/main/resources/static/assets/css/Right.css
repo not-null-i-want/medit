@@ -106,7 +106,7 @@
 #opinion {
 	margin: 0px auto 10px; 
     margin: 5px auto;
-    width: 100%;
+    width: 270px;
     height: 425px;  
     position: relative;
 }
@@ -171,21 +171,27 @@
     table-layout: fixed;
     padding: 20px;
 }
+.docOpinion {
+	white-space: normal;
+	word-break: break-all;
+}
 
 #editableOpinion {
+    position: absolute;
+    top: 62px;
+    left: 0px;
+    padding: 20px;
+    width: 271px;
     font-family: 'SUITE-Regular';
-    background: #363636;
-    color: #fff;
+    color: white;
+    background-color: rgb(255, 255, 255, 5%);
     height: 366px;
-    padding: 11px 20px;
     font-size: 20px;
-    border: 1px solid rgb(255, 255, 255, 0.3);
-    border-radius: 5px;
-    border-collapse: collapse;
+    outline: none;
     table-layout: fixed;
     box-sizing: border-box;
     resize: none;
-    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
 }
-
-

@@ -11,7 +11,7 @@ $(document).on("click", ".diagDate", function(){
 			let pageSize = 5;  // 페이지당 이미지 수를 5로 변경
 			let totalPage = Math.ceil(cxrName.length / pageSize);
 			let currentPage = 0;
-
+			
 			function showPage(page) {
 				let tableHtml = `<div id="compareCxr">
 	                                    	<div id="compareTable">
@@ -98,7 +98,7 @@ $(document).on("click", ".diagDate", function(){
                     <div>
 						<img src="${res}" id="originalCxrBottom"/>
                     </div>
-                    <div id="thisCxr">
+                    <div id="thisCxr" class="thisCxrSelect">
                         <span>현재 환자 CXR</span>
                     </div>
                 </div>
