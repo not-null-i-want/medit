@@ -57,15 +57,12 @@ $(document).on("click", ".diagDate", function(){
 				$(`#proCxr img[id^='conpareCxrBottom']`).click(function() {
 					let imgSrc = $(this).attr('src');
 					let imgHtml = `<img src="${imgSrc}" id="selectedImage">`;
-					
-					$("#cxrImg").remove();		
-					
-					
+						
 					if ($("#selectedImage").length === 0) {
-						$("#main-section").append(imgHtml);
+						$("#cxrImg").attr("src", imgSrc);
 						}else{
 						$("#selectedImage").remove();
-       					$("#main-section").append(imgHtml);
+       					$("#cxrImg").attr("src", imgSrc);
     				}
 												
 				});				
