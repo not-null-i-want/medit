@@ -17,6 +17,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -65,6 +66,7 @@ public class Cxrs {
 	private Character cxrOriginal;
 	
 	@OneToMany(mappedBy = "cxrSeq")
+	@JsonManagedReference
 	private List<Deeps> deeps;
 	
 	public String toString() {
