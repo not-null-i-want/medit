@@ -569,7 +569,8 @@ $(document).on('click', '.opinion-icon', function() {
 		</div>
     `);
 
-	//$('#opinion').css('border', 'none');// 
+	$('#opinionBox').css('border', 'none');
+	$('#opinion').css('border', 'none');
 	
 	let editableOpinion = $('#editableOpinion');
  	$('#editableOpinion').focus();
@@ -591,10 +592,14 @@ $(document).on('click', '.save-icon', function() {
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
 			
-			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
+		/*	$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');*/
 			
 			opinion.html(`
-					<table class ="docOpinion"> 
+					<div id="opinionBox">
+						<div id="opinionText">
+							<div>소견서</div>
+						</div>
+						<table class ="docOpinion"> 
 						<tr>
 							<td>${saveOpinion}</td>
 						</tr>		
@@ -602,18 +607,6 @@ $(document).on('click', '.save-icon', function() {
 					<div class="opinion-icon">
 					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
-					
-					
-					<div id="opinionBox">
-						<div id="opinionText">
-							<div>소견서</div>
-						</div>
-						<div class ="docOpinion"> 
-							<td>${doctorOpinion}</td>
-						<div>				
-						<div class="opinion-icon">
-							<img src="assets/imgs/OpinionEdit_icon.png" >
-						</div>
 					</div>
 					`)
 		}
