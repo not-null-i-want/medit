@@ -41,13 +41,15 @@
 #prevBtn{
 	width: 40px;
     height: 40px;
-  	padding-top: 60px;
+    position: absolute;
+  	top: 180px;
   	filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(36deg) brightness(117%) contrast(112%);
 }
 #nextBtn{
 	width: 40px;
     height: 40px;
-	padding-top: 180px;
+    position: absolute;
+  	top: 180px;
 	filter: invert(100%) sepia(0%) saturate(7443%) hue-rotate(36deg) brightness(117%) contrast(112%);
 }
 

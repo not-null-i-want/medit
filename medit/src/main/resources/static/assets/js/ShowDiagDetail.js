@@ -57,6 +57,7 @@ $(document).on("click", ".diagDate", function(){
 				$(`#proCxr img[id^='conpareCxrBottom']`).click(function() {
 					let imgSrc = $(this).attr('src');
 					let imgHtml = `<img src="${imgSrc}" id="selectedImage">`;
+					clearCanvas();
 						
 					if ($("#selectedImage").length === 0) {
 						$("#cxrImg").attr("src", imgSrc);
