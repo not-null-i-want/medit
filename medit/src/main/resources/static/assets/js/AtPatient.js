@@ -11,7 +11,9 @@ let totalPage_AT;
 let startPage_AT;
 let endPage_AT;
 
-let isHidden = true;
+let AtHidden = true;
+/*let OpiHidden = true;*/
+let OpiHidden = true;
 let numtable;
 let seletedPtntId;
 let tableHtmlAT;
@@ -26,7 +28,7 @@ $(document).on('click', '.selectPtnt', function() {
 	seletedPtntId = $(this)[0].cells[0].innerText;
 	/*diagAtList = [];*/
 	
-	// 환자 클릭시 환자 디테일 박스 투명도 애니메이션
+	// 환자 클릭시 진단날짜 디테일 박스 투명도 애니메이션
 	if($("#diagnosisDate").hasClass("diagnosisDateBoxAnim-1") === true){
 		$("#diagnosisDate").removeClass("diagnosisDateBoxAnim-1");
 		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-2");
@@ -35,6 +37,7 @@ $(document).on('click', '.selectPtnt', function() {
 		$("#diagnosisDate").addClass("diagnosisDateBoxAnim-1");
 	}
 	
+	// 환자 클릭시 진단날짜 관련 페이징 투명도 애니메이션
 	if($("#pageNumberSpace_AT").hasClass("pageNumberSpace_ATBoxAnim-1") === true){
 		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-1");
 		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-2");
@@ -42,7 +45,6 @@ $(document).on('click', '.selectPtnt', function() {
 		$("#pageNumberSpace_AT").removeClass("pageNumberSpace_ATBoxAnim-2");
 		$("#pageNumberSpace_AT").addClass("pageNumberSpace_ATBoxAnim-1");
 	}
-	
 	
 	$.ajax({
 		url: "/diagAtPaging",
@@ -57,11 +59,12 @@ $(document).on('click', '.selectPtnt', function() {
 			startPage_AT = res.startPage;
 			endPage_AT = res.endPage;
 			
-			// 페이징 hidden고나련 숨겨져있는 경우에만 토글 실행하게 하기
-			if (isHidden) { 
+			// 페이징 hidden관련 숨겨져있는 경우에만 토글 실행하게 하기
+			if (AtHidden) { 
 				$('.hiddenAT').toggle();
-				isHidden = false; 
+				AtHidden = false; 
 			}
+			
 			/*tableHtmlAT = `
 			<div id="diagLeftSpace">
 						<img src="assets/imgs/firstBtn.svg" id="first_AT"
@@ -112,7 +115,7 @@ $(document).on('click', '.selectPtnt', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
@@ -184,7 +187,7 @@ $(document).on('click', '#next_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -258,7 +261,7 @@ $(document).on('click', '#pre_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -333,7 +336,7 @@ $(document).on('click', '#first_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -406,7 +409,7 @@ $(document).on('click', '#last_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 						/*console.log(i);*/
 
@@ -485,7 +488,7 @@ $(document).on('click', '.pageNumber_AT', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += ` 
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
@@ -531,7 +534,7 @@ $(document).on('click', '.diagDate', function() {
 							<td>${doctorOpinion}</td>
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 
@@ -542,18 +545,35 @@ $(document).on('click', '.diagDate', function() {
 
 /////// 의사소견창 수정 아이콘 누르면 수정하는 부분 ///////
 $(document).on('click', '.opinion-icon', function() {
+	
+	/*if (OpiHidden) { 
+				$('.hiddenOpinion').toggle();
+				OpiHidden = false; 
+			}*/
 	// 현재 opinion 영역의 내용 가져오기
+	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
+	
+	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
-        <button class="saveOpinion">Save</button>
+        <div class="save-icon">
+		<img src="assets/imgs/OpinionSave_icon.png" >
+		</div>
     `);
+
+	$('#opinion').css('border', 'none');
+	let editableOpinion = $('#editableOpinion');
+ 	$('#editableOpinion').focus();
+	let len = editableOpinion.val().length;
+    editableOpinion[0].setSelectionRange(len, len);
+
 })
 
 
 /////// 의사소견창 save버튼 누르면 DB저장하는 부분 ///////
-$(document).on('click', '.saveOpinion', function() {
+$(document).on('click', '.save-icon', function() {
 	let saveOpinion = $("#editableOpinion").val();
 	$.ajax({
 		url: "saveOpinion", // RestDiagnosis_Controller에 있음
@@ -564,6 +584,8 @@ $(document).on('click', '.saveOpinion', function() {
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
 
+			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
+			
 			opinion.html(`
 					<table class ="docOpinion"> 
 						<tr>
@@ -571,7 +593,7 @@ $(document).on('click', '.saveOpinion', function() {
 						</tr>		
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 		}

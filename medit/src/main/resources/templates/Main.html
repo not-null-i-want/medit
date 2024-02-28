@@ -90,8 +90,7 @@
         <div id="center">
             <!-- 상단의 빈 공간-->
             <div id="empty">
-                빈 공간
-                <button id="testBtn">테스트</button>
+                
             </div>
             <!-- 가운데 메인 -->
             <section id="main-section">
@@ -103,13 +102,18 @@
         <div id="right">
             <!-- 우측 상단 버튼 모음-->
             <div id="btns">
-				<button id="plusBtn">환자 추가</button>
+				<div id="plusBtn">
+					<img src="assets/imgs/addPtnt.png" id="addPtntIcon"/>
+				</div>
 
 				<button th:text="${session.user.doctorId}" id="modalCloseButton"></button>
 				
-				<img src="assets/imgs/chat.png" id="modalOpenButton"></img>
+				<div id="chatBtn">
+					<img src="assets/imgs/chat.png" id="modalOpenButton"></img>
+				</div>
+				
 
-					<button id="close">X</button>
+					
 				<div id="modalContainer" class="smallgap">
 					<div id="modalContent"></div>
 				</div>

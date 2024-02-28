@@ -81,25 +81,23 @@
    margin: 20px auto 20px;
    width: 90%;
    height: 250px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
+   border: 1px solid rgb(255, 255, 255, 0.2);
    border-radius: 5px;
 }
 
 #ptntTable {
    margin: auto;
-   min-width: 306px;
+   min-width: 305.5px;
    max-width: 100%;
    border-collapse: collapse;
    overflow: hidden;
-   border-radius: 5px;
 }
 
 #ptntTable tr:first-child {
    border-top: none;
    background: #525252;
    color: #fff;
-   height: 20px;
-   border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+   border-bottom: 1px solid rgb(255, 255, 255, 0.2);
 }
 
 #ptntTable tr {
@@ -162,7 +160,7 @@
    display: flex;
    width: 100%;
    height: 45px;
-   border-top: 1px solid rgb(255, 255, 255, 0.3);
+   border-top: 1px solid rgb(255, 255, 255, 0.2);
    border-bottom-left-radius: 4px;
    border-bottom-right-radius: 4px;
 }
@@ -197,11 +195,18 @@
    margin-top: 9px;
    margin-right: 3px;
 }
+.selectNum{
+	font-size: 18px;
+}
 
 .num {
    margin-left: 3px;
    margin-right: 3px;
    color: white;
+}
+
+.ptntListMoveBtn:hover{
+	transform: scale(1.2);
 }
 
 /****** 환자 클릭시 디테일 ******/
@@ -212,21 +217,17 @@
 @keyframes ptntDetailAnim-1{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
-		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes ptntDetailAnim-2{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
-		transform: scale(1.0);
 	}
 }
 .ptntDetailBoxAnim-1{
@@ -241,7 +242,7 @@
    width: 90%;
    height: 286px;
    font-size: 15px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
+   border: 1px solid rgb(255, 255, 255, 0.2);
    border-radius: 5px;
 }
 
@@ -249,21 +250,21 @@
    font-size: 15px;
    color: #fff;
    border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
+   border: 1px solid rgb(255, 255, 255, 0.2);
    border-style: hidden;
    table-layout: fixed;
 }
 
 .detailTable td {
    padding: 0 10px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
+   border: 1px solid rgb(255, 255, 255, 0.2);
 }
 
 .detailTable td:nth-child(1) {
    width: 90px;
    height: 30px;
    padding-left: 20px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
+   border: 1px solid rgb(255, 255, 255, 0.2);
 }
 .detailTable td:nth-child(2) {
    width: 160px;
@@ -299,13 +300,6 @@
 .detailTable tr:nth-child(1) td:nth-child(2){
    border-radius: 5px;
 }
-.detailTable tr:nth-child(7) td:nth-child(1){
-   border-bottom-left-radius: 5px;
-}
-.detailTable tr:nth-child(7) td:nth-child(2){
-   border-bottom-right-radius: 5px;
-}
-
 
 /****** 환자 클릭시 진단날짜 출력 ******/
 .PtntDiagAt {
@@ -320,10 +314,11 @@ margin: 0px auto 10px;
        border: 1px solid white;
        margin: 5px auto;
        width: 90%;
-       height: 205px;  
-       border: 1px solid rgb(255, 255, 255, 0.3);
+       height: 220px;  
+       border: 1px solid rgb(255, 255, 255, 0.1);
        border-radius: 5px;
        position: relative;
+        overflow: hidden;
 }
 
 
@@ -331,21 +326,17 @@ margin: 0px auto 10px;
 @keyframes diagnosisDateAnim-1{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
-		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes diagnosisDateAnim-2{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
-		transform: scale(1.0);
 	}
 }
 .diagnosisDateBoxAnim-1{
@@ -368,7 +359,7 @@ margin: 0px auto 10px;
     height: 30px; /* 아이콘의 높이 */
     border-radius: 50%; /* 원 모양으로 만들기 */
     cursor: pointer; /* 마우스 포인터 모양 변경 */
-    margin-top: 5.5px;
+    margin-top: 4px;
     margin-right: 5px;
     filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
@@ -388,9 +379,10 @@ margin: 0px auto 10px;
    font-size: 15px;
    color: #fff;
    border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
    border-style: hidden;
    table-layout: fixed;
+    overflow: hidden;
+    border: none;
 }
 
 #diagnosisDate tr:first-child {
@@ -411,6 +403,8 @@ margin: 0px auto 10px;
 #head-cell {
     text-align: center;
     font-size: 18px;
+    height: 35px;
+    /* font-weight: bold; */
 }
 
 .hidden-cell {
@@ -421,13 +415,17 @@ margin: 0px auto 10px;
    /* padding: 0 30px; */
       /*  border: 1px solid rgb(255, 255, 255, 0.3); */
        width: 300px;
-       height: 40.3px;
+       height: 46.1px;
        align-items: center;
+       font-size: 16px;
        /* padding-left: 50px;  */
        /* border: 1px solid rgb(255, 255, 255, 0.3); */
        text-align: left;
        /* test-magin:left; */
+       
+       
 }
+
 
 
 .diagAtTable tr:nth-child(even)  {
@@ -443,6 +441,7 @@ margin: 0px auto 10px;
     }
     
 .diagAtTable tr:nth-child(1) td{
+	
    border-top-left-radius: 3.8px;
    border-top-right-radius: 5px;
 }
@@ -464,7 +463,6 @@ margin: 0px auto 10px;
 
 .diagAtTable td {
    padding: 0 10px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
 } 
 
 #pageNumberSpace_AT {
@@ -481,21 +479,17 @@ margin: 0px auto 10px;
 @keyframes pageNumberSpace_ATAnim-1{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
-		transform: scale(1.0);
 		opacity: 100%;
 	}
 }
 @keyframes pageNumberSpace_ATAnim-2{
 	from{
 		opacity: 0%;
-		transform: scale(1.02);
 	}
 	to{
 		opacity: 100%;
-		transform: scale(1.0);
 	}
 }
 .pageNumberSpace_ATBoxAnim-1{
@@ -551,15 +545,11 @@ margin: 0px auto 10px;
 	cursor: pointer;
 }
 
-
-
 .hiddenAT {
     display: none;  /* 화면에서 숨기기 */
     
 }
 
-
-
-table, tr, td {
-   border: 1px solid white;
+.diagAtMoveBtn:hover{
+	transform: scale(1.2);
 }

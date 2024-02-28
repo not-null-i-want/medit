@@ -1,3 +1,249 @@
+/*************** canvas 부분 ****************/
+#myCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 3px;
+	margin-left: 3px;
+}
+.clear-button{
+	position: absolute;
+	top: 5px;
+	left: 230px;
+	width: 40px;
+	height: 40px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+}
+.clear-button:active{
+	animation: clickAnim 0.1s;
+}
+@keyframes clickAnim{
+	0%{
+		transform: scale(1.0);
+		filter: invert(30%) sepia(12%) saturate(2681%) hue-rotate(181deg) brightness(98%) contrast(87%);
+	}
+	50%{
+		transform: scale(1.5);
+	}
+	100%{
+		transform: scale(1.0);
+		filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+	}
+}
+
+.red{
+	position: absolute;
+	top: 8px;
+	left: 193px;
+	width: 32px;
+	height: 32px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+}
+.green{
+	position: absolute;
+	top: 8px;
+	left: 154px;
+	width: 32px;
+	height: 32px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+}
+.yellow{
+	position: absolute;
+	top: 8px;
+	left: 116px;
+	width: 32px;
+	height: 32px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+}
+
+.red-active{
+	filter: invert(69%) sepia(46%) saturate(5838%) hue-rotate(324deg) brightness(99%) contrast(105%) !important;
+	opacity: 70%;
+	animation: colorActive 0.3s;
+}
+.green-active{
+	filter: invert(72%) sepia(88%) saturate(358%) hue-rotate(39deg) brightness(119%) contrast(101%) !important;
+	opacity: 70%;
+	animation: colorActive 0.3s;
+}
+.yellow-active{
+	filter: invert(85%) sepia(36%) saturate(660%) hue-rotate(350deg) brightness(101%) contrast(104%) !important;
+	opacity: 70%;
+	animation: colorActive 0.3s;
+}
+@keyframes colorActive{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.5);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+@keyframes colorActive-2{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.5);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+
+#strokeWidthValue{
+	position: absolute;
+	top: 9px;
+	left: 105px;
+	font-size: 14px;
+}
+#pencilWidth{
+	position: absolute;
+	top: 5px;
+	left: 63px;
+	width: 35px;
+	height: 30px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+}
+.toggleDrawing-passive{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 7px;
+	left: 12px;
+	filter: invert(30%) sepia(12%) saturate(2681%) hue-rotate(181deg) brightness(98%) contrast(87%);
+	animation: colorActive 0.3s;
+}
+
+.toggleDrawing-active{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	top: 7px;
+	left: 12px;
+	filter: invert(24%) sepia(35%) saturate(0%) hue-rotate(185deg) brightness(99%) contrast(96%);
+	animation: colorActive-2 0.3s;
+}
+
+#implement{
+	position: absolute;
+	bottom: 257px;
+	left: 482px;
+	width: 280px;
+	height: 50px;
+	background-color: #cccccc;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: 1px solid rgb(0, 0, 0, 0.2);
+	border-left: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+input[type=range] {
+	position: absolute;
+	top: 6px;
+	left: 54px;
+	width: 50px;
+  	-webkit-appearance: none;
+	width: 50px;
+	height: 100%;
+	background: transparent;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: -5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 50px;
+  height: 9px;
+  background: #bdbdbd;
+  border-radius: 3rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+input[type=range]:hover::-webkit-slider-runnable-track {
+  background: #39568d
+}
+input[type=range]::-ms-track {
+  width: 50px;
+  cursor: pointer;
+  height: 9px;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: -5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+input[type=range]::-ms-fill-lower {
+  background: #bdbdbd;
+  border-radius: 3rem;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #ff6e40;
+}
+input[type=range]::-ms-fill-upper {
+  background: #bdbdbd;
+  border-radius: 3rem;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ff6e40;
+}
+input[type=range]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: -5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-track {
+  width: 60%;
+  height: 9px;
+  background: #bdbdbd;
+  border-radius: 3rem;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+input[type=range]:hover::-moz-range-track {
+  background: #ff6e40;
+}
+
+/********************************************/
+
+
+#cxrImg {
+	width: 100%; /* Adjust as per your image dimensions */
+	height: auto;
+}
+
+.stroke-width-slider {
+	margin-top: 10px;
+}
+
 #cxrImg {
 	position: absolute;
 	margin: 2px;
@@ -57,7 +303,7 @@
 	opacity: 80%;
 }
 
-#originalCxrBottom{
+#originalCxrBottom {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -65,7 +311,7 @@
 	border-top-right-radius: 5px;
 }
 
-#proCxr{
+#proCxr {
 	position: absolute;
 	bottom: 20px;
 	left: 200px;

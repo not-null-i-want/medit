@@ -5,9 +5,7 @@
 
 /* 상단 빈 공간 */
 #empty {
-	border: 1px solid white;
 	box-sizing: border-box;
-	background-color: #636363;
 	width: 98.5%;
 	height: 50px;
 	/* 아래 5개는 나중에 지우기*/

@@ -295,3 +295,34 @@
   }
 }
 
+
+/* 진단 아이콘 누를 때 이벤트 */
+.diagAt-icon-anim-1{
+	animation: diagAt-anim-1 0.5s;
+}
+.diagAt-icon-anim-2{
+	animation: diagAt-anim-2 0.5s;
+}
+
+@keyframes diagAt-anim-1 {
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+@keyframes diagAt-anim-2 {
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}

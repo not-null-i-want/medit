@@ -1,5 +1,3 @@
-let writeDiagBtn = document.getElementById("testBtn");
-
 // console.log(selectedPtntId_addDiagnosis); // SelectPatient.js에서 가져온 변수
 // console.log(selectedDoctorId_addDiagnosis);
 // selectedPtntName_addDiagnosis;
@@ -77,10 +75,18 @@ const loadWriteDiag = () => {
 		</div>
 	`).trigger("create");
 	
+	if(!$(".diagAt-icon").hasClass("diagAt-icon-anim-1") && !$(".diagAt-icon").hasClass("diagAt-icon-anim-2")){
+		$(".diagAt-icon").addClass("diagAt-icon-anim-1");
+	} else if ($(".diagAt-icon").hasClass("diagAt-icon-anim-1")){
+		$(".diagAt-icon").removeClass("diagAt-icon-anim-1");
+		$(".diagAt-icon").addClass("diagAt-icon-anim-2");
+	} else if ($(".diagAt-icon").hasClass("diagAt-icon-anim-2")){
+		$(".diagAt-icon").removeClass("diagAt-icon-anim-2");
+		$(".diagAt-icon").addClass("diagAt-icon-anim-1");
+	}
+	
 };
-writeDiagBtn.addEventListener("click", loadWriteDiag);
-
-
+$(document).on("click", ".diagAt-icon", loadWriteDiag);
 
 /* CXR 업로드 박스 */
 let App = {};

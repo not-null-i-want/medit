@@ -5,10 +5,82 @@
 }
 /* 우측 상단 버튼모음 */
 #btns {
-	border: 1px solid white;
 	width: 100%;
 	height: 150px;
 	box-sizing: border-box;
+}
+#plusBtn {
+	position: relative;
+	background-color: #525252;
+	top: 50px;
+	right: -40px;
+	width: 80px;
+	height: 80px;
+	border-radius: 30px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-webkit-transition: all 0.25s ease-in-out;
+  	-moz-transition: all 0.25s ease-in-out;
+  	-ms-transition: all 0.25s ease-in-out;
+  	-o-transition: all 0.25s ease-in-out;
+  	transition: all 0.25s ease-in-out;
+}
+#plusBtn:hover {
+	background-color: #39568d;
+	animation: btnHover 0.3s;
+}
+#addPtntIcon{
+	position: absolute;
+	left: 13px;
+	top: 10px;
+	width: 55px;
+	height: 55px;
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(110%) contrast(101%);
+}
+#chatBtn{
+	position: relative;
+	top: -30px;
+	right: -140px;
+	background-color: #525252;
+	width: 80px;
+	height: 80px;
+	border-radius: 30px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-webkit-transition: all 0.25s ease-in-out;
+  	-moz-transition: all 0.25s ease-in-out;
+  	-ms-transition: all 0.25s ease-in-out;
+  	-o-transition: all 0.25s ease-in-out;
+  	transition: all 0.25s ease-in-out;
+}
+#chatBtn:hover {
+	background-color: #39568d;
+	animation: btnHover 0.3s;
+}
+@keyframes btnHover{
+	0%{
+		transform: scale(1.0);
+	}
+	50%{
+		transform: scale(1.2);
+	}
+	100%{
+		transform: scale(1.0);	
+	}
+}
+#modalOpenButton{
+	position: absolute;
+	left: 13px;
+	top: 12px;
+	width: 55px;
+	height: 55px;
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(148deg) brightness(110%) contrast(101%);
 }
 
 /* 진단 결과 */
@@ -35,8 +107,8 @@
 	margin: 0px auto 10px; 
        border: 1px solid white;
        margin: 5px auto;
-       width: 90%;
-       height: 205px;  
+       width: 100%;
+       height: 425px;  
        border: 1px solid rgb(255, 255, 255, 0.3);
        border-radius: 5px;
        position: relative;
@@ -45,12 +117,13 @@
 #opinion .opinion-icon {
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 40px; /* 아이콘의 너비 */
     height: 50px; /* 아이콘의 높이 */
     border-radius: 50%; /* 원 모양으로 만들기 */
     cursor: pointer; /* 마우스 포인터 모양 변경 */
-    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
 
@@ -60,22 +133,27 @@
     object-fit: cover;
 }
 
-
-#editableOpinion{ /* 의사소견 고치는 아이콘 누르면 나오는 textarea부분 */
-   background: #363636;
-   color: #fff;
-   height: 20px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-radius: 5px;
-	font-size: 15px;
-   color: #fff;
-   border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-style: hidden;
-   table-layout: fixed;
-	
-	
+#opinion .save-icon {
+	position: absolute;
+    bottom: 0;
+    left: 2px;
+    width: 40px; /* 아이콘의 너비 */
+    height: 50px; /* 아이콘의 높이 */
+    border-radius: 50%; /* 원 모양으로 만들기 */
+    cursor: pointer; /* 마우스 포인터 모양 변경 */
+    margin-left: 10px;
+    margin-bottom: 10px;
+    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
+
+#opinion .save-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
 
 .docOpinion {
 	
@@ -89,7 +167,7 @@
 }
 
 .docOpinion td {
-   padding: 0 30px;
+   padding: 3px 20px;
        border: 1px solid rgb(255, 255, 255, 0.3);
        width: 300px;
        height: 40px;
@@ -97,19 +175,49 @@
        /* padding-left: 50px;  */
        border: 1px solid rgb(255, 255, 255, 0.3);
        text-align: left;
-       test-magin:left;
 }
+
+/* #editableOpinion {
+    width: 100%; 
+    height: 426px; 
+    padding: 11px 20px;
+    font-size: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 너비와 높이에 padding과 border를 포함하도록 설정
+    resize: none; textarea 크기 조절 비활성화
+}  */
+
+/* #editableOpinion{ 의사소견 고치는 아이콘 누르면 나오는 textarea부분
+	font-family: 'SUITE-Regular';
+   background: #363636;
+   color: #fff;
+   height: 20px;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-radius: 5px;
+	font-size: 15px;
+   color: #fff;
+   border-collapse: collapse;
+   border: 1px solid rgb(255, 255, 255, 0.3);
+   border-style: hidden;
+   table-layout: fixed;
+}  */
+
 
 #editableOpinion {
-    width: 100%; /* 너비를 100%로 설정하여 부모 요소에 꽉 차도록 함 */
-    height: 210px; /* 높이를 조절할 수 있습니다. */
-    max-height: 100%;
-    padding: 10px; /* 내부 여백 추가 */
-    font-size: 14px; /* 글꼴 크기 설정 */
-    border: 1px solid #ccc; /* 테두리 추가 */
-    border-radius: 5px; /* 테두리의 모서리를 둥글게 만듭니다. */
-    box-sizing: border-box; /* 너비와 높이에 padding과 border를 포함하도록 설정 */
-    resize: none; /* textarea 크기 조절 비활성화 */
+    font-family: 'SUITE-Regular';
+    background: #363636;
+    color: #fff;
+    height: 426px;
+    padding: 11px 20px;
+    font-size: 20px;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+    border-radius: 5px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
 }
 
-/* #saveOpinion */
+
