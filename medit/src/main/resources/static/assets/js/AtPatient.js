@@ -544,7 +544,18 @@ $(document).on('click', '.diagDate', function() {
 					<div>				
 				</div>
 			`).trigger("create");
+			
+			$("#opinionBox").addClass("opinionBox-anim1");
 
+			if(!$("#opinionBox").hasClass("opinionBox-anim1") && !$("#opinionBox").hasClass("opinionBox-anim2")){
+				$("#opinionBox").addClass("opinionBox-anim1");
+			} else if ($("#opinionBox").hasClass("opinionBox-anim1")) {
+				$("#opinionBox").removeClass("opinionBox-anim1");
+				$("#opinionBox").addClass("opinionBox-anim2");
+			} else if ($("#opinionBox").hasClass("opinionBox-anim2")) {
+				$("#opinionBox").removeClass("opinionBox-anim2");
+				$("#opinionBox").addClass("opinionBox-anim1");
+			}
 		}
 	})
 })
