@@ -72,7 +72,8 @@ public class DiagnosisController {
 		String fileRealName = amazonS3.getUrl(bucket, fileName).toString(); // S3 주소 + 파일 이름
 
 		RestTemplate r = new RestTemplate();
-		String flask = "http://127.0.0.1:5000/process_image";
+		String flask = "http://192.168.219.46:5000/process_image";
+		/* String flask = "http://127.0.0.1:5000/process_image"; */
 
 		Map<String, String> map = new HashMap<>();
 		map.put("image_url", fileRealName);

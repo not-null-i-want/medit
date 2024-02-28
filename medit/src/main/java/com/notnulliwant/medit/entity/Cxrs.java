@@ -64,6 +64,7 @@ public class Cxrs {
 	@Column(name = "CXR_ORIGINAL")
 	private Character cxrOriginal;
 	
+	@JsonBackReference
 	@OneToMany(mappedBy = "cxrSeq")
 	private List<Deeps> deeps;
 	
