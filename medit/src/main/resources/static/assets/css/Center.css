@@ -52,3 +52,13 @@ section {
 	object-fit: cover; 
 	filter: grayscale(50%);
 }
+
+.mainTextArea {
+	position: absolute;
+	top: 430px;
+	left: 340px;
+	font-size: 25px;
+	color: rgb(255, 255, 255, 0.4);
+	animation: defaultMsg 2.5s infinite;
+	font-family: SBAggroB;
+}
