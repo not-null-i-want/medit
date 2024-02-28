@@ -534,7 +534,7 @@ $(document).on('click', '.diagDate', function() {
 							<td>${doctorOpinion}</td>
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 
@@ -558,13 +558,15 @@ $(document).on('click', '.opinion-icon', function() {
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
-        <button class="saveOpinion">Save</button>
+        <div class="save-icon">
+		<img src="assets/imgs/OpinionSave_icon.png" >
+		</div>
     `);
 })
 
 
 /////// 의사소견창 save버튼 누르면 DB저장하는 부분 ///////
-$(document).on('click', '.saveOpinion', function() {
+$(document).on('click', '.save-icon', function() {
 	let saveOpinion = $("#editableOpinion").val();
 	$.ajax({
 		url: "saveOpinion", // RestDiagnosis_Controller에 있음
@@ -584,7 +586,7 @@ $(document).on('click', '.saveOpinion', function() {
 						</tr>		
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 		}
