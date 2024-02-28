@@ -74,6 +74,17 @@ const loadWriteDiag = () => {
 			</form>
 		</div>
 	`).trigger("create");
+	
+	if(!$(".diagAt-icon").hasClass("diagAt-icon-anim-1") && !$(".diagAt-icon").hasClass("diagAt-icon-anim-2")){
+		$(".diagAt-icon").addClass("diagAt-icon-anim-1");
+	} else if ($(".diagAt-icon").hasClass("diagAt-icon-anim-1")){
+		$(".diagAt-icon").removeClass("diagAt-icon-anim-1");
+		$(".diagAt-icon").addClass("diagAt-icon-anim-2");
+	} else if ($(".diagAt-icon").hasClass("diagAt-icon-anim-2")){
+		$(".diagAt-icon").removeClass("diagAt-icon-anim-2");
+		$(".diagAt-icon").addClass("diagAt-icon-anim-1");
+	}
+	
 };
 $(document).on("click", ".diagAt-icon", loadWriteDiag);
 

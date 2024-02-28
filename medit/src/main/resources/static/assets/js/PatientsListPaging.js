@@ -57,7 +57,7 @@ $(document).ready(function() {
             for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
@@ -117,7 +117,7 @@ let next = () => {
          for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
@@ -178,7 +178,7 @@ let pre = () => {
          for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
@@ -241,7 +241,7 @@ let first = () => {
          for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
@@ -304,7 +304,7 @@ let last = () => {
          for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`
@@ -372,7 +372,7 @@ $(document).on('click', '.pageNumber', function() {
             for(let i = startPage; i <= endPage; i++){
                if(i == pageNumber + 1){
                   pageNumberSpace.append(`
-                     <b><span class="num">${i}</span></b>
+                     <b><span class="num selectNum">${i}</span></b>
                   `).trigger("create");
                } else {
                pageNumberSpace.append(`

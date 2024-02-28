@@ -13,7 +13,7 @@ let endPage_AT;
 
 let AtHidden = true;
 /*let OpiHidden = true;*/
-
+let OpiHidden = true;
 let numtable;
 let seletedPtntId;
 let tableHtmlAT;
@@ -115,7 +115,7 @@ $(document).on('click', '.selectPtnt', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
@@ -187,7 +187,7 @@ $(document).on('click', '#next_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -261,7 +261,7 @@ $(document).on('click', '#pre_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -336,7 +336,7 @@ $(document).on('click', '#first_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -409,7 +409,7 @@ $(document).on('click', '#last_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 						/*console.log(i);*/
 
@@ -488,7 +488,7 @@ $(document).on('click', '.pageNumber_AT', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += ` 
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
@@ -534,7 +534,7 @@ $(document).on('click', '.diagDate', function() {
 							<td>${doctorOpinion}</td>
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 
@@ -551,17 +551,29 @@ $(document).on('click', '.opinion-icon', function() {
 				OpiHidden = false; 
 			}*/
 	// 현재 opinion 영역의 내용 가져오기
+	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
+	
+	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
 	opinion.html(`
         <textarea id="editableOpinion">${currentOpinion}</textarea>
-        <button class="saveOpinion">Save</button>
+        <div class="save-icon">
+		<img src="assets/imgs/OpinionSave_icon.png" >
+		</div>
     `);
+
+	$('#opinion').css('border', 'none');
+	let editableOpinion = $('#editableOpinion');
+ 	$('#editableOpinion').focus();
+	let len = editableOpinion.val().length;
+    editableOpinion[0].setSelectionRange(len, len);
+
 })
 
 
 /////// 의사소견창 save버튼 누르면 DB저장하는 부분 ///////
-$(document).on('click', '.saveOpinion', function() {
+$(document).on('click', '.save-icon', function() {
 	let saveOpinion = $("#editableOpinion").val();
 	$.ajax({
 		url: "saveOpinion", // RestDiagnosis_Controller에 있음
@@ -572,6 +584,8 @@ $(document).on('click', '.saveOpinion', function() {
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
 
+			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
+			
 			opinion.html(`
 					<table class ="docOpinion"> 
 						<tr>
@@ -579,7 +593,7 @@ $(document).on('click', '.saveOpinion', function() {
 						</tr>		
 					</table>				
 					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionSave_icon.png" >
+					<img src="assets/imgs/OpinionEdit_icon.png" >
 					</div>
 					`)
 		}
