@@ -2,9 +2,8 @@ const modalOpenButton = document.getElementById('modalOpenButton');
 const modalCloseButton = document.getElementById('modalCloseButton');
 const modal = document.getElementById('modalContainer');
 
-const chatDiv = $('#chatBox');
-/*const msg = $('#messageInput');*/
-const sendBtn = $('#sendButton');
+let websocket = null;
+var url = "ws://localhost:8089/chat";
 
 modalOpenButton.addEventListener('click', () => {
 	modal.classList.remove('hidden');
@@ -12,6 +11,11 @@ modalOpenButton.addEventListener('click', () => {
 
 modalCloseButton.addEventListener('click', () => {
 	modal.classList.add('hidden');
+
+	if (websocket != null && websocket.readyState === 1) {
+		websocket.close();
+		console.log("웹소켓 연결 종료");
+	}
 });
 
 let test = modal.getElementsByClassName("test");
@@ -24,6 +28,8 @@ $("#close").click(function() {
 	$("#close").css("width", "0px");
 	$("#close").css("height", "0px");
 });
+
+
 
 $("#modalOpenButton").on("click", function() {
 	var sa = $(this).text();
@@ -38,7 +44,7 @@ $("#modalOpenButton").on("click", function() {
 			$("#modalOpenButton").text(sa);
 		}, 500);
 	}, 800);
-	
+
 	$('#modalContainer').css('height', '150%');
 
 	$.ajax({
@@ -67,7 +73,7 @@ $("#modalOpenButton").on("click", function() {
 				event.preventDefault();  // 페이지 전환을 막습니다.
 
 				var url1 = $(this).attr('href');  // 링크의 href 속성을 가져옵니다.
-				
+
 				$.ajax({
 					url: url1,
 					contentType: "application/json;charset=UTF-8",
@@ -100,8 +106,10 @@ $("#modalOpenButton").on("click", function() {
 						$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
 
 						console.log($('#modalCloseButton').text())
-						
+
 						$('#modalContainer').css('height', '350%');
+
+						const msg = $('#messageInput');
 
 						let chat = {
 							"roomSeq": `${data[0].roomSeq.roomSeq}`,
@@ -110,33 +118,6 @@ $("#modalOpenButton").on("click", function() {
 							"emoticon": "",
 						}
 
-						const msg = $('#messageInput');
-
-						let websocket = null;
-						var url = "ws://localhost:8089/chat";
-
-						$(document).on('click', '#messageInput', function() {
-							if (websocket == null || websocket.readyState !== 1) {
-								websocket = new WebSocket(url);
-
-								websocket.onopen = function() {
-									console.log("연결 성공");
-								}
-
-								websocket.onclose = function() {
-									console.log("돌아가")
-								}
-								websocket.onmessage = onMessage;
-							}
-						});
-
-
-						$(document).on('click', '#sendButton', msgSend);
-
-						function onMessage(data) {
-							console.log(data)
-							addChat(JSON.parse(data.data));
-						}
 
 						function msgSend() {
 							if (msg.val().trim() === '') {
@@ -150,25 +131,52 @@ $("#modalOpenButton").on("click", function() {
 
 						}
 
+						$(document).on('keypress', '#messageInput', function(event) {
+							if (event.which == 13) {
+								event.preventDefault();  // 엔터키를 눌렀을 때의 기본 동작(예: 폼 제출)을 막음
+								msgSend();
+							}
+						});
+
+						function onMessage(data) {
+							console.log(data)
+							addChat(JSON.parse(data.data));
+						}
+
+
 						function addChat(json) {
 							if (json.chatting.trim() === '') {
 								return;  // 메시지가 빈칸이면 함수를 빠져나갑니다.
 							}
 
 							let check = json.doctorId.doctorId == chat.doctorId;
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
+							let content = check ? `${json.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${json.chatting}`;
 
 							let msgDiv = `
 	<div class="chatBox">
-		<div>
-			
-			<div class="message ${check ? 'my' : ''}"><img src=> ${json.chatting}</div>
-		</div>
-	</div>
+            <div>
+                <div class="message ${check ? 'my' : ''}">
+                    ${content}
+                </div>
+            </div>
+        </div>
 	`;
 							$('#chatBox').append(msgDiv);
 
 							$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight)
 
+						}
+
+
+						if (websocket == null || websocket.readyState !== 1) {
+							websocket = new WebSocket(url);
+
+							websocket.onopen = function() {
+								console.log("연결 성공");
+							}
+
+							websocket.onmessage = onMessage;
 						}
 
 					},
@@ -187,4 +195,8 @@ $("#modalOpenButton").on("click", function() {
 
 })
 
-
+$('body').on('mouseup', function(event) {
+	if (!$(event.target).closest('#modalContainer').length) {
+		$("#modalContainer").fadeOut();
+	}
+}) 
