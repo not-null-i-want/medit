@@ -115,7 +115,7 @@ $(document).on('click', '.selectPtnt', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
@@ -187,7 +187,7 @@ $(document).on('click', '#next_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -261,7 +261,7 @@ $(document).on('click', '#pre_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -336,7 +336,7 @@ $(document).on('click', '#first_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 					} else {
 						numtable += `
@@ -409,7 +409,7 @@ $(document).on('click', '#last_AT', function() {
 				for (let i = startPage_AT; i <= endPage_AT; i++) {
 					if (i == pageNumber_AT + 1) {
 						numtable += `
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 						/*console.log(i);*/
 
@@ -488,7 +488,7 @@ $(document).on('click', '.pageNumber_AT', function() {
 			for (let i = startPage_AT; i <= endPage_AT; i++) {
 				if (i == pageNumber_AT + 1) {
 					numtable += ` 
-              			<b><span class="num_AT">${i}</span></b>
+              			<b><span class="num_AT selectNum">${i}</span></b>
                   	`;
 				} else {
 					numtable += `
