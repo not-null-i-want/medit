@@ -91,14 +91,12 @@
    max-width: 100%;
    border-collapse: collapse;
    overflow: hidden;
-   border-radius: 5px;
 }
 
 #ptntTable tr:first-child {
    border-top: none;
    background: #525252;
    color: #fff;
-   height: 20px;
    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
 }
 
@@ -196,6 +194,9 @@
    height: 30px;
    margin-top: 9px;
    margin-right: 3px;
+}
+.selectNum{
+	font-size: 18px;
 }
 
 .num {
@@ -295,13 +296,6 @@
 .detailTable tr:nth-child(1) td:nth-child(2){
    border-radius: 5px;
 }
-.detailTable tr:nth-child(7) td:nth-child(1){
-   border-bottom-left-radius: 5px;
-}
-.detailTable tr:nth-child(7) td:nth-child(2){
-   border-bottom-right-radius: 5px;
-}
-
 
 /****** 환자 클릭시 진단날짜 출력 ******/
 .PtntDiagAt {
