@@ -56,9 +56,9 @@ section {
 .mainTextArea {
 	position: absolute;
 	top: 430px;
-	left: 340px;
+	left: 365px;
 	font-size: 25px;
-	color: rgb(255, 255, 255, 0.4);
+	color: rgb(255, 255, 255, 0.7);
 	animation: defaultMsg 2.5s infinite;
-	font-family: SBAggroB;
+	font-family: NEXON Lv1 Gothic OTF;
 }
