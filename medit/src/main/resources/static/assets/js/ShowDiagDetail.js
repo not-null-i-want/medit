@@ -65,6 +65,10 @@ $(document).on("click", ".diagDate", function(){
 						$("#selectedImage").remove();
        					$("#cxrImg").attr("src", imgSrc);
     				}
+					
+					// 클릭한 비교군 cxr이미지 다음 형제 div 이벤트
+					$(".clickPro").removeClass("clickPro");
+					$(this).parent().next().addClass("clickPro");
 												
 				});				
 			}

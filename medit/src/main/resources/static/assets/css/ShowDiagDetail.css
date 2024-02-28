@@ -403,8 +403,8 @@ input[type=range]:hover::-moz-range-track {
 	border: 1px solid rgb(255, 255, 255, 0.3);
 	font-family: SUITE-Regular;
 	font-size: 20px;
-	
 }
+
 #compareCxr0 div:nth-child(1) {
 	position: absolute;
 	width: 100%;
@@ -908,4 +908,7 @@ input[type=range]:hover::-moz-range-track {
 	border-top-right-radius: 10px;
 }
 
-
+/* 비교군 cxr 클릭시 이벤트 */
+.clickPro{
+	background-color: #39568d !important;
+}
