@@ -22,7 +22,6 @@
     <script th:src="@{assets/js/chat.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/PlusPatient.js}" type="text/javascript" defer></script>
     <script th:src="@{assets/js/ShowDiagDetail.js}" type="text/javascript" defer></script>
-     <script th:src="@{assets/js/CompareCxr.js}" type="text/javascript" defer></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script th:src="@{https://code.jquery.com/jquery-3.7.1.js}"></script>
 </head>
@@ -33,7 +32,7 @@
             <img src="assets/imgs/medit2.png" id="logo">
             <!-- 검색창 -->
             <div class="search">
-                <input type="text" id="searchText" placeholder="환자명 입력">
+                <input type="text" id="searchText" placeholder="환자명 입력" onkeyup="enterkey()">
                 <label for="searchText">환자검색</label>
                 <!-- 검색 버튼-->
                 <img src="assets/imgs/search_icon.png" id="search_icon">

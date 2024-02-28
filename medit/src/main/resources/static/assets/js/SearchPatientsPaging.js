@@ -1,6 +1,11 @@
 let searchBtn = document.getElementById("search_icon");
 let inputText;
 
+function enterkey() {
+	if (window.event.keyCode == 13) {
+		searchPatients();
+    }
+}
 
 /////////////////// 환자 검색 페이징 /////////////////////////
 
