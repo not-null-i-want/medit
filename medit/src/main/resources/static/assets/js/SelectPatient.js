@@ -44,31 +44,31 @@ $(document).on('click', '.selectPtnt', function() {
             <table class="detailTable">
                    <tr>
                       <td>환자 번호</td>
-                  <td>${ptntId}</td>
+                  	  <td>${ptntId}</td>
                    </tr>
                    <tr>
                       <td>환자 이름</td>
-                  <td>${ptntName}</td>
+                      <td>${ptntName}</td>
                    </tr>
                    <tr>
                       <td>생년월일</td>
-                  <td>${ptntBirthdate}</td>
+                      <td>${ptntBirthdate}</td>
                    </tr>
                    <tr>
                       <td>성별</td>
-                  <td>${ptntGender}</td>
+					  <td>${ptntGender == "0" ? "남성" : "여성"}</td>
                    </tr>
                    <tr>
                       <td>주소</td>
-                  <td>${ptntAddr}</td>
+                      <td>${ptntAddr}</td>
                    </tr>
                    <tr>
                       <td>연락처</td>
-                  <td>${ptntPhone}</td>
+                      <td>${ptntPhone}</td>
                    </tr>
                    <tr>
                       <td>담당의</td>
-                  <td>${doctorName}</td>
+                      <td>${doctorName}</td>
                    </tr>
                 </table>
          `).trigger("create");

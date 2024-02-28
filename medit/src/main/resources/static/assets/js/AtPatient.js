@@ -558,7 +558,13 @@ $(document).on('click', '.opinion-icon', function() {
 	currentOpinion = opinion.find('.docOpinion div').text().trim();
 	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
-	$(".docOpinion").html(`
+	
+	/*let docOpinionTest = $(".docOpinion")*/
+	
+	opinion.html(`<div id="opinionBox">
+						<div id="opinionText">
+							<div>소견서</div>
+						</div>
         <textarea id="editableOpinion">${currentOpinion}</textarea>
         <div class="save-icon">
 			<img src="assets/imgs/OpinionSave_icon.png" >
