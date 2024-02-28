@@ -355,9 +355,10 @@ input[type=range]:hover::-moz-range-track {
 
 #compareTable{
 	writing-mode: vertical-lr;
-	padding-top:20px;
+	letter-spacing:-4px;
+	font-size: 19px;
+	padding-top:31px;
 	padding-left:7px;
-	margin-top: 1px;
 	color:white;
 	width: 40px;
 	height: 100px;
@@ -916,4 +917,30 @@ input[type=range]:hover::-moz-range-track {
 /* 현재 환자 cxr 클릭 시 이벤트*/
 .thisCxrSelect{
 	background-color: #39568d !important;
+}
+
+
+/* main-section 이벤트 */
+.main-section-event-1{
+	animation: main-section-event-1 0.7s;
+}
+.main-section-event-2{
+	animation: main-section-event-2 0.7s;
+}
+
+@keyframes main-section-event-1{
+	from{
+		opacity: 0%;
+	}
+	to{
+		opacity: 100%;
+	}
+}
+@keyframes main-section-event-2{
+	from{
+		opacity: 0%;
+	}
+	to{
+		opacity: 100%;
+	}
 }

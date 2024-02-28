@@ -195,3 +195,27 @@
     border-bottom-right-radius: 5px;
     border: none;
 }
+
+.opinionBox-anim1 {
+	animation: opinionBox-anim1 0.7s;
+}
+.opinionBox-anim2 {
+	animation: opinionBox-anim2 0.7s;
+}
+
+@keyframes opinionBox-anim1{
+	from {
+		opacity: 0%
+	}
+	to {
+		opacity: 100%
+	}
+}
+@keyframes opinionBox-anim2{
+	from {
+		opacity: 0%
+	}
+	to {
+		opacity: 100%
+	}
+}
