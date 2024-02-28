@@ -205,6 +205,10 @@
    color: white;
 }
 
+.ptntListMoveBtn:hover{
+	transform: scale(1.2);
+}
+
 /****** 환자 클릭시 디테일 ******/
 .selectPtntActive {
    background-color: #39568d !important;
@@ -541,15 +545,11 @@ margin: 0px auto 10px;
 	cursor: pointer;
 }
 
-
-
 .hiddenAT {
     display: none;  /* 화면에서 숨기기 */
     
 }
 
-
-
-/* table, tr, td {
-   border: 1px solid white;
-} */
+.diagAtMoveBtn:hover{
+	transform: scale(1.2);
+}
