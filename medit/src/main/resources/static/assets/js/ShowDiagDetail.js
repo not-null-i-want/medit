@@ -149,6 +149,17 @@ $(document).on("click", ".diagDate", function(){
 				$(".clickPro").removeClass("clickPro");
 			})
 			
+			// 메인 섹션 이벤트
+			if(!$("#main-section").hasClass("main-section-event-1") && !$("#main-section").hasClass("main-section-event-2")){
+				$("#main-section").addClass("main-section-event-1");
+			} else if($("#main-section").hasClass("main-section-event-1")){
+				$("#main-section").removeClass("main-section-event-1");
+				$("#main-section").addClass("main-section-event-2");
+			} else if($("#main-section").hasClass("main-section-event-2")) {
+				$("#main-section").removeClass("main-section-event-2");
+				$("#main-section").addClass("main-section-event-1");
+			}
+			
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
