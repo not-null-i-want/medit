@@ -908,7 +908,12 @@ input[type=range]:hover::-moz-range-track {
 	border-top-right-radius: 10px;
 }
 
-/* 비교군 cxr 클릭시 이벤트 */
+/* 비교군 cxr 클릭 시 이벤트 */
 .clickPro{
+	background-color: #39568d !important;
+}
+
+/* 현재 환자 cxr 클릭 시 이벤트*/
+.thisCxrSelect{
 	background-color: #39568d !important;
 }

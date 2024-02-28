@@ -315,16 +315,15 @@
 
 /* 진단 날짜 */
 #diagnosisDate {
-	
-margin: 0px auto 10px; 
-       border: 1px solid white;
-       margin: 5px auto;
-       width: 90%;
-       height: 260px;  
-       border: 1px solid rgb(255, 255, 255, 0.1);
-       border-radius: 10px;
-       position: relative;
-        overflow: hidden;
+	margin: 0px auto 10px; 
+    border: 1px solid white;
+    margin: 5px auto;
+    width: 90%;
+    height: 260px;  
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
 }
 
 

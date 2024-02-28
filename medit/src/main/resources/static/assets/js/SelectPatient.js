@@ -75,4 +75,6 @@ $(document).on('click', '.selectPtnt', function() {
       }
    });
 
+	$("#diagnosisDate").css("border", "1px solid rgb(255, 255, 255, 0.3)");
+
 });

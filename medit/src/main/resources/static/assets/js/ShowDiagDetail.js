@@ -69,6 +69,10 @@ $(document).on("click", ".diagDate", function(){
 					// 클릭한 비교군 cxr이미지 다음 형제 div 이벤트
 					$(".clickPro").removeClass("clickPro");
 					$(this).parent().next().addClass("clickPro");
+					
+					if($("#thisCxr").hasClass("thisCxrSelect")){
+						$("#thisCxr").removeClass("thisCxrSelect");
+					}
 												
 				});				
 			}
@@ -94,7 +98,7 @@ $(document).on("click", ".diagDate", function(){
                     <div>
 						<img src="${res}" id="originalCxrBottom"/>
                     </div>
-                    <div>
+                    <div id="thisCxr">
                         <span>현재 환자 CXR</span>
                     </div>
                 </div>
@@ -136,6 +140,15 @@ $(document).on("click", ".diagDate", function(){
 		    canvas.addEventListener('mouseleave', function() {
 				isDrawing = false;
 			});
+			
+			// 현재 환자 cxr 누를 시 이벤트
+			$("#originalCxrBottom").on("click", function(){
+				clearCanvas();
+				$("#cxrImg").attr("src", res);
+				$("#thisCxr").addClass("thisCxrSelect");
+				$(".clickPro").removeClass("clickPro");
+			})
+			
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
