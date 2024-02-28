@@ -16,6 +16,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 html, body{
 	margin: 0;
@@ -27,10 +39,16 @@ html, body{
 	overflow-y: auto;
 	font-family: 'SUITE-Regular';
 	animation: mainConn 0.5s;
-	-webkit-user-select:none;
-  	-moz-user-select:none;
-  	-ms-user-select:none;
-  	user-select:none
+	-webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+img{
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
 }
 .container{
 	display: flex;

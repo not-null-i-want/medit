@@ -206,7 +206,7 @@
 }
 
 .ptntListMoveBtn:hover{
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 
 /****** 환자 클릭시 디테일 ******/
@@ -300,6 +300,12 @@
 .detailTable tr:nth-child(1) td:nth-child(2){
    border-radius: 5px;
 }
+.detailTable tr:nth-child(7) td:nth-child(1){
+   border-bottom-left-radius: 5px;
+}
+.detailTable tr:nth-child(7) td:nth-child(2){
+   border-bottom-right-radius: 5px;
+}
 
 /****** 환자 클릭시 진단날짜 출력 ******/
 .PtntDiagAt {
@@ -314,9 +320,9 @@ margin: 0px auto 10px;
        border: 1px solid white;
        margin: 5px auto;
        width: 90%;
-       height: 220px;  
+       height: 260px;  
        border: 1px solid rgb(255, 255, 255, 0.1);
-       border-radius: 5px;
+       border-radius: 10px;
        position: relative;
         overflow: hidden;
 }
@@ -551,5 +557,5 @@ margin: 0px auto 10px;
 }
 
 .diagAtMoveBtn:hover{
-	transform: scale(1.2);
+	transform: scale(1.1);
 }

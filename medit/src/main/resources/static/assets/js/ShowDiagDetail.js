@@ -57,16 +57,18 @@ $(document).on("click", ".diagDate", function(){
 				$(`#proCxr img[id^='conpareCxrBottom']`).click(function() {
 					let imgSrc = $(this).attr('src');
 					let imgHtml = `<img src="${imgSrc}" id="selectedImage">`;
-					
-					$("#cxrImg").remove();		
-					
-					
+					clearCanvas();
+						
 					if ($("#selectedImage").length === 0) {
-						$("#main-section").append(imgHtml);
+						$("#cxrImg").attr("src", imgSrc);
 						}else{
 						$("#selectedImage").remove();
-       					$("#main-section").append(imgHtml);
+       					$("#cxrImg").attr("src", imgSrc);
     				}
+					
+					// 클릭한 비교군 cxr이미지 다음 형제 div 이벤트
+					$(".clickPro").removeClass("clickPro");
+					$(this).parent().next().addClass("clickPro");
 												
 				});				
 			}

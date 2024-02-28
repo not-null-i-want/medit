@@ -1,6 +1,12 @@
 let id = document.getElementsByClassName("vector")[0];
 let pw = document.getElementsByClassName("vector")[1];
 
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+});
+
 id.addEventListener("click", function(e) {
   e.preventDefault;
   

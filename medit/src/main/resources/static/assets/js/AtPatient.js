@@ -25,6 +25,8 @@ let currentOpinion;
 
 $(document).on('click', '.selectPtnt', function() {
 
+	$('#diagnosisDate').css('height', '220px');
+
 	seletedPtntId = $(this)[0].cells[0].innerText;
 	/*diagAtList = [];*/
 	
@@ -553,7 +555,6 @@ $(document).on('click', '.opinion-icon', function() {
 	// 현재 opinion 영역의 내용 가져오기
 	
 	currentOpinion = opinion.find('.docOpinion td').text().trim();
-	
 	/*$('#opinion').css('border', 'none');*/
 	// textarea로 교체
 	opinion.html(`
@@ -563,7 +564,8 @@ $(document).on('click', '.opinion-icon', function() {
 		</div>
     `);
 
-	$('#opinion').css('border', 'none');
+	//$('#opinion').css('border', 'none');// 
+	
 	let editableOpinion = $('#editableOpinion');
  	$('#editableOpinion').focus();
 	let len = editableOpinion.val().length;
@@ -583,6 +585,8 @@ $(document).on('click', '.save-icon', function() {
 		},
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
+			
+			opinion.removeClass('no-border');
 
 			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
 			
