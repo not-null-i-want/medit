@@ -19,20 +19,26 @@ let test = modal.getElementsByClassName("test");
 // 채팅 리스트 불러오기
 let dlist = $("#modalContent");
 
-
+$("#close").click(function() {
+	$("#modalContainer").fadeOut();
+	$("#close").css("width", "0px");
+	$("#close").css("height", "0px");
+});
 
 $("#modalOpenButton").on("click", function() {
 	var sa = $(this).text();
 	$(this).text("");
+	$(this).addClass("ball");
 	setTimeout(function() {
 		$("#modalContainer").fadeIn();
 		$("#close").css("width", "30px");
 		$("#close").css("height", "30px");
 		setTimeout(function() {
+			$("#modalOpenButton").removeClass("ball");
 			$("#modalOpenButton").text(sa);
 		}, 500);
 	}, 800);
-
+	
 	$('#modalContainer').css('height', '150%');
 
 	$.ajax({
@@ -48,27 +54,20 @@ $("#modalOpenButton").on("click", function() {
 				var link = "/doctor/" + d.doctorId;
 
 				dlist.append(`
-				<button id="close"></button>
-				<div class="dicon">
-				<img src="assets/imgs/dicon.png" class="dicon"></div>
-                    	<div class="detail-link"><a class="detail-link" href="${link}">
+				<div>
+				<img src="assets/imgs/dicon.png" class="dicon">
+                    	<a class="detail-link" href="${link}">
                         	${d.doctorName}
-                    	</a></div>
-                    	 <br>
+                    	</a>
+                    	</div> <br>
             `).trigger("create");
 			})
-
-			$("#close").click(function() {
-				$("#modalContainer").fadeOut();
-				$("#close").css("width", "0px");
-				$("#close").css("height", "0px");
-			});
 
 			$('.detail-link').on('click', function(event) {
 				event.preventDefault();  // 페이지 전환을 막습니다.
 
 				var url1 = $(this).attr('href');  // 링크의 href 속성을 가져옵니다.
-
+				
 				$.ajax({
 					url: url1,
 					contentType: "application/json;charset=UTF-8",
@@ -78,14 +77,12 @@ $("#modalOpenButton").on("click", function() {
 						dlist.empty();
 
 						dlist.append(`<div id="chatBox"></div>
-	
-  　<input id="messageInput" type="text">　
-  <img src="assets/imgs/send.png" id="sendButton">
-`).trigger("create");
+	<input id="messageInput" type="text" class="test">
+	<img src="assets/imgs/send.png" id="sendButton">`).trigger("create");
 
 						data.forEach(function(c) {
 							let check = c.doctorId.doctorId == $('#modalCloseButton').text();
-							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/dicon.png';
 							let content = check ? `${c.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${c.chatting}`;
 
 							let msgDiv = `
@@ -103,7 +100,7 @@ $("#modalOpenButton").on("click", function() {
 						$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
 
 						console.log($('#modalCloseButton').text())
-
+						
 						$('#modalContainer').css('height', '350%');
 
 						let chat = {
@@ -159,17 +156,14 @@ $("#modalOpenButton").on("click", function() {
 							}
 
 							let check = json.doctorId.doctorId == chat.doctorId;
-							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
-							let content = check ? `${json.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${json.chatting}`;
 
 							let msgDiv = `
 	<div class="chatBox">
-            <div>
-                <div class="message ${check ? 'my' : ''}">
-                    ${content}
-                </div>
-            </div>
-        </div>
+		<div>
+			
+			<div class="message ${check ? 'my' : ''}"><img src=> ${json.chatting}</div>
+		</div>
+	</div>
 	`;
 							$('#chatBox').append(msgDiv);
 
