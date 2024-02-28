@@ -105,17 +105,34 @@
 /* 소견 */
 #opinion {
 	margin: 0px auto 10px; 
-       border: 1px solid white;
-       margin: 5px auto;
-       width: 100%;
-       height: 425px;  
-       border: 1px solid rgb(255, 255, 255, 0.3);
-       border-radius: 5px;
-       position: relative;
+    margin: 5px auto;
+    width: 100%;
+    height: 425px;  
+    position: relative;
 }
 
-#opinion {
-    position: relative;
+#opinionBox {
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(255, 255, 255, 0.2);
+	border-radius: 5px;
+}
+#opinionText{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	background-color: #3d3d3d;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+}
+#opinionText div{
+	display: inline;
+	position: absolute;
+	font-size: 22px;
+	margin-left: 100px;
+	top: 15px;
+	color: white;
 }
 
 #opinion .opinion-icon, #opinion .save-icon {
@@ -132,19 +149,6 @@
     filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
 }
 
-/* #opinion .opinion-icon {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px; 아이콘의 너비
-    height: 50px; 아이콘의 높이
-    border-radius: 50%; 원 모양으로 만들기
-    cursor: pointer; 마우스 포인터 모양 변경
-    margin-left: 10px;
-    margin-bottom: 10px;
-    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
-} */
-
 #opinion .opinion-icon img {
     width: 100%;
     height: 100%;
@@ -152,82 +156,27 @@
 }
 
 
-/* #opinion .save-icon {
-	position: absolute;
-    bottom: 0;
-    left: 1;
-    width: 40px; 아이콘의 너비
-    height: 50px; 아이콘의 높이
-    border-radius: 50%; 원 모양으로 만들기
-    cursor: pointer; 마우스 포인터 모양 변경
-    margin-left: 10px;
-    margin-bottom: 10px;
-  	filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(64deg) brightness(104%) contrast(106%);
-} */
-
 #opinion .save-icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-
-
-
 .docOpinion {
-	
-   font-size: 20px;
-   color: #fff;
-   border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-style: hidden;
-   table-layout: fixed;
-   
+    font-size: 20px;
+    color: #fff;
+    border-collapse: collapse;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+    border-style: hidden;
+    table-layout: fixed;
+    padding: 20px;
 }
-
-.docOpinion td {
-   padding: 3px 20px;
-       border: 1px solid rgb(255, 255, 255, 0.3);
-       width: 300px;
-       height: 40px;
-       align-items: center;
-       /* padding-left: 50px;  */
-       border: 1px solid rgb(255, 255, 255, 0.3);
-       text-align: left;
-}
-
-/* #editableOpinion {
-    width: 100%; 
-    height: 426px; 
-    padding: 11px 20px;
-    font-size: 20px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    box-sizing: border-box; 너비와 높이에 padding과 border를 포함하도록 설정
-    resize: none; textarea 크기 조절 비활성화
-}  */
-
-/* #editableOpinion{ 의사소견 고치는 아이콘 누르면 나오는 textarea부분
-	font-family: 'SUITE-Regular';
-   background: #363636;
-   color: #fff;
-   height: 20px;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-radius: 5px;
-	font-size: 15px;
-   color: #fff;
-   border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-style: hidden;
-   table-layout: fixed;
-}  */
-
 
 #editableOpinion {
     font-family: 'SUITE-Regular';
     background: #363636;
     color: #fff;
-    height: 426px;
+    height: 366px;
     padding: 11px 20px;
     font-size: 20px;
     border: 1px solid rgb(255, 255, 255, 0.3);

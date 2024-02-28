@@ -532,13 +532,18 @@ $(document).on('click', '.diagDate', function() {
 				doctorOpinion = ""
 			}
 			opinion.html(`
-					<table class ="docOpinion"> 
-							<td>${doctorOpinion}</td>
-					</table>				
-					<div class="opinion-icon">
-					<img src="assets/imgs/OpinionEdit_icon.png" >
+				<div id="opinionBox">
+					<div id="opinionText">
+						<div>소견서</div>
 					</div>
-					`)
+					<div class ="docOpinion"> 
+						<td>${doctorOpinion}</td>
+					<div>				
+					<div class="opinion-icon">
+						<img src="assets/imgs/OpinionEdit_icon.png" >
+					</div>
+				</div>
+			`).trigger("create");
 
 		}
 	})
@@ -586,8 +591,6 @@ $(document).on('click', '.save-icon', function() {
 		success: function(res) {
 			let doctorOpinion = res.doctorOpinion;
 			
-			opinion.removeClass('no-border');
-
 			$('#opinion').css('border', '1px solid rgb(255, 255, 255, 0.3)');
 			
 			opinion.html(`
@@ -598,6 +601,19 @@ $(document).on('click', '.save-icon', function() {
 					</table>				
 					<div class="opinion-icon">
 					<img src="assets/imgs/OpinionEdit_icon.png" >
+					</div>
+					
+					
+					<div id="opinionBox">
+						<div id="opinionText">
+							<div>소견서</div>
+						</div>
+						<div class ="docOpinion"> 
+							<td>${doctorOpinion}</td>
+						<div>				
+						<div class="opinion-icon">
+							<img src="assets/imgs/OpinionEdit_icon.png" >
+						</div>
 					</div>
 					`)
 		}
