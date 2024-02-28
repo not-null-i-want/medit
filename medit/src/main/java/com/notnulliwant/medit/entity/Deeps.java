@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -32,6 +34,7 @@ public class Deeps {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "deeps_seq")
 	private Integer deepSeq;
 	
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "cxrSeq")
 	private Cxrs cxrSeq;
