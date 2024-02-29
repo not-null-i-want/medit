@@ -92,7 +92,7 @@ $(document).on("click", ".diagDate", function(){
 					<img src="assets/imgs/clean.png" class="clear-button" onclick="clearCanvas()">
 				</div>
                 <div id="graph">
-
+					<canvas id="chart" width="405" height="650"></canvas>
                 </div>
                 <div id="originalCxr">
                     <div>
@@ -158,6 +158,137 @@ $(document).on("click", ".diagDate", function(){
 			} else if($("#main-section").hasClass("main-section-event-2")) {
 				$("#main-section").removeClass("main-section-event-2");
 				$("#main-section").addClass("main-section-event-1");
+			}
+			
+			// 그래프 출력
+			let Ct = $("#chart");
+			let diagData = [10 ,6 ,22.40 ,0.60 ,0.20,
+			              	10.80, 22.00, 12.00, 5.50, 11.70,
+			              	14.30, 5.60, 2.50, 11.40
+			             	];
+			
+			let topThreeIndices = diagData.map((value, index) => ({ value, index }))
+				                          .sort((a, b) => b.value - a.value)
+				                          .slice(0, 3)
+				                          .map(({ index }) => index);
+
+			let topThreeColors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'];
+
+			let colors = diagData.map((value, index) => {
+			    if (topThreeIndices.includes(index)) {
+			        return topThreeColors[topThreeIndices.indexOf(index)];
+			    } else {
+			        return 'rgba(75, 192, 192, 0.2)';
+			    }
+			});
+			
+			let myChart = new Chart(Ct, {
+				type: "bar",
+				data: {
+			    	labels: ["무기폐", "심장비대", "흉수", "침윤음영", "폐 종괴",
+							 "폐 결절", "폐렴", "기흉", "폐 경화", "폐 부종",
+							 "폐 기종", "폐 섬유증", "흉막비후", "폐 탈장"
+							],
+			    	datasets: [
+			    		{
+			    			label: "질환",
+			    			data: diagData,
+							backgroundColor: colors,
+			    		}
+					],
+			 	},
+			  	options: {
+			        indexAxis: "y",
+					layout: {
+			            padding: {
+			                left: 10,
+			                right: 30,
+			                top: 20,
+			                bottom: 10
+			            },
+					},
+			        plugins: {
+			            legend: {
+							display: false,
+			                labels: {
+			                    color: "white",
+								font: {
+									size: 15,
+									family: "SUITE-Regular"
+								}
+			                }
+			            },
+						tooltip: {
+			                backgroundColor: 'rgba(68, 68, 68, 0.8)'
+			            }
+			        },
+					animation: {
+            			duration: 2000,
+						easing: 'easeInOutQuad'
+        			},
+			        scales: {
+			            x: {
+			                ticks: {
+								callback: function(value, index, values) {
+				                    return value + '%';
+				                },
+			                    color: "white",
+								font: {
+									size: 13,
+									family: "SUITE-Regular"
+								}
+			                },
+							grid: {
+			                    color: "rgba(255, 255, 255, 0.07)"
+			                }
+			            },
+			            y: {
+							grid: {
+                    			display: false
+							},
+			                ticks: {
+			                    color: "white",
+								font: {
+									size: 17,
+									family: "SUITE-Regular"
+								}
+			                }
+			            }
+			        },
+					elements: {
+			            bar: {
+			                borderRadius: 4,
+			            }
+			        },
+			    }
+			});
+			
+			
+			/* 진단 결과 출력  */
+			$("#diagnosisResult").html(`
+				<div id="diagResult">
+					<div id="diagHead">
+						<div id="diagHeadText">
+							medit 진단 결과
+						</div>
+					</div>
+					<div id="diagBody">
+						<div id="diagBodyText">
+							일반적으로 임계치가 45% 이상이면 해당 질병일 가능성이 있습니다. 현 CXR을 분석한 결과 정상이라고 판단됩니다.
+						</div>
+					</div>
+				</div>
+			`).trigger("create");
+			
+			
+			if(!$("#diagResult").hasClass("diagResult-event-1") && !$("#diagResult").hasClass("diagResult-event-2")){
+				$("#diagResult").addClass("diagResult-event-1");
+			} else if ($("#diagResult").hasClass("diagResult-event-1")){
+				$("#diagResult").removeClass("diagResult-event-1");
+				$("#diagResult").addClass("diagResult-event-2");
+			} else {
+				$("#diagResult").removeClass("diagResult-event-2");
+				$("#diagResult").addClass("diagResult-event-1");
 			}
 			
 		},
