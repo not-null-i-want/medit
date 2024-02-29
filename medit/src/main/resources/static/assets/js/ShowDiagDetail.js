@@ -268,17 +268,45 @@ $(document).on("click", ".diagDate", function(){
 			$("#diagnosisResult").html(`
 				<div id="diagResult">
 					<div id="diagHead">
+						<img src="assets/imgs/analytic.png"/>
 						<div id="diagHeadText">
-							medit 진단 결과
+							진단 결과
 						</div>
 					</div>
 					<div id="diagBody">
 						<div id="diagBodyText">
-							일반적으로 임계치가 45% 이상이면 해당 질병일 가능성이 있습니다. 현 CXR을 분석한 결과 정상이라고 판단됩니다.
+							<p class="typing-txt">일반적으로 임계치가 45% 이상이면 해당 질병일 가능성이 있습니다. 현 CXR을 분석한 결과 정상이라고 판단됩니다.</p>
+							<p class="typing"></p>
 						</div>
 					</div>
 				</div>
 			`).trigger("create");
+			
+			/* 진단 결과 애니메이션 */
+			var typingBool = false; 
+			var typingIdx=0; 
+			
+			var typingTxt = $(".typing-txt").text(); 
+			
+			typingTxt=typingTxt.split(""); // 한글자씩 자름 
+			
+			if(typingBool==false){ 
+			  // 타이핑이 진행되지 않았다면 
+			   typingBool=true;     
+			   var tyInt = setInterval(typing,100); // 반복동작 
+			} 
+			     
+			function typing(){ 
+			  if(typingIdx<typingTxt.length){ 
+			    // 타이핑될 텍스트 길이만큼 반복
+			    $(".typing").append(typingTxt[typingIdx]);
+			    // 한글자씩 이어줌 
+			    typingIdx++; 
+			   } else{ 
+			    //끝나면 반복종료 
+			    clearInterval(tyInt); 
+			   } 
+			}  
 			
 			
 			if(!$("#diagResult").hasClass("diagResult-event-1") && !$("#diagResult").hasClass("diagResult-event-2")){

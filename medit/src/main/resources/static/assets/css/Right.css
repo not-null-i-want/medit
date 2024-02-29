@@ -110,6 +110,14 @@
 	border: 1px solid rgb(255, 255, 255, 0.2);
 	border-radius: 5px;
 }
+#opinionText img {
+	filter: invert(100%) sepia(0%) saturate(7426%) hue-rotate(132deg) brightness(122%) contrast(117%);
+	width: 42px;
+	height: 42px;
+	position: relative;
+	left: 73px;
+	top: 10px;
+}
 #opinionText{
 	position: relative;
 	width: 100%;
@@ -123,8 +131,9 @@
 	display: inline;
 	position: absolute;
 	font-size: 22px;
-	margin-left: 100px;
-	top: 15px;
+	font-family: PuradakGentleGothicR;
+	margin-left: 75px;
+	top: 18px;
 	color: white;
 }
 
