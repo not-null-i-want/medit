@@ -60,12 +60,12 @@ $("#modalOpenButton").on("click", function() {
 				var link = "/doctor/" + d.doctorId;
 
 				dlist.append(`
-				<div>
+				<div class="chatUserList">
 				<img src="assets/imgs/dicon.png" class="dicon">
                     	<a class="detail-link" href="${link}">
                         	${d.doctorName}
                     	</a>
-                    	</div> <br>
+                    	</div> 
             `).trigger("create");
 			})
 

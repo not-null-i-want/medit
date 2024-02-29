@@ -1,52 +1,137 @@
 /* 채팅창 관련 */
 #chatBox {
-	width: 270px;
+	width: 280px;
 	height: 450px;
 	overflow: auto;
-	
 }
 
+#chatBox::-webkit-scrollbar {
+	width: 0.00000001em; /* 스크롤바 너비 설정 */
+}
+
+#chatBox::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+
 #messageInput {
-	width: 180px;
+	width: 210px;
 	height: 30px;
 	border: none;
 	position: absolute;
-	padding-left: 10px;
-	border-radius: 5px;
+	padding-left: 17px;
+	padding-right: 40px;
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 5px; border-radius : 5px;
 	font-family: SUITE-Regular;
 	outline: none;
 	font-size: 18px;
-}
-
-.message.my {
-	font-size: 18px;
-	text-align: right;
-	background-color: #c0c0c0;
-	border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.message {
-	font-size: 18px;
-	text-align: left;
-	background-color: #d8d8d8;
-	border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.chatBox {
-	margin: 10px;
-	padding: 10px;
 	border-radius: 5px;
 }
 
-.detail-link{
+/* .message {
+	font-size: 17px;
+	text-align: left;
+	background-color: #d8d8d8;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	align-items: center;
+	margin-right: 40px;
+	color: #3d3d3d;
+}
+
+.message.my {
+	font-size: 17px;
+	text-align: right;
+	background-color: #c0c0c0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	align-items: center;
+	margin-left: 60px;
+	margin-right: -10px;
+	color: #3d3d3d;
+} */
+
+.message,
+.message.my {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    text-align: left;
+    background-color: #d8d8d8;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 70px;
+    color: #3d3d3d;
+    padding-right:7px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.message.my {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 주 축 방향으로 우측 정렬 */
+    background-color: #c0c0c0;
+    border-radius: 10px;
+    margin-left: 70px;
+    margin-right: 0px;
+    color: #3d3d3d;
+    padding-right:0px;
+    padding-left:12px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.message.my .message-text {
+    padding-left: 10px; /* 원하는 만큼의 왼쪽 패딩 설정 */
+    
+}
+
+.message.my .dicon {
+    margin-right: 0px;
+    margin-left: 5px;
+}
+
+.chatBox {
+	padding: 8px; /*채팅창 간격조절용!! */
+	border-radius: 5px;
+}
+
+.my-message{
+	padding-left:20px;
+}
+
+.chatUserList {
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-top: 5px;
+	margin-bottom: 21px;
+}
+
+.dicon {
+	width: 33px;
+	height: 33ㅇpx;
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: -3px;
+	margin-bottom: -3px;
+}
+
+.detail-link {
 	font-size: 18px;
 	display: inline-block;
+	padding-top: -10px;
+	padding-left: 7px;
+	color: #3d3d3d;
 }
 
 #modalCloseButton {
@@ -56,8 +141,8 @@
 #sendButton {
 	width: 25px;
 	height: 25px;
-	bottom: 25px;
-	right: 35px;
+	bottom: 20px;
+	right: 31.5px;
 	position: absolute;
 }
 
@@ -66,51 +151,50 @@ a {
 	text-decoration: none;
 }
 
-.dicon{
-	width: 30px;
-	height: 30px;
-	display: inline-block;
-}
-
 /* 모달창 */
 #modalContainer {
-  width: 115%;
-  left: -10%;
-  top: 0;
-  height: 150%;
-  background: rgb(233, 233, 233);
-  z-index: 100;
-  display: none;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: 0px 6px 18px -5px rgba(245, 245, 245, 1);
-    
+	width: 115%;
+	left: -90px;
+	top: -50px;
+	height: 150%;
+	background: rgb(233, 233, 233);
+	z-index: 100;
+	display: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	/* box-shadow: 0px 6px 18px -5px rgba(245, 245, 245, 1); */
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  
 }
 
 .smallgap {
-  width: 550px;
-  height: 550px;
-  margin: 25px auto;
-  position: relative;
-  overflow: hidden;
+	width: 550px;
+	height: 550px;
+	margin: 25px auto;
+	position: relative;
+	overflow: hidden;
 }
 
 #close {
-  width: 0px;
-  height: 0px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  /* transition: 0.4s all; */
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	/* transition: 0.4s all; */
 }
 
 #modalContent {
 	width: 200px;
 	height: 300px;
 	padding: 15px;
-	
+	padding-top: 20px;
 }
