@@ -76,7 +76,6 @@ $(document).on("click", ".diagDate", function(){
 												
 				});				
 			}
-			
 
 			$("#main-section").html(`
 				<img src="${res[0]}" id="cxrImg">
@@ -149,10 +148,19 @@ $(document).on("click", ".diagDate", function(){
 				$(".clickPro").removeClass("clickPro");
 			})
 			
-			let currentImageIndex = 0;
+			let currentImageIndex = 1;
 
-			// 버튼 클릭 이벤트
-			$("#visualrize").on("click", function() {
+
+			// visualizer 버튼 생성
+			$("#empty").html(`
+				<div id="visualizer">
+					<input type="checkbox" id="switch" />
+					<label id="switchLabel" for="switch">Toggle</label>
+				</div>
+			`).trigger("create");
+			
+			// visualizer 버튼 클릭 이벤트
+			$("#switch").on("click", function() {
 				
 				console.log($("#cxrImg").attr("src"))
 				clearCanvas();
@@ -160,12 +168,20 @@ $(document).on("click", ".diagDate", function(){
 				let currentSrc = $("#cxrImg").attr("src");
 				currentImageIndex = (currentImageIndex + 1) % res.length;
 				$("#cxrImg").attr("src", res[currentImageIndex]);				
-				$("#thisCxr").toggleClass("thisCxrSelect");				
 				$(".clickPro").removeClass("clickPro");
+				
+				///////////
+				if(!$("#thisCxr").hasClass("thisCxrSelect") && !$("#thisCxr").hasClass("visualizeOn")){
+					$("#thisCxr").addClass("visualizeOn");
+				} else if ($("#thisCxr").hasClass("thisCxrSelect")){
+					$("#thisCxr").removeClass("thisCxrSelect");	
+					$("#thisCxr").addClass("visualizeOn");
+				} else {
+					$("#thisCxr").removeClass("visualizeOn");
+					$("#thisCxr").addClass("thisCxrSelect");
+				}
 			});
 			
-			
-		
 			
 			// 메인 섹션 이벤트
 			if(!$("#main-section").hasClass("main-section-event-1") && !$("#main-section").hasClass("main-section-event-2")){

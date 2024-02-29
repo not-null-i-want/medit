@@ -1034,3 +1034,56 @@ p.typing-txt{
   animation-iteration-count: infinite;
   margin: 0;
  } 
+ 
+/* visualizer 버튼 */
+#visualizer {
+	position: relative;
+	top: -10px;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+#switchLabel {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 80px;
+	height: 40px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+#switchLabel:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + #switchLabel {
+	background: #bada55;
+}
+
+input:checked + #switchLabel:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+#switchLabel:active:after {
+	width: 130px;
+}
+
+.visualizeOn{
+	background-color: #bada55 !important;
+	color: #444444 !important;
+}
