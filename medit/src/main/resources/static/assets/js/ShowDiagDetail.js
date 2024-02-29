@@ -146,10 +146,7 @@ $(document).on("click", ".diagDate", function(){
 				$("#cxrImg").attr("src", res[0]);
 				$("#thisCxr").addClass("thisCxrSelect");
 				$(".clickPro").removeClass("clickPro");
-			})
-			
-			let currentImageIndex = 1;
-
+			})	
 
 			// visualizer 버튼 생성
 			$("#empty").html(`
@@ -159,18 +156,23 @@ $(document).on("click", ".diagDate", function(){
 				</div>
 			`).trigger("create");
 			
+			
+			let toggle = 1;
 			// visualizer 버튼 클릭 이벤트
 			$("#switch").on("click", function() {
 				
-				console.log($("#cxrImg").attr("src"))
 				clearCanvas();
-
-				let currentSrc = $("#cxrImg").attr("src");
-				currentImageIndex = (currentImageIndex + 1) % res.length;
-				$("#cxrImg").attr("src", res[currentImageIndex]);				
-				$(".clickPro").removeClass("clickPro");
 				
-				///////////
+				if (toggle == 0){
+					$("#cxrImg").attr("src", res[0]);	
+					$(".clickPro").removeClass("clickPro");
+					toggle = 1;
+				} else if (toggle == 1){
+					$("#cxrImg").attr("src", res[1]);
+					toggle = 0;
+				}
+				
+				// div 색 변경 //
 				if(!$("#thisCxr").hasClass("thisCxrSelect") && !$("#thisCxr").hasClass("visualizeOn")){
 					$("#thisCxr").addClass("visualizeOn");
 				} else if ($("#thisCxr").hasClass("thisCxrSelect")){
