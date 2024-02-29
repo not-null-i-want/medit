@@ -79,7 +79,7 @@ $(document).on("click", ".diagDate", function(){
 			
 
 			$("#main-section").html(`
-				<img src="${res}" id="cxrImg">
+				<img src="${res[0]}" id="cxrImg">
 				<canvas id="myCanvas" width="760" height="760"></canvas>
 				<div id="implement">
 					<img src="assets/imgs/on_off.png" class="toggleBtn toggleDrawing-passive" onclick="toggleDrawing()"/>
@@ -96,7 +96,7 @@ $(document).on("click", ".diagDate", function(){
                 </div>
                 <div id="originalCxr">
                     <div>
-						<img src="${res}" id="originalCxrBottom"/>
+						<img src="${res[0]}" id="originalCxrBottom"/>
                     </div>
                     <div id="thisCxr" class="thisCxrSelect">
                         <span>현재 환자 CXR</span>
@@ -144,7 +144,7 @@ $(document).on("click", ".diagDate", function(){
 			// 현재 환자 cxr 누를 시 이벤트
 			$("#originalCxrBottom").on("click", function(){
 				clearCanvas();
-				$("#cxrImg").attr("src", res);
+				$("#cxrImg").attr("src", res[0]);
 				$("#thisCxr").addClass("thisCxrSelect");
 				$(".clickPro").removeClass("clickPro");
 			})
