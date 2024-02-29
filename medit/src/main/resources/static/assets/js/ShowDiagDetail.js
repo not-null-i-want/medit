@@ -149,6 +149,24 @@ $(document).on("click", ".diagDate", function(){
 				$(".clickPro").removeClass("clickPro");
 			})
 			
+			let currentImageIndex = 0;
+
+			// 버튼 클릭 이벤트
+			$("#visualrize").on("click", function() {
+				
+				console.log($("#cxrImg").attr("src"))
+				clearCanvas();
+
+				let currentSrc = $("#cxrImg").attr("src");
+				currentImageIndex = (currentImageIndex + 1) % res.length;
+				$("#cxrImg").attr("src", res[currentImageIndex]);				
+				$("#thisCxr").toggleClass("thisCxrSelect");				
+				$(".clickPro").removeClass("clickPro");
+			});
+			
+			
+		
+			
 			// 메인 섹션 이벤트
 			if(!$("#main-section").hasClass("main-section-event-1") && !$("#main-section").hasClass("main-section-event-2")){
 				$("#main-section").addClass("main-section-event-1");

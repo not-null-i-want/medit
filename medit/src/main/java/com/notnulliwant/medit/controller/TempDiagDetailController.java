@@ -1,5 +1,7 @@
 package com.notnulliwant.medit.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,16 +23,25 @@ public class TempDiagDetailController {
 	
 	
 	@RequestMapping("showDiagDetail")
-	public String showDiagDetail(Integer diagSeq) {
-		
-		Diagnosis diag = new Diagnosis();
-		diag.setDiagSeq(diagSeq);
-		
-		Cxrs cxrs = cxrsRepo.findByDiagSeq(diag);
-		
-		String cxrPath = cxrs.getCxrRealname();
-		
-		return cxrPath;
-	}
+	public String[] showDiagDetail(Integer diagSeq) {
+
+	    Diagnosis diag = new Diagnosis();
+	    diag.setDiagSeq(diagSeq);
+
+	    List<Cxrs> cxrsList = cxrsRepo.findByDiagSeq(diag);
+
+	    String[] cxrPaths = new String[cxrsList.size()];
+
+	    for (int i = 0; i < cxrsList.size(); i++) {
+	        Cxrs cxrs = cxrsList.get(i);
+	        cxrPaths[i] = cxrs.getCxrRealname();
+	    }
+	    
+	    System.out.println(cxrPaths[0]);
+	    System.out.println(cxrPaths[1]);
+	    
+	    
+	    return cxrPaths;
+	}	
 	
 }
