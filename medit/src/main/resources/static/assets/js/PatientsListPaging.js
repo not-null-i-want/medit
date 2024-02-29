@@ -82,7 +82,6 @@ let next = () => {
       url : "/paging",
       data : {"page" : pageNumber + 2},
       success : function(res){
-         console.log(res);
          
          isFirst = res.first;
          isLast = res.last;
@@ -90,6 +89,8 @@ let next = () => {
          
          startPage = res.startPage;
          endPage = res.endPage;
+
+	
       
          let patients = res.patients;
          

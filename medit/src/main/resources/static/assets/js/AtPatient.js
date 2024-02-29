@@ -193,7 +193,7 @@ $(document).on('click', '#next_AT', function() {
                   	`;
 					} else {
 						numtable += `
-              			<span class="num_AT num">${i}</span>
+              			<span class="pageNumber_AT num">${i}</span>
                   	`;
 					}
 				}

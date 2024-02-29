@@ -42,8 +42,8 @@ $("#modalOpenButton").on("click", function() {
 		setTimeout(function() {
 			$("#modalOpenButton").removeClass("ball");
 			$("#modalOpenButton").text(sa);
-		}, 500);
-	}, 800);
+		}, 1);
+	}, 1);
 
 	$('#modalContainer').css('height', '150%');
 
