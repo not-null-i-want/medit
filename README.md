@@ -9,7 +9,7 @@
 - 스마트인재개발원 인공지능 융합서비스 과정의 마지막 프로젝트로써 기업의 멘토링을 받아 개발하였습니다.
 - 의료인들에게 즉각적으로 드러나지 않을 수 있는 패턴을 식별 가능하게 하여 질환을 조기에 발견함으로써 적시에 개입할 수 있고 **오진을 막는데에 도움**을 주고자 합니다.
 - 일관되고 객관적인 분석을 제공하여 **효과적인 치료 계획을 설립**할 수 있도록 합니다.
-- 의료인이 부족하다면 보조 진단 도구 역할을 하여 **의사 결정에 도움**을 줍니다.
+- 의료인이 부족하다면 보조 진단 도구 역할을 하여 **의사 결정에 도움**을 줄 수 있도록 합니다.
 <br>
 
 ## 📅 프로젝트 기간
@@ -28,10 +28,9 @@
         <td>Back-end</td>
         <td>
             <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/>
-			      <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+	    <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
             <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=Spring%20Boot&logoColor=white">
             <img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white"/>
-            <img src="https://img.shields.io/badge/JPA-bcae79?style=for-the-badge&logo=&logoColor=white"/>
             <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
             <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"/>
         </td>
@@ -69,6 +68,7 @@
         <td>Library & API</td>
         <td>
             <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+	    <img src="https://img.shields.io/badge/Spring Data JPA-bcae79?style=for-the-badge&logo=&logoColor=white"/>
             <img src="https://img.shields.io/badge/Canvas-007CE2?style=for-the-badge&logo=Canvs&logoColor=white">
             <img src="https://img.shields.io/badge/chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white">
             <img src="https://img.shields.io/badge/kakaoMap API-FFCD00?style=for-the-badge&logo=kakao&logoColor=white">
