@@ -93,3 +93,36 @@
     
 </table>
 <br>
+
+## 🗃 시스템 아키텍처
+<div align="center">
+
+![medit architecture](https://github.com/not-null-i-want/medit/assets/145624456/08ee4b71-79ff-4f03-ad0b-964f50888527)
+ </div>
+
+## 🎫 ERD
+![medit DB](https://github.com/not-null-i-want/medit/assets/145624456/27d0f475-2145-46f1-b0d6-8dd9d013117f)
+<br>
+
+## 🔌 구성 및 흐름도
+![medit flow](https://github.com/not-null-i-want/medit/assets/145624456/332e44a8-a306-4784-806f-f9eeb1879ad7)
+<br>
+
+## ✒ 구현 전 화면설계
+<br>
+<details>
+<summary><b>화면설계 펼치기</b></summary>
+<div markdown="1">
+	
+![Login](https://github.com/not-null-i-want/medit/assets/145624456/7303b72c-11eb-4f8d-b59c-b6cf4819d8f9)
+![Main](https://github.com/not-null-i-want/medit/assets/145624456/546b4c29-6611-4703-8677-907b247a7b92)
+![PatientRegistration](https://github.com/not-null-i-want/medit/assets/145624456/a0d7c99d-4f93-4374-bdf5-3af5939a9c73)
+![Diag](https://github.com/not-null-i-want/medit/assets/145624456/ad87a368-89be-4b43-bd15-9910ab414bde)
+![Select](https://github.com/not-null-i-want/medit/assets/145624456/ee4ce8db-0c2e-47d6-81ee-572b7cb9bdc0)
+![Select2](https://github.com/not-null-i-want/medit/assets/145624456/76bad73e-1dd2-4b4c-bfd3-a05508f651fc)
+![Messanger](https://github.com/not-null-i-want/medit/assets/145624456/559060c2-aeda-4077-b5df-b600a4fe5a68)
+</div>
+</details>
+<br>
+
+## 📚 주요 기능
