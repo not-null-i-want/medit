@@ -103,7 +103,9 @@ $("#modalOpenButton").on("click", function() {
 							$('#chatBox').append(msgDiv).trigger("create");
 						});
 
-						$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
+						setTimeout(() => {
+							$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
+						}, 100);
 
 						console.log($('#modalCloseButton').text())
 
@@ -150,7 +152,7 @@ $("#modalOpenButton").on("click", function() {
 							}
 
 							let check = json.doctorId.doctorId == chat.doctorId;
-							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/ddicon.png';
+							let imgSrc = check ? 'assets/imgs/dicon.png' : 'assets/imgs/dicon.png';
 							let content = check ? `${json.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${json.chatting}`;
 
 							let msgDiv = `
