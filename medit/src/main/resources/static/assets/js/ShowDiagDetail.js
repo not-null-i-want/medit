@@ -315,6 +315,9 @@ $(document).on("click", ".diagDate", function(){
 							<p class="typing-txt">${res[15]}</p>
 							<p class="typing"></p>
 						</div>
+						<div class="stamp">
+							<div class="stampText">${res[16]}</div>
+						</div>
 					</div>
 				</div>
 			`).trigger("create");
@@ -330,7 +333,7 @@ $(document).on("click", ".diagDate", function(){
 			if(typingBool==false){ 
 			  // 타이핑이 진행되지 않았다면 
 			   typingBool=true;     
-			   var tyInt = setInterval(typing,100); // 반복동작 
+			   var tyInt = setInterval(typing,50); // 반복동작 
 			} 
 			     
 			function typing(){ 
