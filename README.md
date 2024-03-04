@@ -1,7 +1,7 @@
 #  👨‍⚕️ Team 낫널원해 : MEDIT
 <div align="center">
   
-  ![readme](https://github.com/not-null-i-want/medit/assets/145624456/f6b2a5dd-3d99-49ce-846c-3671ca2894e4)
+![ppt_front](https://github.com/not-null-i-want/medit/assets/145624456/0919f029-f375-4106-a0a4-d4bcd180c3b9)
 </div>
 
 ## 📑 프로젝트 소개
@@ -97,7 +97,7 @@
 ## 🗃 시스템 아키텍처
 <div align="center">
 
-![medit architecture](https://github.com/not-null-i-want/medit/assets/145624456/08ee4b71-79ff-4f03-ad0b-964f50888527)
+![medit architecture](https://github.com/not-null-i-want/medit/assets/145624456/67a20768-3b6c-43d4-a896-cb0d7678e5de)
  </div>
 
 ## 🎫 ERD
