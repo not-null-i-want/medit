@@ -312,6 +312,27 @@
 
 ### [김병훈]
 
+<details>
+<summary><b>ERR_INCOMPLETE_CHUNKED_ENCODING 200</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+- 양방향으로 연결된 Entity를 그대로 조회하는 경우 서로의 정보를 순환하면서 조회하다가 Stackoverflow가 발생하게 되었음
+- 이를 순환참조라고 하며, 참조하는 대상이 서로 물려있어 참조할 수 없게 되는 현상을 일컫는다.
+
+　💡 해결 방법
+- **@JsonIgnore** : JSON 데이터에 해당 프로퍼티는 null로 들어가게 된다. 해당하는 프로퍼티도 넘겨줘야 했기 때문에 이 방법은 사용하지 않았음
+- **@JsonManagedReference & @JsonBackReference** : 부모 클래스의 필드에 @JsonManagedReference를, 자식 클래스의 필드에 @JsonBackReference를 추가하여 순환참조를 막는다. **이 방법으로 해결하였음**
+- **DTO 사용** : 오류가 발생하게 된 주원인은 '양방향 매핑'이기도 하지만, 더 정확하게는 Entity 자체를 Response로 리턴한데에 있다. Entity 자체를 Return 하지 않고, DTO 객체를 만들어 필요한 데이터만 옮겨담아 Client로 리턴하면 순환 참조 관련 문제를 방지 할 수 있다.
+- **매핑 재설정** : 만약 양방향 매핑이 필요가 없다면 단방향 매핑을 해줘서 자연스레 순환 참조 문제를 해결할 수 있다.
+
+![image](https://github.com/not-null-i-want/medit/assets/145624456/58898a99-00c3-421f-a716-47e4ee71319d)
+
+</div>
+</details>
+
 ### [윤수민]
 
 <details>
@@ -388,6 +409,34 @@ java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\to
       <version>2.7.6</version>
       <relativePath/>
 </parent>
+```
+
+</div>
+</details>
+
+<details>
+<summary><b>com.fasterxml.jackson.databind.exc.InvalidDefinitionException</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+
+
+
+
+　💡 해결 방법
+- spring-cloud-starter-aws 의존성 주입시 로컬환경은 AWS환경이 아니기때문에 발생한다.
+- 아래 구문을 SpringBootApplication에 적용하였음
+
+```java
+@SpringBootApplication(
+      exclude = {
+              org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration.class,
+              org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration.class,
+              org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration.class
+      }
+ )
 ```
 
 </div>
