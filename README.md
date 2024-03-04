@@ -319,12 +319,12 @@
 ---
 
 　🧨 오류 내용
-- 양방향으로 연결된 Entity를 그대로 조회하는 경우 서로의 정보를 순환하면서 조회하다가 Stackoverflow가 발생하게 되었음
+- 양방향으로 연결된 Entity를 그대로 조회하는 경우 서로의 정보를 순환하면서 조회하다가 Stackoverflow가 발생하게 되었음.
 - 이를 순환참조라고 하며, 참조하는 대상이 서로 물려있어 참조할 수 없게 되는 현상을 일컫는다.
 
 　💡 해결 방법
-- **@JsonIgnore** : JSON 데이터에 해당 프로퍼티는 null로 들어가게 된다. 해당하는 프로퍼티도 넘겨줘야 했기 때문에 이 방법은 사용하지 않았음
-- **@JsonManagedReference & @JsonBackReference** : 부모 클래스의 필드에 @JsonManagedReference를, 자식 클래스의 필드에 @JsonBackReference를 추가하여 순환참조를 막는다. **이 방법으로 해결하였음**
+- **@JsonIgnore** : JSON 데이터에 해당 프로퍼티는 null로 들어가게 된다. 해당하는 프로퍼티도 넘겨줘야 했기 때문에 이 방법은 사용하지 않았음.
+- **@JsonManagedReference & @JsonBackReference** : 부모 클래스의 필드에 @JsonManagedReference를, 자식 클래스의 필드에 @JsonBackReference를 추가하여 순환참조를 막는다. **이 방법으로 해결하였음.**
 - **DTO 사용** : 오류가 발생하게 된 주원인은 '양방향 매핑'이기도 하지만, 더 정확하게는 Entity 자체를 Response로 리턴한데에 있다. Entity 자체를 Return 하지 않고, DTO 객체를 만들어 필요한 데이터만 옮겨담아 Client로 리턴하면 순환 참조 관련 문제를 방지 할 수 있다.
 - **매핑 재설정** : 만약 양방향 매핑이 필요가 없다면 단방향 매핑을 해줘서 자연스레 순환 참조 문제를 해결할 수 있다.
 
@@ -348,7 +348,7 @@
 
 　💡 해결 방법
 - spring-cloud-starter-aws 의존성 주입시 로컬환경은 AWS환경이 아니기때문에 발생한다.
-- 아래 구문을 SpringBootApplication에 적용하였음
+- 아래 구문을 SpringBootApplication에 적용하였음.
 
 ```java
 @SpringBootApplication(
@@ -375,7 +375,7 @@
 
 　💡 해결 방법
 - 버킷명은 유일해야 한다.
-- yml이나 properties 파일에서 버킷명이 알맞게 입력됐나 점검, 수정하였음
+- yml이나 properties 파일에서 버킷명이 알맞게 입력됐나 점검, 수정하였음.
 
 </div>
 </details>
@@ -399,8 +399,8 @@ java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\to
 ```
 
 　💡 해결 방법
-- 스프링부트 버전 문제로 발생
-- 버전을 2.7.6으로 변경하였음
+- 스프링부트 버전 문제로 발생.
+- 버전을 2.7.6으로 변경하였음.
 
 ```xml
 <parent>
@@ -421,23 +421,36 @@ java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\to
 ---
 
 　🧨 오류 내용
-
-
-
+- **Jackson 라이브러리가 자바 객체를 JSON으로 변환하려고 할 때, 클래스 정의에 문제가 있어서 발생하는 예외다.**
+- JPA 엔티티가 지연 로딩(Lazy Loading) 전략을 사용하여 연관된 객체를 로드하는 경우에 특히 그럴 수 있는데 이 때문에 Jackson이 해당 프록시 객체를 올바르게 직렬화하지 못한다.
+  <br>
+  
+	- **직렬화**: 객체의 상태를 바이트 스트림으로 변환하는 과정이다. 이는 네트워크로 전송하거나 파일에 저장하기 위해 사용된다.
+	- **즉시 로딩(Eager)**: 엔티티를 조회하면 연관 관계에 있는 엔티티까지 조회.
+   	- **지연 로딩(Lazy)**: 해당 엔티티만 조회하고 연관되어 있는 나머지 데이터는 나중으로 미룸.
+   	- 실무에서는 **즉시 로딩은 지양**함 = 아무리 단순한 구조의 설계라도, 시간이 지나면 변화되고 추가되기 마련이므로 개발 과정에서 임시로 사용하는 게 아니라면, 항상 지연 로딩을 사용함으로써 성능 이슈가 발생할 가능성을 줄여주는 것이 좋다!
+	- @ManyToOne 매핑의 **기본 fetch가 EAGER**라서 생략해도 EAGER로 동작한다.
 
 　💡 해결 방법
-- spring-cloud-starter-aws 의존성 주입시 로컬환경은 AWS환경이 아니기때문에 발생한다.
-- 아래 구문을 SpringBootApplication에 적용하였음
+- DTO를 만든다거나 여러 방법이 있지만 **Jackson Custom Serializer**를 만들었음.
+ 
+	１. JsonSerializer를 상속받아 커스텀할 Serializer를 만든다.
 
-```java
-@SpringBootApplication(
-      exclude = {
-              org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration.class,
-              org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration.class,
-              org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration.class
-      }
- )
-```
+	２. JsonGenerator.writeStartObject()으로 시작을 열어준다.
+
+ 	３. JsonGenerator.write`자료형`Field("필드 이름", 값)으로 지정한다.
+  
+  	４. JsonGenerator.writeEndObject()로 닫아줌으로써 로직을 구성한다.
+  	<br>
+   
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/6cb0c7ea-cfa7-4bd1-a7d4-b8145397943e)
+
+  	５. 만든 Custom Serializer를 사용하려는 필드에 @JsonSerialize(using = CustomSerializer.class)를 추가한다.
+  	<br>
+   
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/babc1a12-60f8-42d3-ba1c-6280eb466ead)
+
+
 
 </div>
 </details>
