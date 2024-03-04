@@ -72,6 +72,8 @@
             <img src="https://img.shields.io/badge/Canvas-007CE2?style=for-the-badge&logo=Canvs&logoColor=white">
             <img src="https://img.shields.io/badge/chart.js-F5788D?style=for-the-badge&logo=chart.js&logoColor=white">
             <img src="https://img.shields.io/badge/kakaoMap API-FFCD00?style=for-the-badge&logo=kakao&logoColor=white">
+			<img src="https://img.shields.io/badge/pytorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
+			<img src="https://img.shields.io/badge/opencv-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
         </td>
     </tr>
     <tr>
@@ -126,12 +128,78 @@
 <br>
 
 ## 📚 주요 기능
-- 로그인을 제외한 모든 기능 비동기화
-- 환자를 관리할 수 있는 기본적인 기능(환자 추가, 환자 검색 및 환자 목록, 환자 정보 상세보기, 소견서 작성 및 수정 등)
-- 웹소켓을 이용하여 실시간 통신을 가능하게함으로써 의료진들의 일대일 채팅 지원
-- 효율적인 데이터 로딩과 가독성을 위해 목록을 출력해주는 기능들의 페이징 처리(환자 목록, 진료 날짜 목록)
-- 사용자가 확인할 수 있는 각 질환에 해당하는 CXR 제공(비교군)
-- HTML5 Canvas를 이용한 CXR 편집(그리기, 펜 굵기 조절, 색 변경, ON/OFF 토글, 클리어)
-- 딥러닝으로 진단된 각 질환에 대한 확률값들을 Chart.js로 그래프화
-- 비쥬얼라이징?-------
-- 딥러닝------
+###### (문장을 클릭하면 자세히 볼 수 있습니다.)
+<details>
+<summary><b>로그인을 제외한 모든 기능 비동기화</b></summary>
+<div markdown="1">
+	
+![image](https://github.com/not-null-i-want/medit/assets/145624456/b1f97539-909e-4066-97e0-5991a5c69bfd)
+</div>
+</details>
+
+<details>
+<summary><b>환자를 관리할 수 있는 기본적인 기능(환자 추가, 환자 검색 및 환자 목록, 환자 정보 상세보기, 소견서 작성 및 수정 등)</b></summary>
+<div markdown="1">
+
+- 환자 등록<br>
+![환자등록](https://github.com/not-null-i-want/medit/assets/145624456/3d4b5ed2-2c39-4f27-9e4b-4404ccedc89b)
+
+- 환자 목록 및 검색, 상세 정보<br>
+![환자검색, 상세목록](https://github.com/not-null-i-want/medit/assets/145624456/1f1b814d-479c-4b68-a7a1-d5f5bc43b1bd)
+
+- 소견 작성 및 수정<br>
+![소견작성](https://github.com/not-null-i-want/medit/assets/145624456/ef71e151-f39d-4a68-a9b0-6b9d43d2cdd4)
+</div>
+</details>
+
+<details>
+<summary><b>웹소켓을 이용하여 실시간 통신을 가능하게함으로써 의료진들의 일대일 채팅 지원</b></summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary><b>효율적인 데이터 로딩과 가독성을 위해 목록을 출력해주는 기능들의 페이징 처리(환자 목록, 진료 날짜 목록)</b></summary>
+<div markdown="1">
+
+![페이징](https://github.com/not-null-i-want/medit/assets/145624456/61d429be-33b7-4890-8928-bcc53dd92465)
+</div>
+</details>
+
+<details>
+<summary><b>사용자가 확인할 수 있는 각 질환에 해당하는 CXR 제공(비교군)</b></summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary><b>HTML5 Canvas를 이용한 CXR 편집(그리기, 펜 굵기 조절, 색 변경, ON/OFF 토글, 클리어)</b></summary>
+<div markdown="1">
+
+![canvas](https://github.com/not-null-i-want/medit/assets/145624456/41d22ba5-f142-4fcf-808d-278411d1c401)
+</div>
+</details>
+
+<details>
+<summary><b>딥러닝으로 진단된 각 질환에 대한 확률값들을 Chart.js로 그래프화</b></summary>
+<div markdown="1">
+
+![그래프](https://github.com/not-null-i-want/medit/assets/145624456/94abb003-71a9-4f98-811a-41398ae9d4cb)
+</div>
+</details>
+
+<details>
+<summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리</b></summary>
+<div markdown="1">
+
+</div>
+</details>
+
+<details>
+<summary><b>추론된 결과가 정상이 아닌 경우, CAM(Class Activation Map) 이미지 생성</b></summary>
+<div markdown="1">
+
+</div>
+</details>
