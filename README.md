@@ -477,3 +477,68 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
 </div>
 </details>
+
+<br>
+
+## 👨‍👦‍👦 팀원 소개
+<table>
+    <tr>
+        <td align="center" width="250px"><b>정연희</b></td>
+        <td align="center" width="250px"><b>김병훈</b></td>
+        <td align="center" width="250px"><b>윤수민</b></td>
+        <td align="center" width="250px"><b>임지후</b></td>
+        <td align="center" width="250px"><b>이동훈</b></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">Main</td>
+    </tr>
+    <tr>
+        <td align="center">PM, Back-end</td>
+        <td align="center">Back-end</td>
+        <td align="center">Back-end, Front-end</td>
+        <td align="center">Bakc-end</td>
+        <td align="center">Deep Learning</td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">Sub</td>
+    </tr>
+    <tr>
+        <td align="center">Deep Learning</td>
+        <td align="center">Front-end</td>
+        <td align="center"></td>
+        <td align="center">Front-end</td>
+        <td align="center"></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="5">업무 분장</td>
+    </tr>
+    	<tr>
+			<td><h5>
+				-연희
+			</h5></td>
+			<td><h5>
+				-병훈
+			</h5></td>
+			<td><h5>
+				-수민
+			</h5></td>
+			<td><h5>
+				-지후
+			</h5></td>
+			<td><h5>
+				-동훈
+			</h5></td>
+    	</tr>
+	<tr>
+		<td colspan="5" align="center">Github</td>
+	</tr>
+    	<tr>
+		<td align="center"><a href="https://github.com/youneeee/YounheeJung">@youneeee</a></td>
+		<td align="center"><a href="https://github.com/hoon801">@hoon801</a></td>
+		<td align="center"><a href="https://github.com/explorersm11">@explorersm11</a></td>
+		<td align="center"><a href="https://github.com/yim7595/yim7595">@yim7595</a></td>
+		<td align="center"><a href="https://github.com/opencv256/Lee-Dong-Hun">@opencv256</a></td>
+	</tr>
+</table>
+
+### 🙏 마지막으로 저희에게 최고의 길잡이가 되어주신 🧠<a href="https://github.com/dongseop-kim">김동섭 멘토님</a>에게 진심으로 감사드립니다! 👏
