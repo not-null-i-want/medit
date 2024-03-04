@@ -541,5 +541,8 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 	</tr>
 </table>
 
-### 🙏 마지막으로 저희에게 최고의 길잡이가 되어주신
-### 🧠<a href="https://github.com/dongseop-kim">김동섭 멘토님</a>에게 진심으로 감사드립니다! 👏
+<div align="center">
+	
+### 🙏 마지막으로 저희에게 최고의 길잡이가 되어주신 👏
+### 🧠<a href="https://github.com/dongseop-kim">김동섭 멘토님</a>에게 진심으로 감사드립니다! 
+</div>
