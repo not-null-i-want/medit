@@ -496,7 +496,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
         <td align="center">PM, Back-end</td>
         <td align="center">Back-end</td>
         <td align="center">Back-end, Front-end</td>
-        <td align="center">Bakc-end</td>
+        <td align="center">Back-end</td>
         <td align="center">Deep Learning</td>
     </tr>
     <tr>
