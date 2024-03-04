@@ -156,6 +156,7 @@
 <summary><b>웹소켓을 이용하여 실시간 통신을 가능하게함으로써 의료진들의 일대일 채팅 지원</b></summary>
 <div markdown="1">
 
+![채팅](https://github.com/not-null-i-want/medit/assets/145624456/774a9d77-2997-4125-8a46-5881c6350b8e)
 </div>
 </details>
 
@@ -171,6 +172,7 @@
 <summary><b>사용자가 확인할 수 있는 각 질환에 해당하는 CXR 제공(비교군)</b></summary>
 <div markdown="1">
 
+![비교군](https://github.com/not-null-i-want/medit/assets/145624456/e589100b-c56d-44d0-966b-40b9aaf28f53)
 </div>
 </details>
 
@@ -191,15 +193,113 @@
 </details>
 
 <details>
-<summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리</b></summary>
+<summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리, CAM(Class Activation Map 이미지 생성</b></summary>
 <div markdown="1">
 
-</div>
-</details>
+- **결과 추론 과정**
+  
+	---
 
-<details>
-<summary><b>추론된 결과가 정상이 아닌 경우, CAM(Class Activation Map) 이미지 생성</b></summary>
-<div markdown="1">
+	1. **모델 및 관련 설정**: 코드는 ResNet 모델을 사용하며, 이 모델은 torchXrayVision패키지에서 가져온 것입니다. 모델은 사전 학습된 가중치인 "resnet50-res512-all"로 초기화되며, GradCAM을 통해 어떤 레이어를 타겟으로 할 것인지 정의합니다.
+   
+	2. **이미지 다운로드 및 로드**: 사용자가 제공한 이미지 URL을 사용하여 이미지를 다운로드하고, OpenCV를 사용하여 이미지를 로드합니다. 이미지는 그레이스케일로 변환되어 처리됩니다.
+   
+	3. **이미지 전처리 및 테스트**: 이미지는 다양한 크기로 조정되며, 필요에 따라 히스토그램 평활화와 이미지 반전이 적용됩니다. 그 후, 이미지는 모델의 입력 형식에 맞게 정규화되고, 모델을 통해 테스트됩니다.
+
+	4. **결과 처리**: 추론된 결과는 확률 및 레이블로 처리됩니다. 결과에 대한 적절한 처리가 수행된 후, 해당 결과를 반환하고 화면에 표시됩니다.
+   
+	5. **이미지 생성 및 업로드**: 결과가 정상이 아닌 경우, CAM (Class Activation Map) 이미지가 생성되고 S3에 업로드됩니다. CAM 이미지는 모델이 어떤 부분을 보고 각 결과를 도출했는지 시각적으로 보여줍니다.
+
+	<br>
+
+- **기존 torchXrayVision에 추가 작업**
+
+  	---
+  
+  	1. **GradCAM 적용**: GradCAM(Gradient-weighted Class Activation Mapping)은 모델의 활성화를 시각화하고, 모델이 예측에 사용한 중요한 영역을 확인하는 데 사용됩니다. 코드에서는 GradCAM을 사용하여 모델이 예측한 결과에 대한 활성화 맵을 생성하고 시각화하는 과정이 추가되었습니다.<br>
+
+	<div align="center">
+		
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/a0e72cf8-3030-449d-828f-897e7faef53e)
+	</div>
+
+	---
+
+ 	2. **TTA(Test-Time Augmentation) 적용**: TTA는 테스트 시에 데이터 증강을 적용하여 모델의 성능을 향상시키는 기법입니다. 코드에서는 TTA를 적용하여 이미지를 여러 크기로 조정하고, 히스토그램 평활화 및 이미지 뒤집기 등의 데이터 증강 기법을 적용하여 모델의 예측 정확도를 높이는 작업이 수행되었습니다.
+     
+     	- **히스토그램 평활화(Histogram Equalization)**: 이미지의 대비를 향상시키기 위해 히스토그램을 조정하는 기술입니다. 이를 통해 어두운 이미지의 세부 정보를 뚜렷하게 표현할 수 있습니다.
+     
+	    - **이미지 반전(Flip)**: 이미지를 좌우로 뒤집어 증강시키는 것으로, 데이터의 다양성을 높이고 모델이 다양한 각도에서 이미지를 이해할 수 있도록 돕습니다.
+ 
+  	<div align="center">
+		
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/997a3374-6c3e-46bb-89a2-04b0a66f76c3)
+	</div>
+
+	---
+
+ 	3. **맵핑 및 결과 처리**: 모델이 출력하는 각 병변에 대한 확률을 분석하여 특정 임계값 이상인 경우에만 해당 병변으로 판정합니다. 또한, GradCAM을 통해 생성된 활성화 맵을 사용하여 특정 병변과 관련된 이미지 영역을 시각화하고, 이를 사용자에게 제공합니다.
+     
+		- 모델의 출력에서 각 병변에 대한 확률 분석, 특정 임계값 이상인 경우에만 해당 병변으로 판단합니다.
+	   	<div align="center">
+			
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/17092413-648e-4355-ba39-9bb22d9442c4)
+		</div>
+
+  		- GradCAM을 통해 생성된 활성화 맵을 사용하여 특정 병변과 관련된 이미지 영역을 시각화하여 사용에게 제공합니다.
+		<div align="center">
+			
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/6f23589f-67ab-481a-a382-8381fad58657)
+		</div>
+
+	---
+
+  	4. **aws s3로의 이미지 업로드 및 URL 반환**: 처리된 이미지를 AWS S3에 업로드하고, 업로드된 이미지의 URL을 스프링부트로 전송합니다.
+
+	---
+  
+  	5. **마스킹 작업**
+  	   
+  		１. 테스트된 확률값과 CAM(클래스 활성화 맵)을 기반으로 한 임계값을 설정합니다.
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/0a9e46ce-7af9-41ea-a6a1-6c82e3f73123)
+
+  		２. 임계값보다 높은 확률을 가진 레이블에 대해서만 마스킹을 진행합니다.<br>
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/d5ad2058-a52f-41ac-bfb3-850f8b667967)
+
+
+  		３. 마스킹을 위해 CAM을 정규화합니다.<br>
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/9124ffb1-8fe3-4034-9912-8f3aa8e621ee)
+
+
+  		４. 가우시안 블러(Gaussian Blur)를 적용하여 CAM을 부드럽게 만듭니다.
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/f25552e8-8d83-42cd-80f2-de0b4023e496)
+
+
+  		５. CAM에서 특정 임계값 이상의 윤곽선을 추출합니다.
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/7aacb65b-d295-4815-9c15-9edb2764913f)
+
+
+  		６. 추출된 윤곽선을 기반으로 병변 영역을 표시하기 위해 히트맵을 생성합니다.
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/32bfd0f8-f1b8-4a71-8d44-604c94e40ffc)
+
+
+  		７. 히트맵과 윤곽선을 원본 이미지에 겹쳐서 마스킹된 이미지를 생성합니다.
+	  	![image](https://github.com/not-null-i-want/medit/assets/145624456/e7303c18-e6f5-440b-be65-4d9492cb15d7)
+
+<br>
+<br>
+<br>
+
+- **추가 작업 후 변경점**
+
+---
+
+  - 추가 전<br>
+  ![image](https://github.com/not-null-i-want/medit/assets/145624456/aaea8950-f72c-4520-a9a4-3b29853059e3)
+
+
+  - 추가 후<br>
+  ![image](https://github.com/not-null-i-want/medit/assets/145624456/4506eb19-b883-4a6e-8b5e-3ac5433ae173)
 
 </div>
 </details>
