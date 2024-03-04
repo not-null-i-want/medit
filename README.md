@@ -303,3 +303,86 @@
 
 </div>
 </details>
+
+<br>
+
+## 🧩 트러블 슈팅
+
+<details>
+<summary><b>Failed to connect to service endpoint</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+
+	com.amazonaws.SdkClientException: Failed to connect to service endpoint:
+	Caused by: java.net.SocketTimeoutException: connect timed out
+
+　💡 해결 방법
+- spring-cloud-starter-aws 의존성 주입시 로컬환경은 AWS환경이 아니기때문에 발생한다.
+- 아래 구문을 SpringBootApplication에 적용하였음
+
+```java
+@SpringBootApplication(
+      exclude = {
+              org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration.class,
+              org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration.class,
+              org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration.class
+      }
+ )
+```
+
+</div>
+</details>
+
+<details>
+<summary><b>AmazonS3Exception: The specified bucket does not exist</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+ 
+![image](https://github.com/not-null-i-want/medit/assets/145624456/26c3db5b-d2c0-49b4-b8f2-56bc52e3de25)
+
+　💡 해결 방법
+- 버킷명은 유일해야 한다.
+- yml이나 properties 파일에서 버킷명이 알맞게 입력됐나 점검, 수정하였음
+
+</div>
+</details>
+
+<details>
+<summary><b>java.io.UncheckedIOException: Cannot delete</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+ 
+```
+java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\tomcat.8089.1070292282324288404\work\Tomcat\localhost\medit\upload_09e1bcb3_1796_4afb_b0a8_86783c1dc4d2_00000001.tmp
+...
+Caused by: java.io.IOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\tomcat.8089.1070292282324288404\work\Tomcat\localhost\medit\upload_09e1bcb3_1796_4afb_b0a8_86783c1dc4d2_00000001.tmp
+...
+java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\tomcat.8089.1070292282324288404\work\Tomcat\localhost\medit\upload_09e1bcb3_1796_4afb_b0a8_86783c1dc4d2_00000001.tmp
+...
+2024-02-13 18:46:15.802 ERROR 4908 --- [nio-8089-exec-1] org.apache.tomcat.util.net.NioEndpoint   : Error running socket processor
+```
+
+　💡 해결 방법
+- 스프링부트 버전 문제로 발생
+- 버전을 2.7.6으로 변경하였음
+
+```xml
+<parent>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-parent</artifactId>
+      <version>2.7.6</version>
+      <relativePath/>
+</parent>
+```
+
+</div>
+</details>
