@@ -7,7 +7,7 @@ $(document).on("click", ".diagDate", function(){
 		data: {"diagSeq" : seletedDiagSeq},
 		success: function(res){
 			
-			let cxrName = ["정상", "무기폐", "심장비대", "흉수", "침윤음영", "폐 종괴", "폐 결절", "폐렴", "기흉", "폐 경화", "폐 부종", "폐 기종", "폐 섬유증", "흉막비후", "폐 탈장"];
+			let cxrName = ["정상", "무기폐", "흉수", "침윤음영", "폐 종괴", "폐 결절", "폐렴", "기흉", "폐 경화", "폐 부종", "폐 기종", "폐 섬유증", "흉막비후", "폐 탈장"];
 			let pageSize = 5;  // 페이지당 이미지 수를 5로 변경
 			let totalPage = Math.ceil(cxrName.length / pageSize);
 			let currentPage = 0;
@@ -182,6 +182,7 @@ $(document).on("click", ".diagDate", function(){
 					$("#thisCxr").removeClass("visualizeOn");
 					$("#thisCxr").addClass("thisCxrSelect");
 				}
+				
 			});
 			
 			
@@ -198,9 +199,9 @@ $(document).on("click", ".diagDate", function(){
 			
 			// 그래프 출력
 			let Ct = $("#chart");
-			let diagData = [10 ,6 ,22.40 ,0.60 ,0.20,
-			              	10.80, 22.00, 12.00, 5.50, 11.70,
-			              	14.30, 5.60, 2.50, 11.40
+			let diagData = [res[2] ,res[9] ,res[4] ,res[13], res[12],
+			              	res[10], res[5], res[3], res[6], res[7],
+			              	res[8], res[11], res[14]
 			             	];
 			
 			let topThreeIndices = diagData.map((value, index) => ({ value, index }))
@@ -221,9 +222,9 @@ $(document).on("click", ".diagDate", function(){
 			let myChart = new Chart(Ct, {
 				type: "bar",
 				data: {
-			    	labels: ["무기폐", "심장비대", "흉수", "침윤음영", "폐 종괴",
-							 "폐 결절", "폐렴", "기흉", "폐 경화", "폐 부종",
-							 "폐 기종", "폐 섬유증", "흉막비후", "폐 탈장"
+			    	labels: ["무기폐", "흉수", "침윤음영", "폐 종괴", "폐 결절",
+							 "폐렴", "기흉", "폐 경화", "폐 부종", "폐 기종",
+							 "폐 섬유증", "흉막비후", "폐 탈장"
 							],
 			    	datasets: [
 			    		{
@@ -311,8 +312,11 @@ $(document).on("click", ".diagDate", function(){
 					</div>
 					<div id="diagBody">
 						<div id="diagBodyText">
-							<p class="typing-txt">일반적으로 임계치가 45% 이상이면 해당 질병일 가능성이 있습니다. 현 CXR을 분석한 결과 정상이라고 판단됩니다.</p>
+							<p class="typing-txt">${res[15]}</p>
 							<p class="typing"></p>
+						</div>
+						<div class="stamp">
+							<div class="stampText">${res[16]}</div>
 						</div>
 					</div>
 				</div>
@@ -329,7 +333,7 @@ $(document).on("click", ".diagDate", function(){
 			if(typingBool==false){ 
 			  // 타이핑이 진행되지 않았다면 
 			   typingBool=true;     
-			   var tyInt = setInterval(typing,100); // 반복동작 
+			   var tyInt = setInterval(typing,50); // 반복동작 
 			} 
 			     
 			function typing(){ 

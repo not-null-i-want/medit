@@ -1,7 +1,7 @@
 #  👨‍⚕️ Team 낫널원해 : MEDIT
 <div align="center">
   
-  ![readme](https://github.com/not-null-i-want/medit/assets/145624456/f6b2a5dd-3d99-49ce-846c-3671ca2894e4)
+![ppt_front](https://github.com/not-null-i-want/medit/assets/145624456/0919f029-f375-4106-a0a4-d4bcd180c3b9)
 </div>
 
 ## 📑 프로젝트 소개
@@ -97,7 +97,7 @@
 ## 🗃 시스템 아키텍처
 <div align="center">
 
-![medit architecture](https://github.com/not-null-i-want/medit/assets/145624456/08ee4b71-79ff-4f03-ad0b-964f50888527)
+![medit architecture](https://github.com/not-null-i-want/medit/assets/145624456/67a20768-3b6c-43d4-a896-cb0d7678e5de)
  </div>
 
 ## 🎫 ERD
@@ -126,3 +126,12 @@
 <br>
 
 ## 📚 주요 기능
+- 로그인을 제외한 모든 기능 비동기화
+- 환자를 관리할 수 있는 기본적인 기능(환자 추가, 환자 검색 및 환자 목록, 환자 정보 상세보기, 소견서 작성 및 수정 등)
+- 웹소켓을 이용하여 실시간 통신을 가능하게함으로써 의료진들의 일대일 채팅 지원
+- 효율적인 데이터 로딩과 가독성을 위해 목록을 출력해주는 기능들의 페이징 처리(환자 목록, 진료 날짜 목록)
+- 사용자가 확인할 수 있는 각 질환에 해당하는 CXR 제공(비교군)
+- HTML5 Canvas를 이용한 CXR 편집(그리기, 펜 굵기 조절, 색 변경, ON/OFF 토글, 클리어)
+- 딥러닝으로 진단된 각 질환에 대한 확률값들을 Chart.js로 그래프화
+- 비쥬얼라이징?-------
+- 딥러닝------

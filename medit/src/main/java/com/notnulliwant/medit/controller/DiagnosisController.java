@@ -57,9 +57,6 @@ public class DiagnosisController {
 	@RequestMapping("/diagnose")
 	public String diagnose(MultipartFile file, Diagnosis diagnosis) throws IOException {
 
-		System.out.println(diagnosis.getDoctorId().getDoctorId());
-		System.out.println(diagnosis.getPtntId());
-
 		Diagnosis diag = diagRepo.save(diagnosis); // DB 진단 추가
 
 		Integer diagSeq = diag.getDiagSeq(); // 진단번호
@@ -72,7 +69,7 @@ public class DiagnosisController {
 		String fileRealName = amazonS3.getUrl(bucket, fileName).toString(); // S3 주소 + 파일 이름
 
 		RestTemplate r = new RestTemplate();
-		String flask = "http://192.168.219.54:5000/process_image";
+		String flask = "http://192.168.219.46:5000/process_image";
 		/* String flask = "http://127.0.0.1:5000/process_image"; */
 
 		Map<String, String> map = new HashMap<>();
@@ -89,10 +86,8 @@ public class DiagnosisController {
 		Map<String, Object> map1 = mapper.readValue(body, new TypeReference<Map<String, Object>>() {
 		});
 		String s3_url = (String) map1.get("s3_url");
-//		List<Map<String, String>> result = (List<Map<String, String>>) map1.get("result");
-//		String resultStr = mapper.writeValueAsString(result);
-//		System.out.println(result);
-//		System.out.println(resultStr);
+		List<Map<String, String>> result = (List<Map<String, String>>) map1.get("result");
+		String resultStr = mapper.writeValueAsString(result);
 
 		// 확장자 추출
 
@@ -128,12 +123,12 @@ public class DiagnosisController {
 		
 		Cxrs cxrseq = cxrsRepo.findCxrSeqByCxrRealname(s3_url);
 		
-//		Deeps deep = new Deeps();
-//		
-//		deep.setCxrSeq(cxrseq);
-//		deep.setDeepResult(resultStr);
-//		
-//		deepsRepo.save(deep);
+		Deeps deep = new Deeps();
+		
+		deep.setCxrSeq(cxrseq);
+		deep.setDeepResult(resultStr);
+		
+		deepsRepo.save(deep);
 		
 		return "redirect:Main";
 	}
