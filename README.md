@@ -393,8 +393,6 @@ java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\to
 </div>
 </details>
 
-### [임지후]
-
 ### [이동훈]
 
 <details>
