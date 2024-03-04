@@ -1,31 +1,28 @@
 /* 업로드 박스 */
-.upload {
-  position: absolute;
-  width: 40%;
-  min-height: 355px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding-bottom: 20px;
-  background: #fff;
-  -webkit-animation: fadeup 0.5s 0.5s ease both;
-          animation: fadeup 0.5s 0.5s ease both;
-  transform: translateY(20px);
-  opacity: 0;
-  margin-left: 370px;
-}
-.upload .upload-files header {
-  background: #39568d;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  text-align: center;
-}
-.upload .upload-files header p {
-  color: #fff;
-  font-size: 40px;
-  margin: 0;
-  padding: 50px 0;
-}
+.upload  {
+	position: absolute;
+	width: 40%;
+	min-height: 355px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	padding-bottom: 20px;
+	background: #fff;
+	-webkit-animation: fadeup 0.5s 0.5s ease both;
+	animation: fadeup 0.5s 0.5s ease both;
+	transform: translateY(20px);
+	opacity: 0;
+	margin-left: 370px;}
+.upload .upload-files header  {
+	background: #39568d;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-align: center;}
+.upload .upload-files header p  {
+	color: #fff;
+	font-size: 40px;
+	margin: 0;
+	padding: 50px 0;}
 .upload .upload-files header p i {
   transform: translateY(20px);
   opacity: 0;

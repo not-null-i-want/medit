@@ -57,9 +57,6 @@ public class DiagnosisController {
 	@RequestMapping("/diagnose")
 	public String diagnose(MultipartFile file, Diagnosis diagnosis) throws IOException {
 
-		System.out.println(diagnosis.getDoctorId().getDoctorId());
-		System.out.println(diagnosis.getPtntId());
-
 		Diagnosis diag = diagRepo.save(diagnosis); // DB 진단 추가
 
 		Integer diagSeq = diag.getDiagSeq(); // 진단번호
@@ -84,7 +81,6 @@ public class DiagnosisController {
 		HttpEntity<Map<String, String>> request = new HttpEntity<>(map, headers);
 		ResponseEntity<String> response = r.postForEntity(flask, request, String.class);
 		String body = response.getBody();
-		System.out.println(body);
 
 		ObjectMapper mapper = new ObjectMapper();
 		Map<String, Object> map1 = mapper.readValue(body, new TypeReference<Map<String, Object>>() {
@@ -92,8 +88,6 @@ public class DiagnosisController {
 		String s3_url = (String) map1.get("s3_url");
 		List<Map<String, String>> result = (List<Map<String, String>>) map1.get("result");
 		String resultStr = mapper.writeValueAsString(result);
-		System.out.println(result);
-		System.out.println(resultStr);
 
 		// 확장자 추출
 

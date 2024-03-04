@@ -69,17 +69,17 @@
 }
 
 .diag-person{
-  width: 60px;
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(110%) contrast(103%);
-  position: absolute;
-  left: 470px;
+	width: 60px;
+	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(110%) contrast(103%);
+	position: absolute;
+	left: 470px;
   
 }
 .diag-dc{
-  top: 180px;
+	top: 180px;
 }
 .diag-pt{
-  top: 75px;
+	top: 75px;
 }
 
 .fixedTextBox {
@@ -135,85 +135,85 @@
 
 /* diagnose 탭 */
 .tabName .box {
-  width: 250px;
-  height: 250px;
-  margin-left: 75px;
-  margin-top: 10px;
-  position: relative;
-  justify-content: center;
-  flex-direction: column;
+	width: 250px;
+	height: 250px;
+	margin-left: 75px;
+	margin-top: 10px;
+	position: relative;
+	justify-content: center;
+	flex-direction: column;
 }
 .tabName .box .title {
-  width: 65%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 50px;
+	width: 65%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 50px;
 }
 .tabName .box .title .block {
-  width: 0%;
-  height: inherit;
-  background: #c85557;
-  position: absolute;
-  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  display: flex;
+	width: 0%;
+	height: inherit;
+	background: #c85557;
+	position: absolute;
+	animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+	display: flex;
 }
 .tabName .box .title h1 {
-  font-family: "Poppins";
-  color: #fff;
-  font-size: 32px;
-  -webkit-animation: mainFadeIn 2s forwards;
-  -o-animation: mainFadeIn 2s forwards;
-  animation: mainFadeIn 2s forwards;
-  animation-delay: 1.6s;
-  opacity: 0;
-  display: flex;
-  align-items: baseline;
-  position: relative;
+	font-family: "Poppins";
+	color: #fff;
+	font-size: 32px;
+	-webkit-animation: mainFadeIn 2s forwards;
+	-o-animation: mainFadeIn 2s forwards;
+	animation: mainFadeIn 2s forwards;
+	animation-delay: 1.6s;
+	opacity: 0;
+	display: flex;
+	align-items: baseline;
+	position: relative;
 }
 .tabName .box .title h1 span {
-  width: 0px;
-  height: 0px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background: #ffb510;
-  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation-delay: 2s;
-  margin-left: 5px;
-  margin-top: -10px;
-  position: absolute;
-  bottom: 13px;
-  right: -12px;
+	width: 0px;
+	height: 0px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: #ffb510;
+	-webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+	animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+	animation-delay: 2s;
+	margin-left: 5px;
+	margin-top: -10px;
+	position: absolute;
+	bottom: 13px;
+	right: -12px;
 }
 .tabName .box .role {
-  width: 55%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 30px;
-  margin-top: -10px;
+	width: 55%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 30px;
+	margin-top: -10px;
 }
 .tabName .box .role .block {
-  width: 0%;
-  height: inherit;
-  background: #e18d56;
-  position: absolute;
-  animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation-delay: 2s;
-  display: flex;
+	width: 0%;
+	height: inherit;
+	background: #e18d56;
+	position: absolute;
+	animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+	animation-delay: 2s;
+	display: flex;
 }
 .tabName .box .role p {
-  animation: secFadeIn 2s forwards;
-  animation-delay: 3.2s;
-  opacity: 0;
-  font-weight: 400;
-  font-family: "Lato";
-  color: #ffffff;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+	animation: secFadeIn 2s forwards;
+	animation-delay: 3.2s;
+	opacity: 0;
+	font-weight: 400;
+	font-family: "Lato";
+	color: #ffffff;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 5px;
 }
 
 @keyframes mainBlock {

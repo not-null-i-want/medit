@@ -83,8 +83,8 @@ $("#modalOpenButton").on("click", function() {
 						dlist.empty();
 
 						dlist.append(`<div id="chatBox"></div>
-	<input id="messageInput" type="text" class="test">
-	<img src="assets/imgs/send.png" id="sendButton">`).trigger("create");
+							<input id="messageInput" type="text" class="test">
+							<img src="assets/imgs/send.png" id="sendButton">`).trigger("create");
 
 						data.forEach(function(c) {
 							let check = c.doctorId.doctorId == $('#modalCloseButton').text();
@@ -92,14 +92,14 @@ $("#modalOpenButton").on("click", function() {
 							let content = check ? `${c.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${c.chatting}`;
 
 							let msgDiv = `
-        <div class="chatBox">
-            <div>
-                <div class="message ${check ? 'my' : ''}">
-                    ${content}
-                </div>
-            </div>
-        </div>
-    `;
+						        <div class="chatBox">
+						            <div>
+						                <div class="message ${check ? 'my' : ''}">
+						                    ${content}
+						                </div>
+						            </div>
+						        </div>
+						    `;
 							$('#chatBox').append(msgDiv).trigger("create");
 						});
 
@@ -156,14 +156,14 @@ $("#modalOpenButton").on("click", function() {
 							let content = check ? `${json.chatting}<img src="${imgSrc}" class="dicon">` : `<img src="${imgSrc}" class="dicon">${json.chatting}`;
 
 							let msgDiv = `
-	<div class="chatBox">
-            <div>
-                <div class="message ${check ? 'my' : ''}">
-                    ${content}
-                </div>
-            </div>
-        </div>
-	`;
+								<div class="chatBox">
+							        <div>
+							            <div class="message ${check ? 'my' : ''}">
+							                ${content}
+							            </div>
+							        </div>
+							    </div>
+							`;
 							$('#chatBox').append(msgDiv);
 
 							$('#chatBox').scrollTop($('#chatBox')[0].scrollHeight)

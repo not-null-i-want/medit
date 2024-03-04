@@ -416,21 +416,12 @@
 }
 
 .diagAtTable td {
-   /* padding: 0 30px; */
-      /*  border: 1px solid rgb(255, 255, 255, 0.3); */
-       width: 300px;
-       height: 46.1px;
-       align-items: center;
-       font-size: 16px;
-       /* padding-left: 50px;  */
-       /* border: 1px solid rgb(255, 255, 255, 0.3); */
-       text-align: left;
-       /* test-magin:left; */
-       
-       
+    width: 300px;
+    height: 46.1px;
+    align-items: center;
+    font-size: 16px;
+    text-align: left;
 }
-
-
 
 .diagAtTable tr:nth-child(even)  {
        background-color: #3d3d3d;
@@ -454,16 +445,6 @@
    border-bottom-left-radius: 5px;
    border-bottom-right-radius: 5px;
 }
-    
-
-/*  .diagAtTable {
-   font-size: 16px;
-   color: #fff;
-   border-collapse: collapse;
-   border: 1px solid rgb(255, 255, 255, 0.3);
-   border-style: hidden;
-   table-layout: fixed;
-} */
 
 .diagAtTable td {
    padding: 0 10px;

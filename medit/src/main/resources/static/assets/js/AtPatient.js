@@ -67,19 +67,6 @@ $(document).on('click', '.selectPtnt', function() {
 				AtHidden = false; 
 			}
 			
-			/*tableHtmlAT = `
-			<div id="diagLeftSpace">
-						<img src="assets/imgs/firstBtn.svg" id="first_AT"
-							class="diagAtMoveBtn"></img> <img src="assets/imgs/preBtn.svg"
-							id="pre_AT" class="diagAtMoveBtn"></img>
-					</div>
-					<div id="pageNumber_AT"></div>
-					<div id="diagRightSpace">
-						<img src="assets/imgs/nextBtn.svg" id="next_AT" class="diagAtMoveBtn"></img>
-						<img src="assets/imgs/lastBtn.svg" id="last_AT" class="diagAtMoveBtn"></img>
-					</div>
-					`;
-			table_AT.html(tableHtmlAT);*/
 			
 			// 진단 날짜, diag테이블 시퀀스 배열 초기화
 			let Arr_ptntAt = [];
@@ -568,10 +555,6 @@ $(document).on('click', '.opinion-icon', function() {
 	// 현재 opinion 영역의 내용 가져오기
 	
 	currentOpinion = opinion.find('.docOpinion div').text().trim();
-	/*$('#opinion').css('border', 'none');*/
-	// textarea로 교체
-	
-	/*let docOpinionTest = $(".docOpinion")*/
 	
 	opinion.html(`<div id="opinionBox">
 						<div id="opinionText">

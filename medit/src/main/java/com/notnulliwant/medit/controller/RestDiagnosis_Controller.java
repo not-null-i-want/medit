@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.notnulliwant.medit.entity.Cxrs;
 import com.notnulliwant.medit.entity.Deeps;
 import com.notnulliwant.medit.entity.Diagnosis;
+import com.notnulliwant.medit.entity.PagingDiagAt;
 import com.notnulliwant.medit.repository.CxrsRepository;
 import com.notnulliwant.medit.repository.DeepsRepository;
 import com.notnulliwant.medit.repository.DiagnosisRepository;
+import com.notnulliwant.medit.service.DiagnosisService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -32,6 +37,9 @@ public class RestDiagnosis_Controller {
 	
 	@Autowired
 	private DeepsRepository deepsRepo;
+	
+	@Autowired
+	private DiagnosisService diagnosisService;
 
 	//진단 날짜 띄워주는 컨트롤러
 	@ResponseBody
@@ -40,9 +48,8 @@ public class RestDiagnosis_Controller {
 
 		List<Diagnosis> diag = Diagrepo.findAllByPtntId(ptntId);
 
-	return diag;
-	
-		}
+		return diag;
+	}
 	
 	//의사소견 띄워주는 컨트롤러
 	@ResponseBody
@@ -51,7 +58,6 @@ public class RestDiagnosis_Controller {
 
 		Diagnosis docOpinion = Diagrepo.findAllBydiagSeq(diagSeq);
 		return docOpinion;
-
 	}
 
 	//의사소견 DB저장해주는 컨트롤러
@@ -68,6 +74,30 @@ public class RestDiagnosis_Controller {
 		return "";
 	}
 	
+	// 진단 날짜 페이징
+	@GetMapping("/diagAtPaging") 
+	public PagingDiagAt paging_AT(@PageableDefault(page = 1) Pageable pageable, Integer ptntId) { 
+			
+		Page<Diagnosis> diaList = diagnosisService.Atpaging(pageable, ptntId);
+			
+		List<Diagnosis> diag = diaList.getContent();
+			
+		PagingDiagAt pagingdiagat = new PagingDiagAt();
+		  
+		int blockLimit = 4; // 페이지 개수 조정 
+		int startPage = (((int) Math.ceil(((double)pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; 
+		int endPage = Math.min((startPage + blockLimit - 1), diaList.getTotalPages());
+		  
+		pagingdiagat.setDiagnosis(diag);
+		pagingdiagat.setFirst(diaList.isFirst());
+		pagingdiagat.setLast(diaList.isLast());
+		pagingdiagat.setNumber(diaList.getNumber());
+		pagingdiagat.setTotalPage(diaList.getTotalPages());
+		pagingdiagat.setStartPage(startPage); 	
+		pagingdiagat.setEndPage(endPage);
+		  
+		return pagingdiagat; 
+	}
 	
 	// 진단 디테일 출력
 	@RequestMapping("showDiagDetail")

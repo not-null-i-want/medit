@@ -48,19 +48,7 @@ public class ChattingController {
         
 	    List<Chattings> test = c_repo.findAllByRoomSeq(chatrooms);
 	    
-	    
-	    System.out.println(test);
-//	    
-//	    System.out.println(test);
-//	    model.addAttribute("roomseq", roomSeq);
-	    
 	    return test;
 	}
-
-//	@PostMapping("/chat/history")
-//	@ResponseBody
-//	public List<Chattings> getChatHistory(@RequestParam Integer roomSeq) {
-//	    return c_repo.findByRoomSeq(roomSeq);
-//	}
 	
 }

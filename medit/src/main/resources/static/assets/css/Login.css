@@ -41,30 +41,29 @@ video{
 }
 
 .login {
-overflow: hidden;
-background-color: white;
-padding: 40px 30px 30px 30px;
-border-radius: 10px;
-position: absolute;
-top: 50%;
-left: 50%;
-width: 500px;
-height: 500px;
--webkit-transform: translate(-50%, -50%);
--moz-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
--o-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
--webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
--moz-transition: -moz-transform 300ms, box-shadow 300ms;
-transition: transform 300ms, box-shadow 300ms;
-box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
-opacity: 85%;
-
-animation-name: loginBox;
-animation-duration:1.5s;
-animation-duration: leaner;
-
+	overflow: hidden;
+	background-color: white;
+	padding: 40px 30px 30px 30px;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 500px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+	-moz-transition: -moz-transform 300ms, box-shadow 300ms;
+	transition: transform 300ms, box-shadow 300ms;
+	box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+	opacity: 85%;
+	
+	animation-name: loginBox;
+	animation-duration:1.5s;
+	animation-duration: leaner;
 }
 
 @keyframes loginBox {
@@ -77,76 +76,76 @@ animation-duration: leaner;
 }
 
 .login::before, .login::after {
-content: "";
-position: absolute;
-width: 600px;
-height: 600px;
-border-top-left-radius: 40%;
-border-top-right-radius: 45%;
-border-bottom-left-radius: 35%;
-border-bottom-right-radius: 40%;
-z-index: -1;
+	content: "";
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	border-top-left-radius: 40%;
+	border-top-right-radius: 45%;
+	border-bottom-left-radius: 35%;
+	border-bottom-right-radius: 40%;
+	z-index: -1;
 }
 .login::before {
-left: -8%;
-bottom: -100%;
-background-color: rgba(138, 154, 172, 0.15);
--webkit-animation: wawes 6s infinite linear;
--moz-animation: wawes 6s infinite linear;
-animation: wawes 6s infinite linear;
+	left: -8%;
+	bottom: -100%;
+	background-color: rgba(138, 154, 172, 0.15);
+	-webkit-animation: wawes 6s infinite linear;
+	-moz-animation: wawes 6s infinite linear;
+	animation: wawes 6s infinite linear;
 }
 .login::after {
-left: -3%;
-bottom: -95%;
-background-color: rgba(2, 128, 144, 0.2);
--webkit-animation: wawes 7s infinite;
--moz-animation: wawes 7s infinite;
-animation: wawes 7s infinite;
+	left: -3%;
+	bottom: -95%;
+	background-color: rgba(2, 128, 144, 0.2);
+	-webkit-animation: wawes 7s infinite;
+	-moz-animation: wawes 7s infinite;
+	animation: wawes 7s infinite;
 }
 .login > div > input {
-font-family: "Poppins", sans-serif;
-display: block;
-font-size: 18px;
-background-color: rgba(255, 255, 255, 0.0);
-width: 60%;
-border: 0;
-padding: 10px 10px;
-margin: 15px;
-margin-left: 90px;
-outline: none;
-border-bottom: 1px solid rgb(150, 150, 150);
-color: #474747;
+	font-family: "Poppins", sans-serif;
+	display: block;
+	font-size: 18px;
+	background-color: rgba(255, 255, 255, 0.0);
+	width: 60%;
+	border: 0;
+	padding: 10px 10px;
+	margin: 15px;
+	margin-left: 90px;
+	outline: none;
+	border-bottom: 1px solid rgb(150, 150, 150);
+	color: #474747;
 }
 .login > input[type="submit"] {
-font-family: "Poppins", sans-serif;
-cursor: pointer;
-color: #fff;
-font-size: 20px;
-width: 100px;
-border: 0;
-padding: 10px 0;
-
-margin: 50px 200px 20px 200px;
-
-border-radius: 5px;
-background-color: #6d6d6d;
--webkit-transition: background-color 300ms;
--moz-transition: background-color 300ms;
-transition: background-color 300ms;
--webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
--moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
--ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
--o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
--webkit-transition: all 0.25s ease-in-out;
--moz-transition: all 0.25s ease-in-out;
--ms-transition: all 0.25s ease-in-out;
--o-transition: all 0.25s ease-in-out;
-transition: all 0.25s ease-in-out;
+	font-family: "Poppins", sans-serif;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	width: 100px;
+	border: 0;
+	padding: 10px 0;
+	
+	margin: 50px 200px 20px 200px;
+	
+	border-radius: 5px;
+	background-color: #6d6d6d;
+	-webkit-transition: background-color 300ms;
+	-moz-transition: background-color 300ms;
+	transition: background-color 300ms;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 .login > input[type="submit"]:hover {
-background-color: #435ea8;
-width: 200px;
+	background-color: #435ea8;
+	width: 200px;
 }
 
 @-webkit-keyframes wawes {
@@ -182,12 +181,12 @@ to {
 }
 }
 a {
-text-decoration: none;
-color: rgba(255, 255, 255, 0.6);
-position: absolute;
-right: 10px;
-bottom: 10px;
-font-size: 12px;
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.6);
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-size: 12px;
 }
 
 /* 로그인, 비밀번호 input 애니메이션*/
