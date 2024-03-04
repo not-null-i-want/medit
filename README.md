@@ -308,6 +308,12 @@
 
 ## 🧩 트러블 슈팅
 
+### [정연희]
+
+### [김병훈]
+
+### [윤수민]
+
 <details>
 <summary><b>Failed to connect to service endpoint</b></summary>
 <div markdown="1">
@@ -382,6 +388,31 @@ java.io.UncheckedIOException: Cannot delete C:\Users\smhrd\AppData\Local\Temp\to
       <version>2.7.6</version>
       <relativePath/>
 </parent>
+```
+
+</div>
+</details>
+
+### [임지후]
+
+### [이동훈]
+
+<details>
+<summary><b>OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.</b></summary>
+<div markdown="1">
+
+---
+
+　🧨 오류 내용
+
+ - 각종 커널(라이브러리)들의 충돌이 발생
+
+　💡 해결 방법
+- openmp 커널 충돌 방지를 위해 코드를 입력하였음
+
+```py
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 ```
 
 </div>
