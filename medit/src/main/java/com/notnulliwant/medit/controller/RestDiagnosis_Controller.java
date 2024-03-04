@@ -18,7 +18,7 @@ public class RestDiagnosis_Controller {
 
 	//진단 날짜 띄워주는 컨트롤러
 	@ResponseBody
-	@RequestMapping("/ShowPatientAt") // 트러블슈팅, postmapping으로해놔서 오류가 405오류가 뜨던걸 requestmapping으로	바꿔주니 해결됨!
+	@RequestMapping("/ShowPatientAt")
 	public List<Diagnosis> ShowPatientAt(Integer ptntId) {
 
 		List<Diagnosis> diag = Diagrepo.findAllByPtntId(ptntId);

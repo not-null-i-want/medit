@@ -1,8 +1,7 @@
 package com.notnulliwant.medit.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,7 +51,7 @@ public class Diagnosis {
    
    @CreationTimestamp
    @Column(name = "DIAG_AT")
-   private Date diagAt;
+   private LocalDateTime diagAt;
    
    @Column(name = "DOCTOR_OPINION")
    private String doctorOpinion;
@@ -67,7 +66,7 @@ public class Diagnosis {
    
 // 진단 날짜 목록 페이징에 사용할 생성자
 public Diagnosis(Integer DiagSeq, Integer PtntId, Doctors DoctorId, 
-		   Date DiagAt, String DoctorOpinion ) {
+		LocalDateTime DiagAt, String DoctorOpinion ) {
    this.diagSeq = DiagSeq;
    this.ptntId = PtntId;
    this.doctorId = DoctorId;

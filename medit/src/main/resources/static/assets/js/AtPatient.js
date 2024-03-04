@@ -108,7 +108,7 @@ $(document).on('click', '.selectPtnt', function() {
 				tableHtml += '</table>';
 				tableHtml += '<div class="diagAt-icon">' + '<img src="assets/imgs/PatientAt_icon.png" >' + '</div>';
 				diagAT.html(tableHtml).trigger("create");
-				opinion.html("").trigger("create");
+				/*opinion.html("").trigger("create");*/
 			
 			AT_pageNumber = $("#pageNumber_AT");  // 변수선언
 			
