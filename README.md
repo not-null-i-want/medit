@@ -199,6 +199,8 @@
 <summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리, CAM(Class Activation Map 이미지 생성</b></summary>
 <div markdown="1">
 
+- **[[Model Repository]](https://github.com/not-null-i-want/chest-xrv-diagnosis)**
+
 - **결과 추론 과정**
   
 	---
