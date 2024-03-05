@@ -523,7 +523,19 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 				-병훈
 			</h5></td>
 			<td><h5>
-				-수민
+				- DB 설계 및 구현<br><br>
+				- 화면 설계<br><br>
+				- Pageable을 이용한 환자 검색 및 목록 페이징 처리<br><br>
+    			- 환자 상세정보 출력<br><br>
+				- 진단 작성 기능 구현<br><br>
+				- AWS S3 Bucket으로 이미지 업로드 기능 구현<br><br>
+    			- CXR 원본 이미지 출력<br><br>
+				- 모델로부터 추론된 진단 결과 출력<br><br>
+    			- HTML5 Canvas를 이용한 CXR 이미지 편집 기능 구현(펜 굵기, 색상, 클리어, On/Off)<br><br>
+				- Chart.js로 각 확률값들 그래프화<br><br>
+				- AWS EC2, AWS S3 환경 구축<br><br>
+    			- EC2 인스턴스에 SpringBoot 서버 배포<br><br>
+				- 전체적인 페이지 UI/UX 구현(로고, 레이아웃, 메인페이지, 환자검색, 환자목록, 상세정보, 진단, 환자 등록, 진단 결과, 각종 애니메이션)<br>
 			</h5></td>
 			<td><h5>
 				-지후
