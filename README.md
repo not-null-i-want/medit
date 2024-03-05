@@ -149,6 +149,9 @@
 
 - 소견 작성 및 수정<br>
 ![소견작성](https://github.com/not-null-i-want/medit/assets/145624456/ef71e151-f39d-4a68-a9b0-6b9d43d2cdd4)
+
+- 진단<br>
+![진단](https://github.com/not-null-i-want/medit/assets/145624456/25ca7f15-0aae-4c0e-88b7-4ba0b5ec5e8f)
 </div>
 </details>
 
