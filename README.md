@@ -526,7 +526,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 			</h5></td>
 			<td><h5>
 				- DB 설계 및 구현<br><br>
-				- 화면 설계<br><br>
+				- UI/UX 설계<br><br>
 				- Pageable을 이용한 환자 검색 및 목록 페이징 처리<br><br>
     			- 환자 상세정보 출력<br><br>
 				- 진단 작성 기능 구현<br><br>
