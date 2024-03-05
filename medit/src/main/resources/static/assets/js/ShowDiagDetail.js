@@ -106,6 +106,7 @@ $(document).on("click", ".diagDate", function(){
 				</div>
 			`).trigger("create");
 			
+			
 			showPage(currentPage);
 			  
 			var canvas = document.getElementById('myCanvas');
@@ -162,7 +163,7 @@ $(document).on("click", ".diagDate", function(){
 			$("#switch").on("click", function() {
 				
 				clearCanvas();
-				
+
 				if (toggle == 0){
 					$("#cxrImg").attr("src", res[0]);	
 					$(".clickPro").removeClass("clickPro");
@@ -359,6 +360,9 @@ $(document).on("click", ".diagDate", function(){
 				$("#diagResult").addClass("diagResult-event-1");
 			}
 			
+			
+			
+			
 		},
 		error: function(){
 			console.log("showDiagDetail.js error");
@@ -437,4 +441,5 @@ $(document).on("click", ".toggleBtn", function(){
 		$(this).addClass("toggleDrawing-active");
 		console.log("test2");
 	}
+	
 });
