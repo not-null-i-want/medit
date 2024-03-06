@@ -558,6 +558,7 @@ $(document).on('click', '.opinion-icon', function() {
 	
 	opinion.html(`<div id="opinionBox">
 						<div id="opinionText">
+							<img src="assets/imgs/trust.png"/>
 							<div>소견서</div>
 						</div>
         <textarea id="editableOpinion">${currentOpinion}</textarea>
@@ -590,6 +591,7 @@ $(document).on('click', '.save-icon', function() {
 			opinion.html(`
 					<div id="opinionBox">
 						<div id="opinionText">
+							<img src="assets/imgs/trust.png"/>
 							<div>소견서</div>
 						</div>
 						<div class ="docOpinion">
