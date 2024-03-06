@@ -3,7 +3,7 @@ const modalCloseButton = document.getElementById('modalCloseButton');
 const modal = document.getElementById('modalContainer');
 
 let websocket = null;
-var url = "ws://localhost:8089/chat";
+var url = "ws://192.168.219.46:8089/chat";
 
 modalOpenButton.addEventListener('click', () => {
 	modal.classList.remove('hidden');
