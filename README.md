@@ -636,7 +636,13 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 				-연희
 			</h5></td>
 			<td><h5>
-				-병훈
+				- 환자 등록 기능 구현<br><br>
+				- 주소 카카오 api연동<br><br>
+				- 환자별 진단 날짜 출력<br><br>
+				- 진단 날짜별 의사 소견 출력<br><br>
+				- 의사 소견 등록, 삭제, 수정 기능 구현<br><br>
+				- 진단 날짜 페이징 처리, 관련 생성자&entity 구현<br><br>
+				- 채팅, 진단 날짜, 의사소견, 채팅창 CSS<br><br>
 			</h5></td>
 			<td><h5>
 				- DB 설계 및 구현<br><br>
