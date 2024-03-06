@@ -142,7 +142,7 @@
 <div markdown="1">
 
 - 환자 등록<br>
-![환자등록](https://github.com/not-null-i-want/medit/assets/145624456/3d4b5ed2-2c39-4f27-9e4b-4404ccedc89b)
+![MEDIT-Chrome2024-03-0610-43-58-ezgif com-video-to-gif-converter](https://github.com/not-null-i-want/medit/assets/145624456/0485d329-84f4-4595-a201-5a7f67e5c951)
 
 - 환자 목록 및 검색, 상세 정보<br>
 ![환자검색, 상세목록](https://github.com/not-null-i-want/medit/assets/145624456/1f1b814d-479c-4b68-a7a1-d5f5bc43b1bd)
