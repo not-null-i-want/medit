@@ -142,6 +142,11 @@ App.init = (function() {
 		setTimeout(() => {
 			$("#drop").removeClass("hidden");
 		}, 500);
+		$(".list-files").append(`
+			<div class="loader">
+				<div class="loaderBar"></div>
+			</div>
+		`).trigger("create");
 	});
 
 })();

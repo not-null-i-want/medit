@@ -42,7 +42,6 @@ public class RestDiagnosis_Controller {
 	private DiagnosisService diagnosisService;
 
 	//진단 날짜 띄워주는 컨트롤러
-	@ResponseBody
 	@RequestMapping("/ShowPatientAt")
 	public List<Diagnosis> ShowPatientAt(Integer ptntId) {
 
@@ -52,7 +51,6 @@ public class RestDiagnosis_Controller {
 	}
 	
 	//의사소견 띄워주는 컨트롤러
-	@ResponseBody
 	@RequestMapping("/ShowDiagOpinion")
 	public Diagnosis showDiagOpinion(Integer diagSeq) {
 
@@ -61,7 +59,6 @@ public class RestDiagnosis_Controller {
 	}
 
 	//의사소견 DB저장해주는 컨트롤러
-	@ResponseBody
 	@RequestMapping("/saveOpinion")
 	public String updateOpinion(Integer saveSeq, String saveOpinion) {
 
