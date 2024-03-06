@@ -56,7 +56,7 @@ const loadWriteDiag = () => {
                             </header>
                             <div class="body" id="drop">
                                 <i class="fa fa-file-text-o pointer-none" aria-hidden="true"></i>
-                                <p class="pointer-none">파일을 <b>클릭하여 끌어넣거나</b> <br /><a href="#" id="triggerFile">이 곳을 눌러</a> 업로드를 진행하세요.</p>
+                                <p class="pointer-none">파일을 <b>클릭하여 끌어넣거나</b> <br /><a href="#" id="triggerFile">이 곳을 눌러</a> 업로드를 진행하세요.<br/>진단까지 약 1~2분이 소요됩니다.</p>
                                 <input type="file" name="file" class="cxrUpload"/>
                             </div>
                             <footer>

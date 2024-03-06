@@ -93,12 +93,8 @@ public class DiagnosisController {
       if (s3_url != null) {
           List<String> result = (List<String>) map1.get("result");
           String resultStr = mapper.writeValueAsString(result);
-          System.out.println(result);
-          System.out.println(resultStr);
           List<Map<String, String>> result1 = (List<Map<String, String>>) map1.get("result");
           String resultStr1 = mapper.writeValueAsString(result1);
-          System.out.println(result1);
-          System.out.println(resultStr1);
 
           // 확장자 추출
           String extension = "";

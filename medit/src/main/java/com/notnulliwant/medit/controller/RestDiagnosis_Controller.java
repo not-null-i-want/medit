@@ -106,7 +106,7 @@ public class RestDiagnosis_Controller {
 	    Diagnosis diag = new Diagnosis();
 	    diag.setDiagSeq(diagSeq);
 
-	    List<Cxrs> cxrsList = cxrsRepo.findByDiagSeq(diag);
+	    List<Cxrs> cxrsList = cxrsRepo.findByDiagSeqOrderByCxrSeqAsc(diag);
 
 	    Cxrs deepCxr = new Cxrs();
 
@@ -123,7 +123,7 @@ public class RestDiagnosis_Controller {
 
 	    // 딥 러닝 결과 추출
 	    Deeps deeps = deepsRepo.findByCxrSeq(deepCxr);
-	    System.out.println(deeps);
+	    System.out.println(deeps + "***");
 	    
 	    String deepResult = deeps.getDeepResult();
 	    
