@@ -167,7 +167,7 @@
 <summary><b>효율적인 데이터 로딩과 가독성을 위해 목록을 출력해주는 기능들의 페이징 처리(환자 목록, 진료 날짜 목록)</b></summary>
 <div markdown="1">
 
-![페이징](https://github.com/not-null-i-want/medit/assets/145624456/61d429be-33b7-4890-8928-bcc53dd92465)
+![MEDIT-Chrome2024-03-0609-49-03-ezgif com-video-to-gif-converter (1)](https://github.com/not-null-i-want/medit/assets/145624456/4b238501-1d2b-4fac-a861-10cbdc64e1f8)
 </div>
 </details>
 
