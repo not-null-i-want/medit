@@ -145,7 +145,7 @@
 ![MEDIT-Chrome2024-03-0610-43-58-ezgif com-video-to-gif-converter](https://github.com/not-null-i-want/medit/assets/145624456/0485d329-84f4-4595-a201-5a7f67e5c951)
 
 - 환자 목록 및 검색, 상세 정보<br>
-![환자검색, 상세목록](https://github.com/not-null-i-want/medit/assets/145624456/1f1b814d-479c-4b68-a7a1-d5f5bc43b1bd)
+![MEDIT-Chrome2024-03-0611-35-02-ezgif com-video-to-gif-converter](https://github.com/not-null-i-want/medit/assets/145624456/06baca65-ec8a-467f-97f7-5b5daeec803d)
 
 - 소견 작성 및 수정<br>
 ![소견작성](https://github.com/not-null-i-want/medit/assets/145624456/ef71e151-f39d-4a68-a9b0-6b9d43d2cdd4)
