@@ -202,11 +202,13 @@
 }
 
 .rgstLabel{
-	font-size: 30px;
+	font-size: 25px;
 	display: block;
-	font-family: "MBC1961GulimM";
+	font-family: PuradakGentleGothicR;
 	color: white;
 	margin-left: 70px;
+	position: relative;
+	top: 30px;
 }
 .rgst_inputBox{
 	border-radius: 5px;
@@ -220,6 +222,7 @@
 	outline: none;
 	color: #666666;
 	left: 350px;
+	margin-top: 35px;
 }
 .rgst_inputBox:focus{
 	background-color: #39568d;
@@ -264,6 +267,7 @@
 .genderIcon{
 	width: 100px;
 	margin-left: 40px;
+	margin-top: 40px;
 }
 .genderIconPassive{
 	filter: grayscale(100%);
@@ -303,17 +307,17 @@
 	margin-top: 80px;
 }
 #sample4_roadAddress{
-	margin-top: 50px;
+	margin-top: 80px;
 	width: 500px;
 }
 #sample4_detailAddress{
-	margin-top: 100px;
+	margin-top: 125px;
 	width: 500px;
 }
 .searchAddr{
 	display:block;
 	margin-left: 290px;
-	margin-top: 7px;
+	margin-top: 37px;
 	position: absolute;
 	font-family: SUITE-Regular;
 	font-size: 15px;
@@ -327,7 +331,7 @@
 #ptntBtn_rgst{
 	width: 1200px;
 	margin-left: 550px;
-	margin-top: 160px;
+	margin-top: 190px;
 	position: absolute;
 }
 .rgst_btn{
@@ -351,7 +355,7 @@
 	display: inline;
 	position: absolute;
 	left: 347px;
-	top: 109px;
+	top: 139px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
 .rgst_icon_2{
@@ -360,7 +364,7 @@
 	display: inline;
 	position: absolute;
 	left: 35px;
-	top: 0px;
+	top: 30px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
 .rgst_icon_3{
@@ -369,7 +373,7 @@
 	display: inline;
 	position: absolute;
 	left: 350px;
-	top: 225px;
+	top: 245px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
 .rgst_icon_4{
@@ -378,7 +382,7 @@
 	display: inline;
 	position: absolute;
 	left: 346px;
-	top: 343px;
+	top: 355px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
 .rgst_icon_5{
@@ -387,7 +391,7 @@
 	display: inline;
 	position: absolute;
 	left: 350px;
-	top: 455px;
+	top: 460px;
 	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(107deg) brightness(105%) contrast(101%);
 }
 

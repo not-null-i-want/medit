@@ -163,6 +163,47 @@ $(document).on("click", ".diagDate", function(){
 			$("#switch").on("click", function() {
 				
 				clearCanvas();
+				
+				let imgUrl = res[0];
+				
+				let img = new Image();
+				
+				img.src = imgUrl;
+				
+				img.onload = function() {
+				    // Create a canvas element
+				    let canvas = document.createElement('canvas');
+				    let ctx = canvas.getContext('2d');
+				
+				    // Set canvas dimensions to match the image
+				    canvas.width = img.width;
+				    canvas.height = img.height;
+				
+				    // Draw the image on the canvas
+				    ctx.drawImage(img, 0, 0);
+				
+				    // Get the image data
+				    let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+				    let data = imageData.data;
+				
+				    // Loop through each pixel
+				    for (let i = 0; i < data.length; i += 4) {
+				        // Check if the pixel is red
+				        if (data[i] > 200 && data[i + 1] < 100 && data[i + 2] < 100) {
+				            // Convert red pixels to gray
+				            let gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+				            data[i] = gray; // Red
+				            data[i + 1] = gray; // Green
+				            data[i + 2] = gray; // Blue
+				        }
+				    }
+				
+				    // Put the modified image data back to the canvas
+				    ctx.putImageData(imageData, 0, 0);
+				
+				    // Replace the original image with the modified one
+				    document.getElementById('cxrImg').src = canvas.toDataURL();
+				};
 
 				if (toggle == 0){
 					$("#cxrImg").attr("src", res[0]);	
