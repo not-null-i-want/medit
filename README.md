@@ -198,7 +198,7 @@
 </details>
 
 <details>
-<summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리, CAM(Class Activation Map 이미지 생성</b></summary>
+<summary><b>CXR 이미지 업로드 즉시 ResNet 모델을 이용하여 결과를 추론하고 확률 및 레이블 처리, CAM(Class Activation Map) 이미지 생성</b></summary>
 <div markdown="1">
 
 - **[[Model Repository]](https://github.com/not-null-i-want/chest-xrv-diagnosis)**
@@ -307,6 +307,120 @@
 
   - 추가 후<br>
   ![image](https://github.com/not-null-i-want/medit/assets/145624456/4506eb19-b883-4a6e-8b5e-3ac5433ae173)
+
+</div>
+</details>
+
+<details>
+<summary><b>13가지의 폐 질환에 대해 추론</b></summary>
+<div markdown="1">
+
+<br>
+	
+- **Atelectasis(무기폐)** : 폐는 정상적으로 풍선과 같이 공기를 품고 팽창되어 있어야 하는 장기인데, 어떠한 이유에 의해서 폐의 일부가 팽창된 상태를 유지하지 못하고, 부피가 줄어 쭈그러든 것을 말한다.
+	
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/a9e873c0-24c9-45e2-a4d0-2a03bdd23089)
+ 
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/f46ee798-5b9e-4a73-9d81-7ebec7ad4d51)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/6a4d138a-c62f-4f05-9ae2-814eb1174253)
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/963bd118-8c74-431a-a7fa-a0cdadd2409b)
+
+<hr>
+
+- **Effusion(흉막삼출, 흉수)** : 삼출이란 염증이 생겼을 때 핏줄이나 미세한 구멍에서 조직이나 체강 속으로 스며 나오는 세포 성분과 액체 성분이다.
+흉막 삼출은 폐의 흉막에서 체액 성분이 스며나오는 삼출 증상이 나타나는 질환을 말한다. 
+원인 질환에 의하여 흉막에서 흡수되는 체액보다 생성되는 체액이 많아질 때 발생한다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/e5448497-6dd3-4f6e-bdca-b79b57655990)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/b9113296-7427-4ea6-b5f8-4be282f9e15a)
+
+<hr>
+
+- **Infiltration(침윤음영)** : 조직이나 세포에 정상이 아닌 물질이나 비정상적으로 과다한 물질이 축적, 침착하는 것. 또한 이와 같이 하여 축적된 물질을 가리키기도 한다. 즉, 이상세포 성분의 증가된 상태.
+흉부 X-선사진에서는 주로 경계가 불투명한 음영을 표현하는 것을 말한다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/a8bddf75-6690-48e8-9ff1-7ab25e4638cc)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/0c0f7a75-e548-474a-8943-af4cf221ee61)
+
+<hr>
+
+- **Mass(폐 종괴)** : 혹의 특성을 정확히 모르면 '종괴'라고 부른다. 종괴는 피부 겉으로 튀어나와 있기도 하고, 피부 안에 숨어 겉으로 티가 나지 않기도 한다. 결절에 비해 큰 혹이다. 종괴와 결절을 구분하는 명확한 기준은 없다. 폐의 경우 3cm보다 작은 경우 결절, 3cm보다 크면 종괴라고 판단함.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/5fc762ed-fd1a-4c65-a712-05193ddab620)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/fd0b5aa5-d095-42ff-9aaf-59b2eedb2565)
+
+<hr>
+
+- **Nodule(폐 결절)** : 폐결절은 폐 내부에 생긴 지름 3cm 미만의 작은 구상 병변이다. 
+한 개만 있는 것을 고립성 폐결절, 여러 개 있는 것을 다발성 폐결절단순이라고 한다 .
+염증 흔적인 경우 많다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/e8e2dc2e-b261-46fc-85e0-b3c3fd7125a0)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/fa3d1580-ab3e-48a9-a59c-26db6c4d4d77)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/d6c01d8a-58cd-4220-9fbc-dbe7bfa2e841)
+
+<hr>
+
+- **Pneumonia(폐렴)** : 폐렴은 세균이나 바이러스, 곰팡이 등의 미생물로 인한 감염으로 발생하는 폐의 염증이다.
+흉부 X-선상 특징적인 소견으로 쉽게 진단이 되기도 하나 폐렴 이외의 다른 호흡기 질환과의 감별이 필요할 때는 흉부 전산화 단층촬영(CT)등의 검사를 실시하기도 한다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/292e8f77-0b9b-4c4a-8200-d8bf6f5af9e0)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/b95c560e-9bf6-4f10-b10c-5ec8150cfe27)
+
+<hr>
+
+- **Pneumothorax(기흉)** : 기흉은 공기주머니에 해당하는 폐에 구멍이 생겨 공기가 새고 이로 인해 늑막강 내에 공기나 가스가 고이게 되는 질환이다.
+허파와 흉부벽 사이의 흉강에 공기가 비정상적으로 모이는 현상.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/d8415b63-65c3-447a-9db9-cb346db8a22f)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/2aa42f04-3f02-4c03-b59a-ef8fe28b792c)
+
+<hr>
+
+- **Consolidation(폐 경화)** : 액체나 세포등이 폐포의 공기를 대체하여 폐가 단단하게 된 상태.
+X선사진이나 CT에서 폐음영이 비교적 균일하게 증가하며,	폐용적의 변화가 거의 없다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/af925f86-2d8d-489a-a6ee-082671574fbd)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/1a65e7e5-8285-406e-a545-602672ea15c8)
+
+<hr>
+
+- **Edema(폐 부종)** : 혈관 밖의 폐조직인 폐간질 및 폐포에 비정상적으로 액체가 고이는 것. 즉, 말 그대로 폐에 물이 차는 것이다.
+  
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/3c8aff1f-7b57-4de7-8590-ea84a9b75efc)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/c462975c-d84f-4e60-b717-d5a53ebcf492)
+
+<hr>
+
+- **Emphysema(폐 기종)** : 기관지나 폐에 염증이 생기고, 이로 인하여 숨을 쉴 때 폐조직이(폐포) 늘어나는 것을 조절하는 섬유가 파괴된 상태로, 공기 흐름이 막힌것을 말한다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/6c4c3ad1-00b8-4fa9-a75b-f0a2c352ea4f)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/8bb61bb4-46d0-4829-b947-b467ff3170d8)
+
+<hr>
+
+- **Fibrosis(폐 섬유화)** : 폐 조직이 굳어서 심각한 호흡 장애를 불러일으키는 호흡기 질환이다. 섬유화가 진행된 폐조직을 복구할 수 있는 방법은 없다.
+
+  	![image](https://github.com/not-null-i-want/medit/assets/145624456/c4fe15f2-0ffd-4b13-992e-0a6e6c63a399)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/be682383-7343-41a1-bc98-3da67e96716c)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/d0299fcd-65fc-4255-a56d-2c79bc783ebd)
+
+<hr>
+
+- **Pleural Thickening(흉막비후)** : 흉막이 딱딱하게 굳어 두꺼워지는 증상.
+
+ 	![image](https://github.com/not-null-i-want/medit/assets/145624456/ee1f3048-d107-4f47-b9e5-fa0ce8c58255)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/4df32e50-4f69-4063-873f-ae850ba8fd2e)
+
+<hr>
+
+- **Hernia(폐 탈장)** : 폐가 흉벽 밖으로 돌출되는 질환.
+천식과 같은 폐 질환에서 잦은 기침은 흉강 내압을 증가시키고 폐를 탈장시킬 수 있다.
+
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/0483e34b-8f28-410d-b6bd-385f5f23059c)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/b5cfdb8d-48de-4378-874b-fae63bf03415)
+	![image](https://github.com/not-null-i-want/medit/assets/145624456/ae13bca6-0c5e-479a-8d3c-93506aab549e)
 
 </div>
 </details>
