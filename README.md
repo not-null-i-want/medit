@@ -640,7 +640,11 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
     </tr>
     	<tr>
 			<td><h5>
-				-연희
+				- 웹소켓을 활용한 일대일 채팅 기능 구현<br><br>
+                       		- 모달창 기능 구현<br><br>
+				- AWS S3 서버에서 flask로 이미지 주소값 불러오기<br><br>
+				- 처리된 이미지 AWS S3로 파일 업로드<br><br>
+				- flask에서 넘어온 이미지 주소값, 딥러닝 예측 결과값 처리<br><br>
 			</h5></td>
 			<td><h5>
 				- 환자 등록 기능 구현<br><br>
@@ -667,10 +671,19 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 				- 전체적인 페이지 UI/UX 구현(로고, 레이아웃, 메인페이지, 환자검색, 환자목록, 상세정보, 진단, 환자 등록, 진단 결과, 각종 애니메이션)<br>
 			</h5></td>
 			<td><h5>
-				-지후
+				- 환자목록 페이지 기능 구현<br><br>
+				- 환자 상세정보 기능 구현<br><br>
+				- 환자등록 페이지 비동기 기능 구현<br><br>
+				- 비교군 CXR 출력 비동기 기능 구현<br><br>
+				- 비교군 CXR 페이징 및 비교군  CXR CSS 구현<br><br>
+				- CXR Visualize on/off 비동기 구현<br><br>
 			</h5></td>
 			<td><h5>
-				-동훈
+				- 환자 검색 및 로그인 기능 구현<br><br>
+				- aws s3서버 -> flask로 이미지 주소값 받아오기<br><br>
+				- flask서버 -> aws s3서버로 처리된이미지 파일 업로드 및 업로드된 주소값 받아오기<br><br>
+				- 이미지 전처리 및 TTA 방식을 통한 테스트 로직 구현<br><br>
+				- 처리후 결과값, 결과이미지 주소 스프링부트로 넘겨주기<br><br>
 			</h5></td>
     	</tr>
 	<tr>
