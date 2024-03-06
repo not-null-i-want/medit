@@ -140,7 +140,7 @@ public class DiagnosisController {
 
           deepsRepo.save(deep);
       }
-      return "redirect: Main";
+      return "redirect:/Main";
    }
 
 }

@@ -239,6 +239,7 @@ $(document).on("click", ".diagDate", function(){
 				$("#main-section").addClass("main-section-event-1");
 			}
 			
+			
 			// 그래프 출력
 			let Ct = $("#chart");
 			let diagData = [res[2] ,res[9] ,res[4] ,res[13], res[12],

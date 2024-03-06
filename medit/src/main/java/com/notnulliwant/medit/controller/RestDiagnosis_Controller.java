@@ -123,13 +123,13 @@ public class RestDiagnosis_Controller {
 
 	    // 딥 러닝 결과 추출
 	    Deeps deeps = deepsRepo.findByCxrSeq(deepCxr);
+	    System.out.println(deeps);
 	    
 	    String deepResult = deeps.getDeepResult();
 	    
 	    deepResult = deepResult.replace("\"", "").replace("[", "").replace("]", "");
 	    
 	    String[] resultString = deepResult.split(",");
-	    
 	    
 	    for(String text : resultString) {
 	    	String[] parts =  text.trim().split(":");
