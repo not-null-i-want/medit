@@ -694,7 +694,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 		<td align="center"><a href="https://github.com/hoon801">@hoon801</a></td>
 		<td align="center"><a href="https://github.com/explorersm11">@explorersm11</a></td>
 		<td align="center"><a href="https://github.com/yim7595/yim7595">@yim7595</a></td>
-		<td align="center"><a href="https://github.com/opencv256/Lee-Dong-Hun">@opencv256</a></td>
+		<td align="center"><a href="https://github.com/opencv256/opencv256">@opencv256</a></td>
 	</tr>
 </table>
 
